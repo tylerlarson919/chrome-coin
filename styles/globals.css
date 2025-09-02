@@ -1,0 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .ticker-animation {
+    display: inline-block;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+  }
+
+  @keyframes ticker {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* --- New Styles for Background --- */
+  .shining-rays {
+    background-image: repeating-conic-gradient(
+      from 45deg,
+      #d51feb 0% 2.5%,
+      transparent 2.5% 5%
+    );
+    animation: spin 250s linear infinite;
+  }
+
+
+
+  @keyframes spin {
+    from {
+      transform: scale(3) rotate(0deg);
+    }
+    to {
+      transform: scale(3) rotate(360deg);
+    }
+  }
+}
+
+.hover-tilt-zoom {
+  transition: transform 0.3s ease;
+}
+
+.hover-tilt-zoom:hover {
+  transform: rotate(-3deg) scale(1.02);
+}
+
+.pulse-scale {
+  animation: pulseScale 2s ease-in-out infinite;
+}
+
+@keyframes pulseScale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+
+.text-stroke-smooth {
+  -webkit-text-stroke: 14px #000;
+  color: #FFF; 
+  paint-order: stroke fill;
+  position: relative; 
+  display: inline-block; 
+  z-index: 1;
+}
+
+.text-stroke-bg {
+  color: #000; 
+  z-index: -1; 
+  text: center
+}
+
+/* Default (Mobile) Styles */
+.noise-overlay {
+  background-image: url("https://res.cloudinary.com/dqedckeaa/image/upload/v1752695475/retro_comics_halftone_background_dywwro.webp");
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 100;
+  mix-blend-mode: soft-light;
+  
+  /* --- EDITS --- */
+  /* Smaller, repeating texture for mobile that doesn't stretch */
+  background-size: 300px; 
+  background-repeat: repeat;
+  transform: none;
+}
+
+/* Desktop Styles (768px and wider) */
+@media (min-width: 1024px) {
+  /* The .noise-overlay element itself will render the two left-side textures */
+  .noise-overlay {
+    background-repeat: no-repeat;
+    background-image:
+      url("https://res.cloudinary.com/dqedckeaa/image/upload/v1752695475/retro_comics_halftone_background_dywwro.webp"),
+      url("https://res.cloudinary.com/dqedckeaa/image/upload/v1752695475/retro_comics_halftone_background_dywwro.webp");
+    
+    /* Size each texture to be contained within its quadrant without squishing */
+    background-size: contain;
+    
+    /* Position textures in the top-left and bottom-left half of the screen */
+    background-position: top left, bottom left;
+  }
+
+  /* The ::after pseudo-element will render the two MIRRORED right-side textures */
+  .noise-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Use the same background properties as the parent */
+    background-repeat: no-repeat;
+    background-image:
+      url("https://res.cloudinary.com/dqedckeaa/image/upload/v1752695475/retro_comics_halftone_background_dywwro.webp"),
+      url("https://res.cloudinary.com/dqedckeaa/image/upload/v1752695475/retro_comics_halftone_background_dywwro.webp");
+    background-size: contain;
+    
+    /* Position textures in the top-right and bottom-right half */
+    background-position: top right, bottom right;
+    
+    /* Horizontally flip the entire pseudo-element to mirror the textures */
+    transform: scaleX(-1);
+    
+    /* These properties must be duplicated from the parent for the pseudo-element */
+    opacity: 1.0; /* Opacity is handled by the parent */
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+}
+
+
+/* app/globals.css */
+
+.wallet-adapter-dropdown {
+  width: 100% !important;
+}
+
+/* Target the wallet adapter's button class */
+.wallet-adapter-button-trigger {
+  /* bg-[#ea88ea] */
+  background-color: #ea88ea !important;
+  
+  /* py-3 */
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  
+  /* text-white */
+  color: #ffffff !important;
+  
+  /* w-full */
+  width: 100%;
+  
+  /* text-2xl */
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
+  
+  font-family: var(--font-comic-neue), sans-serif !important; 
+  
+  /* tracking-wider */
+  letter-spacing: 0.05em !important;
+  
+  /* border-2 border-black */
+  border: 2px solid #000000 !important;
+
+  /* rounded-md */
+  border-radius: 0.375rem !important;
+
+  /* shadow-[4px_4px_0px_#000000] */
+  box-shadow: 4px 4px 0px #000000 !important;
+  
+  /* transition-all */
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Style for the button's hover state */
+.wallet-adapter-button-trigger:hover {
+  /* hover:shadow-none */
+  box-shadow: none !important;
+  
+  /* hover:translate-x-1 hover:translate-y-1 */
+  transform: translateX(4px) translateY(4px) !important;
+  
+  /* Optional: maintain background on hover */
+  background-color: #ea88ea !important;
+}
+/* --- Modal Overlay & Wrapper --- */
+/* This styles the main pop-up window */
+.wallet-adapter-modal-wrapper {
+  background: rgb(70, 25, 67) !important; /* Deep purple from your site's theme */
+  border: 3px solid #000000 !important;
+  border-radius: 1rem !important;
+  font-family: var(--font-comic-neue), sans-serif !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* --- Modal Title --- */
+/* Styles the "Connect a wallet..." text */
+.wallet-adapter-modal-title {
+  font-size: 2rem !important;
+  line-height: 2.5rem !important;
+  color: #ffffff !important;
+  font-family: inherit !important;
+  font-weight: 700 !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+
+/* --- Close Button ('X') --- */
+.wallet-adapter-modal-button-close {
+  background-color: #ea88ea !important;
+  border-radius: 0.375rem !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.wallet-adapter-modal-button-close:hover {
+  background-color: #ffffff !important;
+  transform: scale(1.1);
+}
+
+.wallet-adapter-modal-button-close svg {
+  fill: #000000 !important;
+}
+
+
+/* --- Wallet List & Buttons --- */
+/* The list containing wallet options */
+.wallet-adapter-modal-list {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.wallet-adapter-modal-list > * + * {
+  margin-top: 10px;
+}
+
+/* Individual wallet buttons (Phantom, Brave, etc.) */
+/* Individual wallet buttons (Phantom, Brave, etc.) */
+.wallet-adapter-modal-list .wallet-adapter-button {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border: 2px solid #000000 !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s ease-in-out !important;
+  font-size: 1.25rem !important;
+  font-family: inherit !important;
+  color: #ffffff !important;
+}
+
+.wallet-adapter-modal-list .wallet-adapter-button:hover {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  border-color: #ea88ea !important;
+}
+
+/* Wallet icon (e.g., Phantom ghost) */
+.wallet-adapter-button-start-icon img {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+
+/* --- "More Options" Button --- */
+.wallet-adapter-modal-list-more {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #ea88ea !important;
+  font-family: inherit !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  margin-top: 1rem !important;
+  text-decoration: underline;
+}
+
+.wallet-adapter-modal-list-more:hover {
+  color: #ffffff !important;
+}
+
+.wallet-adapter-modal-list-more svg {
+  fill: #ea88ea !important;
+}
