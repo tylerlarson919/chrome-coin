@@ -1,14 +1,12 @@
-// ClientLayoutWrapper.tsx
 "use client";
 
 import React, { useState } from "react";
 import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/Footer"; // 1. Import the Footer
+import { Footer } from "@/components/Footer";
 import WelcomeModules from "@/components/first-time-visitors/WelcomeModules";
 import { Providers } from "./providers";
 import ClientLoaderWrapper from "@/components/loading-screen/ClientLoaderWrapper";
 import { LoadingContext } from "@/context/LoadingContext";
-import { Background } from "@/components/Background";
 
 export function ClientLayoutWrapper({
   children,
@@ -22,13 +20,9 @@ export function ClientLayoutWrapper({
     <>
       <ClientLoaderWrapper
         onLoaded={(startLoaderExit) => {
-          // 1. Trigger background to appear
           setIsBackgroundVisible(true);
-          // 2. Wait 300ms
           setTimeout(() => {
-            // 3. Trigger content fade-in
             setIsLoaded(true);
-            // 4. Trigger loader exit animation
             startLoaderExit();
           }, 300);
         }}
@@ -43,7 +37,6 @@ export function ClientLayoutWrapper({
             <WelcomeModules />
             <div className="relative flex flex-col min-h-screen">
               <Navbar />
-              {isBackgroundVisible && <Background />}
               <main className="flex-1">
                 <div className="w-full h-full">{children}</div>
               </main>

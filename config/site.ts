@@ -1,7 +1,6 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "$BOPCOIN",
-  description: "Where chaos meets comedy in an animated universe.",
-
+  name: "$MER",
+  description: "Unlock luxury rentals with $MER - the utility token for exotic cars, yachts, and houses.",
 };

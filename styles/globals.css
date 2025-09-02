@@ -22,7 +22,7 @@
   .shining-rays {
     background-image: repeating-conic-gradient(
       from 45deg,
-      #d51feb 0% 2.5%,
+      #ff6510 0% 2.5%,
       transparent 2.5% 5%
     );
     animation: spin 250s linear infinite;
@@ -148,8 +148,8 @@
 
 /* Target the wallet adapter's button class */
 .wallet-adapter-button-trigger {
-  /* bg-[#ea88ea] */
-  background-color: #ea88ea !important;
+  /* bg-[#ff6510] */
+  background-color: #ff6510 !important;
   
   /* py-3 */
   padding-top: 0.75rem !important;
@@ -192,12 +192,12 @@
   transform: translateX(4px) translateY(4px) !important;
   
   /* Optional: maintain background on hover */
-  background-color: #ea88ea !important;
+  background-color: #ff6510 !important;
 }
 /* --- Modal Overlay & Wrapper --- */
 /* This styles the main pop-up window */
 .wallet-adapter-modal-wrapper {
-  background: rgb(70, 25, 67) !important; /* Deep purple from your site's theme */
+  background: rgb(88, 28, 28) !important; /* Deep purple from your site's theme */
   border: 3px solid #000000 !important;
   border-radius: 1rem !important;
   font-family: var(--font-comic-neue), sans-serif !important;
@@ -219,7 +219,7 @@
 
 /* --- Close Button ('X') --- */
 .wallet-adapter-modal-button-close {
-  background-color: #ea88ea !important;
+  background-color: #ff6510 !important;
   border-radius: 0.375rem !important;
   transition: all 0.2s ease-in-out !important;
 }
@@ -260,7 +260,7 @@
 
 .wallet-adapter-modal-list .wallet-adapter-button:hover {
   background-color: rgba(0, 0, 0, 0.6) !important;
-  border-color: #ea88ea !important;
+  border-color: #ff6510 !important;
 }
 
 /* Wallet icon (e.g., Phantom ghost) */
@@ -275,7 +275,7 @@
   background: none !important;
   border: none !important;
   box-shadow: none !important;
-  color: #ea88ea !important;
+  color: #ff6510 !important;
   font-family: inherit !important;
   font-size: 1.1rem !important;
   font-weight: 600 !important;
@@ -289,5 +289,5 @@
 }
 
 .wallet-adapter-modal-list-more svg {
-  fill: #ea88ea !important;
+  fill: #ff6510 !important;
 }

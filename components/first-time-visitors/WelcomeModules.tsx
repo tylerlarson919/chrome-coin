@@ -1,72 +1,45 @@
-// components/WelcomeModules.tsx
+// components/first-time-visitors/WelcomeModules.tsx
 "use client";
 import { useState, useEffect, useRef } from "react";
 
 export default function WelcomeModules() {
   const [showCookies, setShowCookies] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(false);
-  const [hideCookies, setHideCookies]  = useState(true);
-  const [hideWelcome, setHideWelcome]  = useState(true);
+  const [hideCookies, setHideCookies] = useState(true);
 
   useEffect(() => {
-  const accepted = localStorage.getItem("bop_cookies_accepted");
-  if (!accepted) {
-    setShowCookies(true);
-  }
-}, []);
+    const accepted = localStorage.getItem("mer_cookies_accepted");
+    if (!accepted) {
+      setShowCookies(true);
+    }
+  }, []);
 
-  // ⓑ  ── ADD these two useEffects just after the big init useEffect ─
   useEffect(() => {
-    if (showCookies) requestAnimationFrame(() => setHideCookies(false));   // fade-IN
+    if (showCookies) requestAnimationFrame(() => setHideCookies(false));
   }, [showCookies]);
 
+  const acceptCookies = () => {
+    localStorage.setItem("mer_cookies_accepted", "1");
+    setHideCookies(true);
+  };
+
+  const rejectCookies = () => {
+    localStorage.setItem("mer_cookies_accepted", "2");
+    setHideCookies(true);
+  };
+
   useEffect(() => {
-    if (showWelcome) requestAnimationFrame(() => setHideWelcome(false));   // fade-IN
-  }, [showWelcome]);
+    if (hideCookies && showCookies) {
+      const id = setTimeout(() => setShowCookies(false), 300);
+      return () => clearTimeout(id);
+    }
+  }, [hideCookies, showCookies]);
 
-// ⓒ  ── REPLACE the three handlers (old versions deleted) ──────────
-const acceptCookies = () => {
-  localStorage.setItem("bop_cookies_accepted", "1");
-  setHideCookies(true);                      // start fade-OUT
-};
-
-const rejectCookies = () => {
-  localStorage.setItem("bop_cookies_accepted", "2");
-  setHideCookies(true);                      // start fade-OUT
-};
-
-const setWelcomeSeen = () => {
-  localStorage.setItem("bop_welcome_model_seen", "1");
-  setHideWelcome(true);                      // start fade-OUT
-};
-
-  // ⓓ  ── ADD two cleanup useEffects anywhere with the other hooks ──
-useEffect(() => {
-  if (hideCookies && showCookies) {
-    const id = setTimeout(() => setShowCookies(false), 300);   // match CSS duration
-    return () => clearTimeout(id);
-  }
-}, [hideCookies, showCookies]);
-
-useEffect(() => {
-  if (hideWelcome && showWelcome) {
-    const id = setTimeout(() => setShowWelcome(false), 300);
-    return () => clearTimeout(id);
-  }
-}, [hideWelcome, showWelcome]);
-
-return (
+  return (
     <>
       {showCookies && (
         <div
-          className={`fixed bottom-4 inset-x-4 z-50 max-w-6xl mx-auto
-                     bg-black/70 border-[3px] border-[#ea88ea] rounded-xl 
-                     backdrop-blur-lg 
-                     flex flex-col md:flex-row items-center gap-4 p-4 md:p-5
-                     transition-opacity duration-300
-                     ${hideCookies ? "opacity-0" : "opacity-100"}`}
+          className={`fixed bottom-4 inset-x-4 z-50 max-w-6xl mx-auto bg-black/70 border-[3px] border-mer-orange rounded-xl backdrop-blur-lg flex flex-col md:flex-row items-center gap-4 p-4 md:p-5 transition-opacity duration-300 ${hideCookies ? "opacity-0" : "opacity-100"}`}
         >
-          {/* Text and Icon */}
           <div className="flex-grow flex items-center gap-4">
             <svg
               className="flex-shrink-0 size-8 text-white"
@@ -86,19 +59,17 @@ return (
               />
             </svg>
             <p className="text-sm md:text-base text-white font-semibold tracking-wide [text-shadow:1px_1px_1px_#000]">
-              We use bops (cookies) to enhance your experience and bring the
-              memes to life.
+              We use cookies to enhance your $MER experience.
               <a
                 href="/cookie-policy"
-                className="underline ml-1 hover:text-[#ea88ea] transition-colors"
+                className="underline ml-1 hover:text-mer-orange transition-colors"
               >
                 Learn more
               </a>
             </p>
           </div>
 
-          {/* Buttons */}
-<div className="flex-shrink-0 flex items-center justify-end gap-3 w-full md:w-auto">
+          <div className="flex-shrink-0 flex items-center justify-end gap-3 w-full md:w-auto">
             <button
               onClick={rejectCookies}
               className="px-5 py-2 bg-white text-black font-bold tracking-wider rounded-lg border-2 border-black text-sm shadow-[3px_3px_0px_#000] hover:shadow-none hover:bg-gray-200 active:scale-95 hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-150 ease-in-out"
@@ -107,7 +78,7 @@ return (
             </button>
             <button
               onClick={acceptCookies}
-              className="px-5 py-2 bg-[#ea88ea] text-black font-bold tracking-wider rounded-lg border-2 border-black text-sm shadow-[3px_3px_0px_#000] hover:shadow-none hover:brightness-110 active:scale-95 hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-150 ease-in-out"
+              className="px-5 py-2 bg-mer-orange text-white font-bold tracking-wider rounded-lg border-2 border-black text-sm shadow-[3px_3px_0px_#000] hover:shadow-none hover:brightness-110 active:scale-95 hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-150 ease-in-out"
             >
               Accept
             </button>

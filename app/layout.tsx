@@ -1,11 +1,11 @@
-// app/layout.tsx
 import "@/styles/globals.css";
 import clsx from "clsx";
-import { fontComicNeue, fontLuckiestGuy, fontModak } from "@/config/fonts";
+import { fontPoppins } from "@/config/fonts";
 import { ClientLayoutWrapper } from "./ClientLayoutWrapper";
 export { metadata } from "./metadata";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next"
+
 export default function RootLayout({
   children,
 }: {
@@ -16,15 +16,13 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-transparent font-sans antialiased",
-          fontComicNeue.variable,
-          fontLuckiestGuy.variable,
-          fontModak.variable
+          "min-h-screen bg-black font-poppins antialiased",
+          fontPoppins.variable
         )}
       >
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
-          <Analytics/>
-          <SpeedInsights/>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

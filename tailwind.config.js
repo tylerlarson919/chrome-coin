@@ -11,13 +11,10 @@ darkMode: false,
  theme: {
  extend: {
   fontFamily: {
-    sans: ["var(--font-comic-neue)"],
-    mono: ["var(--font-mono)"],
-    comic : ["var(--font-comic-neue)"],
-    luckiest: ["var(--font-luckiest)"],
-    modak: ["var(--font-modak)"],
+    poppins: ['var(--font-poppins)', 'sans-serif'], // Added to make font-poppins class usable
   },
   colors: {
+    'mer-orange': '#ff6510',
   },
  keyframes: {
     'ticker-ltr': {

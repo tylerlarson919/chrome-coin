@@ -1,4 +1,3 @@
-// FILE: slideVariants.ts
 import { Variants } from "framer-motion";
 
 export const slideVariants: Variants = {

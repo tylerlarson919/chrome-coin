@@ -1,35 +1,8 @@
-import {
-  Fira_Code as FontMono,
-  Inter as FontSans,
-  Luckiest_Guy,
-  Comic_Neue,
-  Modak,
-} from "next/font/google";
+import { Poppins } from "next/font/google";
 
-export const fontModak = Modak({
+export const fontPoppins = Poppins({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-modak",
-});
-
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-export const fontMono = FontMono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-});
-
-export const fontLuckiestGuy = Luckiest_Guy({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-luckiest",
-});
-
-export const fontComicNeue = Comic_Neue({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-comic-neue",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: 'swap', // Added to prevent fallback to Times New Roman during load
 });

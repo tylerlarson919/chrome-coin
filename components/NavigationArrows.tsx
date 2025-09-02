@@ -9,7 +9,6 @@ interface NavigationArrowsProps {
   isFirstStep?: boolean;
 }
 
-// 🎨 REDESIGNED BUTTON COMPONENT
 const ArrowButton = ({ children, ...props }: { children: React.ReactNode } & React.ComponentProps<"button">) => (
   <button
     {...props}
@@ -19,21 +18,18 @@ const ArrowButton = ({ children, ...props }: { children: React.ReactNode } & Rea
   </button>
 );
 
-
 export const NavigationArrows = ({
   onNext,
   onPrev,
   page,
   isLastStep,
-  isFirstStep, // <-- Destructure the new prop
+  isFirstStep,
 }: NavigationArrowsProps) => {
-  // This logic correctly handles both the home page and about page
   const showPrevArrow = isFirstStep !== undefined ? !isFirstStep : page > 0;
 
   return (
     <>
       <AnimatePresence>
-        {/* Use the new logic variable here */}
         {showPrevArrow && (
           <motion.div
             className="fixed z-50 top-[50lvh] left-1 sm:left-4 -translate-y-1/2"

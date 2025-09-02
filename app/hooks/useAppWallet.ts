@@ -9,18 +9,18 @@ export const useAppWallet = () => {
   const walletHook = useWallet();
   const { publicKey } = walletHook;
 
-  const [bopBalance, setBopBalance] = useState(0);
+  const [merBalance, setMerBalance] = useState(0);
 
   const fetchBalance = useCallback(async () => {
     if (!publicKey) {
-      setBopBalance(0);
+      setMerBalance(0);
       return;
     }
 
     const mintAddress = process.env.NEXT_PUBLIC_BOPCOIN_MINT_ADDRESS;
     if (!mintAddress) {
       console.error("BOPCOIN mint address environment variable is not set.");
-      setBopBalance(0);
+      setMerBalance(0);
       return;
     }
 
@@ -31,7 +31,7 @@ export const useAppWallet = () => {
         mintPublicKey = new PublicKey(mintAddress);
       } catch (error) {
         console.error(`Invalid BOPCOIN mint address format in .env: ${mintAddress}`);
-        setBopBalance(0);
+        setMerBalance(0);
         return;
       }
       
@@ -39,26 +39,26 @@ export const useAppWallet = () => {
        const mintAccount = await connection.getAccountInfo(mintPublicKey);
        if (!mintAccount) {
          console.error(`Mint account ${mintAddress} does not exist on the network.`);
-         setBopBalance(0);
+         setMerBalance(0);
          return;
        }
      } catch (error) {
        console.error(`Failed to fetch mint account:`, error);
-       setBopBalance(0);
+       setMerBalance(0);
        return;
      }
       const tokenAccounts = await connection.getParsedTokenAccountsByOwner(publicKey, { mint: mintPublicKey });
 
       if (tokenAccounts.value.length > 0) {
         const balance = tokenAccounts.value[0].account.data.parsed.info.tokenAmount.uiAmount;
-        setBopBalance(balance || 0);
+        setMerBalance(balance || 0);
       } else {
-        setBopBalance(0);
+        setMerBalance(0);
       }
     } catch (error) {
       // This will catch RPC errors, including the "Token mint could not be unpacked" error if the mint account doesn't exist.
       console.error("Failed to fetch BOPCOIN balance:", error);
-      setBopBalance(0); // Reset balance on error
+      setMerBalance(0); // Reset balance on error
     }
   }, [publicKey, connection]);
 
@@ -74,7 +74,7 @@ export const useAppWallet = () => {
 
   return {
     ...walletHook,
-    bopBalance,
+    merBalance,
     fetchBalance,
   };
 };

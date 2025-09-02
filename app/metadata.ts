@@ -2,62 +2,49 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://bopcoin.fun'),
-
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mer-token.com'),
   title: {
-    default: "BOPCOIN",
-    template: `%s - BOPCOIN`,
+    default: "$MER Utility Token",
+    template: `%s - $MER Utility Token`,
   },
-  description: "The ultimate meme coin for the bophouse community. Join the revolution and bop your way to the moon!",
-    /* 3️⃣ Focus keywords (not a ranking factor but good for organisation tools) */
-    keywords: [
-      'bopcoin',
-      'meme coin',
-      'cryptocurrency',
-      'bophouse',
-      'crypto community',
-      'defi token',
-      'moon mission',
-      'crypto memes',
+  description: "Swap SOL for $MER and unlock exclusive rentals of exotic cars, yachts, and houses with Miami Exotic Rents.",
+  keywords: [
+    'MER token',
+    'utility coin',
+    'crypto rentals',
+    'exotic cars',
+    'yachts',
+    'luxury houses',
+    'Solana token',
+    'Web3 utility',
+  ],
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: '/',
+    siteName: '$MER',
+    title: '$MER | Utility Token for Luxury Rentals',
+    description: 'Power your exotic rentals with $MER - the utility token for Miami Exotic Rents.',
+    images: [
+      {
+        url: '/og/mer-og.jpg', // Placeholder - replace with actual
+        width: 1024,
+        height: 1024,
+        alt: '$MER Utility Token',
+      },
     ],
-  
-    /* 4️⃣ Robots */
-    robots: { index: true, follow: true },
-  
-    /* 5️⃣ Canonical fallback */
-    alternates: { canonical: '/' },
-  
-    /* 6️⃣ Open Graph  */
-    openGraph: {
-      type: 'website',
-      locale: 'en_US',
-      url: '/',
-      siteName: 'BOPCOIN',
-      title: 'BOPCOIN | The Ultimate Meme Coin',
-      description:
-        'Join the bophouse revolution with BOPCOIN - the meme coin that\'s taking the crypto world by storm!',
-      images: [
-        {
-          url: '/og/default.webp', 
-          width: 1024,
-          height: 1024,
-          alt: 'BOPCOIN — The Ultimate Meme Coin for the Bophouse',
-        },
-      ],
-    },
-  
-    /* 7️⃣ Twitter */
-    twitter: {
-      card: 'summary_large_image',
-      site: '@BOPCOINofficial',
-      creator: '@BOPCOINofficial',
-      title: 'BOPCOIN | The Ultimate Meme Coin',
-      description:
-        'Bop your way to the moon with the hottest meme coin in the crypto space!',
-      images: ['/og/default.webp'],
-    },
-
-    icons: {
-      icon: '/favicon.ico',
-    },
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@MERofficial',
+    creator: '@MERofficial',
+    title: '$MER | Utility Token for Luxury Rentals',
+    description: 'Swap SOL for $MER and rent exotic cars, yachts, and houses.',
+    images: ['/og/mer-og.jpg'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
 };

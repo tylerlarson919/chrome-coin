@@ -15,7 +15,7 @@ const WalletIcon = ({ src, alt }: { src: string, alt: string }) => (
 );
 
 // Constants
-const BOPCOIN_MINT = new PublicKey(process.env.NEXT_PUBLIC_BOPCOIN_MINT_ADDRESS!);
+const MER_MINT = new PublicKey(process.env.NEXT_PUBLIC_BOPCOIN_MINT_ADDRESS!);
 const SOL_MINT = new PublicKey('So11111111111111111111111111111111111111112'); // Wrapped SOL
 
 const getFriendlyErrorMessage = (error: any): string => {
@@ -39,13 +39,13 @@ const getFriendlyErrorMessage = (error: any): string => {
  return "An unknown error occurred. Please try again.";
 };
 
-export const BuyWidget = () => {
-    const { publicKey, sendTransaction, wallet, disconnect, bopBalance, fetchBalance } = useAppWallet();
+export const SwapWidget = () => {
+    const { publicKey, sendTransaction, wallet, disconnect, merBalance, fetchBalance } = useAppWallet();
     const { connection } = useConnection();
     const [isClient, setIsClient] = useState(false);
     const [activeTab, setActiveTab] = useState('SOL');
     const [payAmount, setPayAmount] = useState('0');
-    const [prices, setPrices] = useState({ solPrice: 0, bopcoinPrice: 0 });
+    const [prices, setPrices] = useState({ solPrice: 0, merPrice: 0 });
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState(''); // 'success', 'error', or ''
     const [statusMessage, setStatusMessage] = useState('');
@@ -74,7 +74,7 @@ export const BuyWidget = () => {
 
     const receiveAmount = useMemo(() => {
         const amount = parseFloat(payAmount) || 0;
-        if (amount === 0 || prices.bopcoinPrice === 0) return '0';
+        if (amount === 0 || prices.merPrice === 0) return '0';
 
         let amountInUsd;
         if (activeTab === 'SOL') {
@@ -83,8 +83,8 @@ export const BuyWidget = () => {
             amountInUsd = amount;
         }
         
-        const bopcoinAmount = amountInUsd / prices.bopcoinPrice;
-        return bopcoinAmount.toLocaleString('en-US', { maximumFractionDigits: 0 });
+        const merAmount = amountInUsd / prices.merPrice;
+        return merAmount.toLocaleString('en-US', { maximumFractionDigits: 0 });
     }, [payAmount, activeTab, prices]);
 
     const handleSwap = async () => {
@@ -139,7 +139,7 @@ export const BuyWidget = () => {
          await connection.confirmTransaction({ blockhash, lastValidBlockHeight, signature }, 'confirmed');
 
          setStatus('success');
-         setStatusMessage('Swap successful! Welcome to the BOP Army.');
+         setStatusMessage('Swap successful! Welcome to the MER Army.');
          fetchBalance();
      } catch (error) {
          console.error('Swap failed:', error);
@@ -173,7 +173,7 @@ export const BuyWidget = () => {
             );
         }
         
-        const actionText = activeTab === 'CARD' ? 'Buy with Card' : `Swap SOL for $BOPCOIN`;
+        const actionText = activeTab === 'CARD' ? 'Buy with Card' : `Swap SOL for $MER`;
         const actionHandler = activeTab === 'CARD' ? handleCardPayment : handleSwap;
         
         return (
@@ -190,8 +190,8 @@ export const BuyWidget = () => {
     return (
         <div className="relative z-10 w-full max-w-md mx-auto">
             <div className="relative z-10 w-full p-6 bg-white border-4 border-black rounded-xl shadow-[8px_8px_0px_#000000]">
-                <h2 className="text-2xl lg:text-3xl font-luckiest tracking-wider text-center text-black">
-                    JOIN THE BOP ARMY!
+                <h2 className="text-2xl lg:text-3xl font-poppins tracking-wider text-center text-black">
+                    SWAP FOR $MER
                 </h2>
                 {isClient && publicKey && wallet && (
                     <div className="flex items-center justify-center gap-4 p-2 mt-4 bg-green-100/80 border-1 border-green-400 rounded-lg">
@@ -212,11 +212,11 @@ export const BuyWidget = () => {
                 )}
 
                 <div className="mt-4 text-center">
-                    <p className="text-gray-700 font-bold">YOUR $BOPCOIN ≈ {bopBalance.toLocaleString()}</p>
-                    <p className="font-mono text-sm text-gray-500">
-                      1 $BOPCOIN ≈ ${prices.bopcoinPrice > 0 ? prices.bopcoinPrice.toPrecision(4) : '...'}
+                    <p className="text-gray-700 font-bold">YOUR $MER ≈ {merBalance.toLocaleString()}</p>
+                    <p className="font-poppins text-sm text-gray-500">
+                      1 $MER ≈ ${prices.merPrice > 0 ? prices.merPrice.toPrecision(4) : '...'}
                     </p>
-                </div>          
+                </div>         
 
                 <div className="space-y-4 py-6">
                     <Input
@@ -230,19 +230,19 @@ export const BuyWidget = () => {
                         classNames={{
                             label: "text-sm font-bold text-gray-800 mb-2",
                             input: "text-xl font-bold",
-                            inputWrapper: ["bg-gray-100", "border-2", "border-black", "shadow-none", "rounded-md", "group-data-[focus=true]:border-[#ea88ea]", "data-[hover=true]:border-[#ea88ea]", "transition-colors"],
+                            inputWrapper: ["dark bg-gray-900 text-white border-2 border-black shadow-none rounded-md group-data-[focus=true]:border-mer-orange data-[hover=true]:border-mer-orange transition-colors"],
                         }}
                     />
                     <Input
                         isReadOnly
-                        label="Receive $BOPCOIN"
+                        label="Receive $MER"
                         value={receiveAmount}
                         variant="bordered"
-                        endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1752807181/bopcoin--logo_m2zyal.webp" alt="$BOPCOIN" className="w-8 h-8 mb-[2px] rounded-[8px]" />}
+                        endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1752807181/bopcoin--logo_m2zyal.webp" alt="$MER" className="w-8 h-8 mb-[2px] rounded-[8px]" />}
                         classNames={{
                             label: "text-sm font-bold text-gray-800 mb-2",
                             input: "text-xl font-bold",
-                            inputWrapper: ["bg-gray-100", "border-2", "border-black", "shadow-none", "rounded-md", "data-[hover=true]:border-black", "transition-colors"],
+                            inputWrapper: ["dark bg-gray-900 text-white border-none shadow-none rounded-md data-[hover=true]:border-black transition-colors"],
                         }}
                     />
                 </div>
@@ -260,22 +260,15 @@ export const BuyWidget = () => {
                 )}
                 
                 <div className="flex items-center justify-between mt-4">
-                    <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" className="text-sm underline text-gray-600 hover:text-[#E54096]">
+                    <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" className="text-sm underline text-gray-600 hover:text-mer-orange">
                         Don&apos;t have a Solana wallet?
                     </a>
                     <div className="flex items-center space-x-2">
-                        <p className="text-sm font-bold">Recommended:</p>
                         <WalletIcon src="https://res.cloudinary.com/dqedckeaa/image/upload/v1752805802/phantom-logo_retn2j.webp" alt="Phantom Wallet" />
                         <WalletIcon src="https://res.cloudinary.com/dqedckeaa/image/upload/v1752805802/solflare-logo_qy2ndn.webp" alt="Solflare Wallet" />
                     </div>
                 </div>
             </div>
-
-            {pathname === '/' && (
-                <div className="hidden lg:block absolute -bottom-[30%] left-1/3 w-full pointer-events-none z-1">
-                    <Image src="https://res.cloudinary.com/dqedckeaa/image/upload/v1752787646/up-2_pi77bv.svg" alt="Decorative Arrow" width={878} height={1606} className="w-20 h-auto pulse-scale" />
-                </div>
-            )}
         </div>
     );
 };
