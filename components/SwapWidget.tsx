@@ -190,8 +190,8 @@ export const SwapWidget = () => {
     return (
         <div className="relative z-10 w-full max-w-md mx-auto">
             <div className="relative z-10 w-full p-6 bg-white border-4 border-black rounded-xl shadow-[8px_8px_0px_#000000]">
-                <h2 className="text-2xl lg:text-3xl font-poppins tracking-wider text-center text-black">
-                    SWAP FOR $MER
+                <h2 className="text-2xl lg:text-3xl font-bold font-poppins text-center text-black">
+                    Swap SOL for $MER
                 </h2>
                 {isClient && publicKey && wallet && (
                     <div className="flex items-center justify-center gap-4 p-2 mt-4 bg-green-100/80 border-1 border-green-400 rounded-lg">
@@ -230,7 +230,7 @@ export const SwapWidget = () => {
                         classNames={{
                             label: "text-sm font-bold text-gray-800 mb-2",
                             input: "text-xl font-bold",
-                            inputWrapper: ["dark bg-gray-900 text-white border-2 border-black shadow-none rounded-md group-data-[focus=true]:border-mer-orange data-[hover=true]:border-mer-orange transition-colors"],
+                            inputWrapper: ["dark bg-[#1a1a1a] text-white border-2 border-black shadow-none rounded-md group-data-[focus=true]:border-mer-orange data-[hover=true]:border-mer-orange transition-colors"],
                         }}
                     />
                     <Input
@@ -242,7 +242,7 @@ export const SwapWidget = () => {
                         classNames={{
                             label: "text-sm font-bold text-gray-800 mb-2",
                             input: "text-xl font-bold",
-                            inputWrapper: ["dark bg-gray-900 text-white border-none shadow-none rounded-md data-[hover=true]:border-black transition-colors"],
+                            inputWrapper: ["dark bg-[#1a1a1a] text-white border-none shadow-none rounded-md data-[hover=true]:border-black transition-colors"],
                         }}
                     />
                 </div>

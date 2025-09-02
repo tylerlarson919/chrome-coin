@@ -1,197 +1,131 @@
 "use client";
-import { useState, useCallback, useRef, useEffect } from "react";
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import Image from "next/image";
 import { Ticker } from "@/components/Ticker";
-import { NavigationArrows } from "@/components/NavigationArrows";
+// No longer need framer-motion or navigation for this simpler design
+// import { useState, useCallback, useRef, useEffect } from "react";
+// import { AnimatePresence, motion, Variants } from "framer-motion";
+// import { NavigationArrows } from "@/components/NavigationArrows";
 
-const crossfadeVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.3, ease: "easeOut" } },
-  exit: { opacity: 0, transition: { duration: 0.5, ease: "easeIn" } },
-};
-
-const calloutVariants: Variants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? 50 : -50,
-    opacity: 0,
-  }),
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction: number) => ({
-    zIndex: 0,
-    x: direction < 0 ? 50 : -50,
-    opacity: 0,
-  }),
-};
+// Removed crossfadeVariants and calloutVariants as sliders are gone
 
 const aboutContent = [
   {
-    title: "01 THE UTILITY",
-    topText: (
+    title: "THE UTILITY",
+    description: (
       <>
-        <p className="mb-2">
+        <p className="mb-4">
           $MER is a utility token for <strong>Miami Exotic Rents</strong>, enabling exclusive access to:
         </p>
-        <ul className="list-disc list-inside space-y-1">
+        <ul className="list-disc list-inside space-y-2 text-lg leading-relaxed">
           <li>Exotic car rentals.</li>
           <li>Luxury yacht charters.</li>
           <li>Premium house rentals.</li>
         </ul>
       </>
     ),
-    bottomTitle: "How It Works",
-    bottomText: (
-      <p className="text-left font-poppins leading-tight sm:text-lg">
-        Swap SOL for $MER and use it to book rentals with discounts and perks.
-      </p>
-    ),
-    imageSrc: "https://res.cloudinary.com/dqedckeaa/image/upload/v1752732408/about-slide1.1_gbm6vu.webp", // Placeholder until replaced
+    imageSrc: "https://res.cloudinary.com/dqedckeaa/image/upload/v1756825797/MER-Lambo-exchange_yzyvin.jpg",
+    imageAlt: "Luxury car exchange",
   },
   {
-    title: "02 THE VISION",
-    topText: (
-        <p>$MER transforms rental experiences, integrating Web3 into luxury lifestyles.</p>
-    ),
-    bottomTitle: "Future Growth",
-    bottomText: (
-        <p className="text-left font-poppins leading-tight sm:text-lg">
-            Planned expansions include global rental networks and new $MER utilities.
+    title: "THE VISION",
+    description: (
+      <>
+        <p className="mb-4">
+          $MER transforms rental experiences, integrating Web3 into luxury lifestyles.
         </p>
+        <p className="text-lg leading-relaxed">
+          Planned expansions include global rental networks and new $MER utilities.
+        </p>
+      </>
     ),
-    imageSrc: "https://res.cloudinary.com/dqedckeaa/image/upload/v1752732410/about-slide2_ppgi7a.webp", // Placeholder
+    imageSrc: "https://res.cloudinary.com/dqedckeaa/image/upload/v1756825797/MER-night-ride_ijrgnv.jpg",
+    imageAlt: "Night ride with exotic car",
   },
   {
-    title: "03 MARKET REACH",
-    topText: (
-      <p>
-        $MER aims to tap into the growing Web3 rental market, targeting <strong>1M+ users</strong> by 2026.
-      </p>
-    ),
-    bottomTitle: "Community Impact",
-    bottomText: (
-        <p className="text-left font-poppins leading-tight sm:text-lg">
-            Join a community driving luxury rentals with crypto innovation.
+    title: "MARKET REACH",
+    description: (
+      <>
+        <p className="mb-4">
+          $MER aims to tap into the growing Web3 rental market, targeting <strong>1M+ users</strong> by 2026.
         </p>
+        <p className="text-lg leading-relaxed">
+          Join a community driving luxury rentals with crypto innovation.
+        </p>
+      </>
     ),
-    imageSrc: "https://res.cloudinary.com/dqedckeaa/image/upload/v1752732411/about-slide3_e5br0t.webp", // Placeholder
+    imageSrc: "https://res.cloudinary.com/dqedckeaa/image/upload/v1756829414/MER-peaceful-crib_ipkb9p.jpg",
+    imageAlt: "Peaceful luxury house",
   },
 ];
 
 export default function AboutPage() {
-  const [subSlide, setSubSlide] = useState(0);
-  const [direction, setDirection] = useState(1);
-
-  const currentCallout = aboutContent[subSlide];
-
-  const handleNext = useCallback(() => {
-    setDirection(1);
-    if (subSlide < aboutContent.length - 1) {
-      setSubSlide((prev) => prev + 1);
-    }
-  }, [subSlide]);
-
-  const handlePrev = useCallback(() => {
-    setDirection(-1);
-    if (subSlide > 0) {
-      setSubSlide((prev) => prev - 1);
-    }
-  }, [subSlide]);
+  // Removed state and handlers for slides
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
-      <div className="relative z-[4] flex min-h-screen w-full flex-col pt-28 pointer-events-none">
-        <div className="flex justify-center pulse-scale px-6 pt-4 pb-2 sm:pt-12 sm:pb-4 lg:pb-12 md:pb-6">
-          <div className="flex flex-col items-center">
+    <div className="relative min-h-screen overflow-x-hidden bg-black text-white">
+      {/* Main content wrapper with padding */}
+      <div className="relative z-[4] flex w-full flex-col pt-28 pb-16">
+
+        {/* Hero Section - Title and Main Image */}
+        <div className="relative w-full h-[500px] md:h-[650px] overflow-hidden mb-16">
+          <Image
+            src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756825797/MER-Parking-Garage_w7nxkt.jpg"
+            alt="What is $MER?"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            className="brightness-[0.7]" // Slightly darken the image
+          />
+          <div className="absolute inset-0 bg-black/40"></div> {/* Dark overlay for readability */}
+          <div className="absolute inset-0 flex items-center justify-center">
             <h1
-              className="w-full text-center font-poppins text-white text-5xl md:text-6xl font-bold"
-              data-text="What is $MER?"
+              className="font-poppins text-white text-5xl md:text-6xl font-bold text-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.7)]"
+              data-text="What is $MER?" // For potential future styling
             >
               What is $MER?
             </h1>
           </div>
         </div>
 
-        <div className="relative flex-grow pointer-events-none">
-          <div className="lg:absolute lg:inset-0 flex h-fit w-full items-start justify-center mt-4 lg:mt-0 px-6 sm:px-0 lg:items-center">
-            <div className="flex justify-center lg:justify-end w-full max-w-[850px]">
-              <div className="relative w-full max-w-[500px] min-h-[203px] sm:min-h-[207px] pointer-events-auto">
-                <AnimatePresence mode="wait" custom={direction}>
-                  <motion.div
-                    key={subSlide}
-                    custom={direction}
-                    variants={calloutVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{
-                      x: { type: "spring", stiffness: 300, damping: 30 },
-                      opacity: { duration: 0.2 },
-                    }}
-                  >
-                    <div className="text-black shadow-lg hover-tilt-zoom">
-                      <div className="px-8 py-2 bg-mer-orange border-4 border-black rounded-lg -mx-[12px] md:-mx-[16px]">
-                        <h2 className="px-4 text-2xl font-bold tracking-wide [text-shadow:2px_2px_0_white] sm:text-3xl font-poppins">
-                          {currentCallout.title}
-                        </h2>
-                      </div>
-                      <div className="-mt-[4px] rounded-b-lg border-4 border-black bg-white px-6 py-4">
-                        <div className="text-left font-poppins text-regular leading-tight text-lg lg:leading-tight">
-                          {currentCallout.topText}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
+        {/* About Content Sections */}
+        <main className="container mx-auto px-4 w-full max-w-6xl">
+          {aboutContent.map((section, index) => (
+            <div
+              key={section.title}
+              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-16 mb-24 md:mb-32`}
+            >
+              {/* Text Content */}
+              <div className="w-full lg:w-1/2 text-left">
+                <h2 className="font-poppins text-4xl md:text-5xl font-bold text-mer-orange mb-6 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
+                  {`0${index + 1} ${section.title}`}
+                </h2>
+                <div className="font-poppins text-gray-200 text-xl md:text-2xl leading-relaxed">
+                  {section.description}
+                </div>
+              </div>
+
+              {/* Image */}
+              <div className="w-full lg:w-1/2 relative h-[300px] md:h-[400px] lg:h-[450px] rounded-xl overflow-hidden shadow-[12px_12px_0_#ff6600] border-4 border-mer-orange">
+                <Image
+                  src={section.imageSrc}
+                  alt={section.imageAlt}
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                  className="transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
             </div>
-          </div>
-
-          <div className="pointer-events-none lg:absolute lg:inset-x-0 lg:bottom-0 h-full">
-            <AnimatePresence custom={direction} mode="wait">
-              <motion.div
-                key={`about-image-${subSlide}`}
-                variants={crossfadeVariants}
-                custom={direction}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                className="h-full"
-              >
-                <div className="relative mx-auto flex h-full max-w-[1100px] items-end">
-                  <div className="flex flex-col lg:flex-row h-full w-full items-center justify-end lg:items-end lg:justify-center lg:justify-start">
-                    <div className="placeholder-image bg-gray-800 text-white h-full lg:h-[70dvh] max-h-[70dvh] w-auto lg:translate-x-1/3 z-10">Placeholder for Utility Image - 500x833</div>
-                    <div className="px-6 sm:px-0 lg:mr-4 mb-20 sm:mb-36 lg:mb-36 lg:ml-10 lg:relative w-full max-w-[500px] lg:max-w-[600px] min-h-[200px] sm:min-h-[160px]">
-                      <div className="rounded-lg border-[3px] border-mer-orange bg-black/60 p-5 text-white backdrop-blur-sm shadow-[8px_8px_0_#5b2359] flex flex-col gap-2 pointer-events-auto">
-                        <h2 className="text-center font-poppins text-4xl text-white [text-shadow:2px_2px_0_#000]">
-                          {currentCallout.bottomTitle}
-                        </h2>
-                        {currentCallout.bottomText}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
+          ))}
+        </main>
       </div>
 
+      {/* Ticker at the bottom */}
       <div className="absolute inset-x-0 bottom-0 z-[19] w-full">
         <Ticker className="relative z-20" />
       </div>
 
-      <div className="pointer-events-auto">
-        <NavigationArrows
-          onNext={handleNext}
-          onPrev={handlePrev}
-          page={subSlide}
-          isLastStep={subSlide === aboutContent.length - 1}
-          isFirstStep={subSlide === 0}
-        />
-      </div>
+      {/* Navigation Arrows removed */}
     </div>
   );
 }

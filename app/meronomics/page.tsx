@@ -76,7 +76,7 @@ export default function MeronomicsPage() {
           </div>
 
           <div className="w-full max-w-md">
-            <div className="rounded-lg border-4 border-black bg-white/90 p-6 text-black backdrop-blur-sm shadow-[8px_8px_0_#5b2359]">
+            <div className="rounded-lg border-4 border-black bg-white/90 p-6 text-black backdrop-blur-sm shadow-[8px_8px_0_#1F1F1F]">
               <h2 className="text-center font-poppins text-4xl text-black">
                 Token Distribution
               </h2>
@@ -118,7 +118,7 @@ export default function MeronomicsPage() {
         </div>
 
         <div className="flex justify-center w-full">
-          <div className="w-full mx-4 sm:mx-10 max-w-[720px] lg:max-w-[1000px] rounded-lg border-4 border-black bg-white/90 p-6 text-black backdrop-blur-sm shadow-[8px_8px_0_#5b2359]">
+          <div className="w-full mx-4 sm:mx-10 max-w-[720px] lg:max-w-[1000px] rounded-lg border-4 border-black bg-white/90 p-6 text-black backdrop-blur-sm shadow-[8px_8px_0_#1F1F1F]">
               <h3 className="text-center font-poppins text-3xl text-black">
                   Support & Rewards (10%)
               </h3>
@@ -149,7 +149,7 @@ export default function MeronomicsPage() {
             </div>
             
             <div className="mb-12 grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
-                <div className="md:col-span-2 rounded-lg border-4 border-black bg-white/90 p-6 text-black backdrop-blur-sm shadow-[8px_8px_0_#5b2359]">
+                <div className="md:col-span-2 rounded-lg border-4 border-black bg-white/90 p-6 text-black backdrop-blur-sm shadow-[8px_8px_0_#1F1F1F]">
                     <h3 className="font-poppins text-3xl text-black">
                         Our Targets
                     </h3>
@@ -164,7 +164,7 @@ export default function MeronomicsPage() {
 
                 <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     {strategySteps.slice(0, 3).map((step) => (
-                        <div key={step.title} className="rounded-lg border-4 border-black bg-white/90 p-4 backdrop-blur-sm shadow-[6px_6px_0_#5b2359] flex flex-col text-center transition-transform hover:scale-105">
+                        <div key={step.title} className="rounded-lg border-4 border-black bg-white/90 p-4 backdrop-blur-sm shadow-[6px_6px_0_#1F1F1F] flex flex-col text-center transition-transform hover:scale-105">
                            <step.icon className="text-4xl mx-auto mb-3 text-mer-orange"/>
                            <h4 className="font-poppins text-xl text-black">{step.title}</h4>
                            <p className="font-poppins text-sm mt-2 flex-grow">{step.description}</p>
@@ -175,7 +175,7 @@ export default function MeronomicsPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {strategySteps.slice(3).map((step) => (
-                    <div key={step.title} className="rounded-lg border-4 border-black bg-white/90 p-4 backdrop-blur-sm shadow-[6px_6px_0_#5b2359] flex flex-col text-center transition-transform hover:scale-105">
+                    <div key={step.title} className="rounded-lg border-4 border-black bg-white/90 p-4 backdrop-blur-sm shadow-[6px_6px_0_#1F1F1F] flex flex-col text-center transition-transform hover:scale-105">
                        <step.icon className="text-4xl mx-auto mb-3 text-mer-orange"/>
                        <h4 className="font-poppins text-xl text-black">{step.title}</h4>
                        <p className="font-poppins text-sm mt-2 flex-grow">{step.description}</p>

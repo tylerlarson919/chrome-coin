@@ -134,7 +134,7 @@ export const Navbar = () => {
                     />
                   </button>
                   <div
-                    className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-52 rounded-lg bg-black/80 transition-all duration-300 ease-in-out origin-top ${openDropdown === link.name ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"}`}
+                    className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-52 rounded-lg bg-black/80 overflow-hidden transition-all duration-300 ease-in-out origin-top ${openDropdown === link.name ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"}`}
                   >
                     <div className="pt-2">
                       {link.items?.map((item) =>
@@ -169,7 +169,7 @@ export const Navbar = () => {
           <div className="flex items-center space-x-4">
             <button 
               onClick={handleBuyClick}
-              className="hidden sm:block tracking-wider font-poppins text-lg text-white bg-mer-orange py-2 px-5 rounded-md border-2 border-white shadow-[2px_2px_0px_#ffffff] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] active:scale-95 transition-all duration-150"
+              className="hidden sm:block tracking-wider font-poppins text-white font-bold bg-mer-orange py-2 px-5 rounded-md border-2 border-white shadow-[2px_2px_0px_#ffffff] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] active:scale-95 transition-all duration-150"
             >
               SWAP FOR $MER
             </button>

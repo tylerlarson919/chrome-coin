@@ -197,7 +197,7 @@
 /* --- Modal Overlay & Wrapper --- */
 /* This styles the main pop-up window */
 .wallet-adapter-modal-wrapper {
-  background: rgb(88, 28, 28) !important; /* Deep purple from your site's theme */
+  background: #1a1a1a !important; /* Deep purple from your site's theme */
   border: 3px solid #000000 !important;
   border-radius: 1rem !important;
   font-family: var(--font-comic-neue), sans-serif !important;

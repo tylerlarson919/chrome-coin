@@ -7,19 +7,19 @@ import { useState } from "react";
 
 const steps = [
   {
-    title: "SET UP YOUR WALLET",
+    title: "Set up your wallet",
     description: "Download Phantom or another Solana-compatible wallet. Secure it with your seed phrase!",
   },
   {
-    title: "GET SOME SOL",
+    title: "Get some SOL",
     description: "Buy Solana ($SOL) on an exchange (e.g., Coinbase) and transfer to your wallet.",
   },
   {
-    title: "VISIT SWAP PAGE",
+    title: "Visit swap page",
     description: "Head to our swap page, connect your wallet, and prepare to join $MER.",
   },
   {
-    title: "SWAP FOR $MER",
+    title: "Swap for $MER",
     description: "Enter your SOL amount, confirm the transaction, and unlock rentals with $MER!",
   },
 ];
@@ -56,7 +56,7 @@ export default function SwapPage() {
                     </span>
                 </div>
                 <div className="h-full rounded-lg border-4 border-black bg-white p-6 shadow-[8px_8px_0px_#000000] transition-all duration-300 hover:-translate-y-1 hover:shadow-[10px_10px_0px_#ff6600]">
-                    <h2 className="font-poppins text-2xl lg:text-3xl text-black tracking-wider mb-2">{step.title}</h2>
+                    <h2 className="font-poppins text-2xl lg:text-3xl font-semibold text-black mb-2">{step.title}</h2>
                     <p className="font-poppins text-md text-gray-800">{step.description}</p>
                 </div>
              </div>
@@ -64,18 +64,18 @@ export default function SwapPage() {
         </div>
 
         <div className="container mx-auto max-w-4xl px-6 w-full mt-14">
-            <div className="rounded-lg border-4 border-black bg-yellow-400 p-4 text-center">
-                <h3 className="font-poppins text-2xl text-black">OFFICIAL $MER ADDRESS</h3>
-                <div className="mt-2 flex items-center justify-center gap-2 sm:gap-4 bg-black/20 rounded-md p-2">
-                    <p className="font-poppins text-white text-xs sm:text-base break-all">{contractAddress}</p>
-                    <button onClick={handleCopy} className="flex-shrink-0 p-2 rounded-md bg-mer-orange text-white border-2 border-black active:scale-95 transition-transform">
-                        {copied ? "Copied!" : <ClipboardDocumentIcon className="w-6 h-6"/>}
-                    </button>
+            <div className="p-4 text-center">
+                <h2 className="text-3xl font-bold mb-4 text-white">Official $MER Contract Address</h2>
+                <div className="inline-flex items-center bg-[#1a1a1a] p-4 rounded-lg">
+                  <p className="text-sm md:text-base break-all mr-4 text-white">{contractAddress}</p>
+                  <button onClick={handleCopy} className="bg-mer-orange p-2 rounded-md hover:bg-mer-orange/80 transition-all">
+                    {copied ? "Copied!" : <ClipboardDocumentIcon className="w-6 h-6 text-white" />}
+                  </button>
                 </div>
             </div>
         </div>
 
-        <div id="swap-widget-section" className="w-full pt-12 md:pt-16 pb-28 scroll-mt-28">
+        <div id="swap-widget-section" className="w-full pt-12 md:pt-4 pb-28 scroll-mt-28">
             <h2 className="mb-8 w-full text-center font-poppins text-5xl md:text-6xl text-white font-bold" data-text="...OR THE EASY WAY">
              ...OR THE EASY WAY
             </h2>

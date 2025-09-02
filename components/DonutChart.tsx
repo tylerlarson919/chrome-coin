@@ -101,16 +101,16 @@ export const DonutChart = ({ data, activeIndex, onHover, onTap }: DonutChartProp
                             <motion.text
                                 x={labelPos.x}
                                 y={labelPos.y}
-                                fill="black"
+                                fill="white"
                                 textAnchor="middle"
                                 dominantBaseline="central"
-                                className="font-luckiest text-lg pointer-events-none drop-shadow-[0_1px_0_white] drop-shadow-[0_-1px_0_white] drop-shadow-[1px_0_0_white] drop-shadow-[-1px_0_0_white]"
+                                className="font-luckiest text-xl pointer-events-none drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]"
                                 initial={{ opacity: 0, scale: 0 }}
                                 animate={{ opacity: 1, scale: [0, 1.15, 1] }}
                                 transition={{
-                                    duration: 0.5,
-                                    ease: "easeOut",
-                                    delay: 0.4 + index * 0.1 // Reduced delay for quicker appearance
+                                duration: 0.5,
+                                ease: "easeOut",
+                                delay: 0.4 + index * 0.1,
                                 }}
                             >
                                 {`${((slice.value / total) * 100).toFixed(0)}%`}
