@@ -47,7 +47,9 @@ export default function HomePage() {
       <div className="container mx-auto px-4 md:py-24"> 
         {/* This div was empty, content will be added below */}
       </div>
-
+      <div className="w-full pointer-events-none z-[19]">
+        <Ticker className="relative z-20" />
+      </div>
       {/* $MER Advantage Section */}
       <section
         className="relative w-full py-20 md:py-32 bg-cover bg-center mb-16"
@@ -169,9 +171,6 @@ export default function HomePage() {
 
         </div>
       </section>
-      <div className="absolute inset-x-0 bottom-0 w-full pointer-events-none z-[19]">
-        <Ticker className="relative z-20" />
-      </div>
     </div>
   );
 }

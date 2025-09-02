@@ -2,7 +2,7 @@ import React from 'react';
 
 const TickerItem = () => (
     <div className="flex-shrink-0 flex items-center space-x-4 px-4 font-poppins">
-        <span className="font-poppins text-xl font-semibold tracking-widest">$MER</span>
+        <span className="font-poppins text-xl font-semibold tracking-widest text-mer-orange">$MER</span>
     </div>
 );
 
@@ -22,7 +22,7 @@ export const Ticker = ({ className }: TickerProps) => {
     );
 
     return (
-        <div className={`w-full bg-mer-orange text-white py-4 overflow-hidden border-black ${className}`}>
+        <div className={`w-full text-white py-4 overflow-hidden border-black ${className}`}>
             <div className="flex animate-ticker-ltr">
                 <TickerContent />
                 <TickerContent aria-hidden="true" />
