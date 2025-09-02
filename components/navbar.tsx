@@ -6,6 +6,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 import { usePathname, useRouter } from "next/navigation";
 import { useAppWallet } from '@/app/hooks/useAppWallet'; 
+import Image from 'next/image';
 
 const HamburgerIcon = ({
   isOpen,
@@ -106,7 +107,7 @@ export const Navbar = () => {
       <nav className="fixed top-0 left-0 right-0 h-24 font-poppins z-[100] bg-black/30 shadow-md backdrop-blur-md">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
           <Link href="/" onClick={() => setIsMenuOpen(false)}>
-            <div className="placeholder-logo text-white">Miami Exotic Rents Logo - 200x34</div>
+            <Image src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756841735/logo-dark-transparent_rfhtw7.png" alt="Miami Exotic Rents Logo" width={80} height={80} />
           </Link>
 
           <div className="hidden lg:flex items-center space-x-8">

@@ -238,7 +238,7 @@ export const SwapWidget = () => {
                         label="Receive $MER"
                         value={receiveAmount}
                         variant="bordered"
-                        endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1752807181/bopcoin--logo_m2zyal.webp" alt="$MER" className="w-8 h-8 mb-[2px] rounded-[8px]" />}
+                        endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756841267/mer-logo-dark_asz8kr.png" alt="$MER" className="w-8 h-8 mb-[2px] rounded-[8px]" />}
                         classNames={{
                             label: "text-sm font-bold text-gray-800 mb-2",
                             input: "text-xl font-bold",
