@@ -5,7 +5,6 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/Footer";
 import WelcomeModules from "@/components/first-time-visitors/WelcomeModules";
 import { Providers } from "./providers";
-import ClientLoaderWrapper from "@/components/loading-screen/ClientLoaderWrapper";
 import { LoadingContext } from "@/context/LoadingContext";
 
 export function ClientLayoutWrapper({
@@ -18,16 +17,6 @@ export function ClientLayoutWrapper({
 
   return (
     <>
-      <ClientLoaderWrapper
-        onLoaded={(startLoaderExit) => {
-          setIsBackgroundVisible(true);
-          setTimeout(() => {
-            setIsLoaded(true);
-            startLoaderExit();
-          }, 300);
-        }}
-      />
-
       <div
         className="transition-opacity duration-700 ease-in-out"
         style={{ opacity: isLoaded ? 1 : 0 }}
