@@ -15,8 +15,8 @@ const steps = [
     description: "Buy Solana ($SOL) on an exchange (e.g., Coinbase) and transfer to your wallet.",
   },
   {
-    title: "Visit swap page",
-    description: "Head to our swap page, connect your wallet, and prepare to join $MER.",
+    title: "Go to DEX",
+    description: "Use a DEX like Raydium or Jupiter, or swap directly on this site to get $MER.",
   },
   {
     title: "Swap for $MER",
