@@ -4,7 +4,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { Transaction, PublicKey } from "@solana/web3.js";
-import { createTransferInstruction, getAssociatedTokenAddress } from "@solana/spl-token";
+import { createTransferInstruction, getAssociatedTokenAddress, createAssociatedTokenAccountInstruction } from "@solana/spl-token";
 import { useAppWallet } from "@/app/hooks/useAppWallet";
 import { useConnection } from "@solana/wallet-adapter-react";
 import { Input } from "@heroui/input";
@@ -80,43 +80,54 @@ export const BookWidget = ({ car }: BookWidgetProps) => {
     setStatusMessage("Preparing transaction...");
 
     try {
-      // This variable will hold either the real or fake signature
       let signature: string;
 
-      // --- TESTING MODE LOGIC ---
+      // The TESTING_MODE flag in your .env is 'false', so this block will run
       if (process.env.NEXT_PUBLIC_TESTING_MODE === 'true') {
         console.warn("--- TESTING MODE ACTIVE ---");
         setStatusMessage("Processing test booking...");
-        // Fake a delay to simulate a transaction and create a fake signature
         await new Promise(resolve => setTimeout(resolve, 1500));
         signature = `TEST_MODE_TRANSACTION_${Date.now()}`;
       } else {
-        // --- PRODUCTION LOGIC (Your existing code) ---
+        // --- PRODUCTION LOGIC ---
         const MER_MINT = new PublicKey(process.env.NEXT_PUBLIC_BOPCOIN_MINT_ADDRESS!);
         const businessWallet = new PublicKey(process.env.NEXT_PUBLIC_BUSINESS_WALLET_ADDRESS!);
-        const amountInSmallestUnit = Math.floor(totalMER * 1_000_000_000);
+        
+        // --- FIX IS HERE: Changed from 9 decimals to 6 decimals ---
+        const amountInSmallestUnit = Math.floor(totalMER * 1_000_000); // 6 zeros for 6 decimals
 
         const userMerAta = await getAssociatedTokenAddress(MER_MINT, publicKey);
         const businessMerAta = await getAssociatedTokenAddress(MER_MINT, businessWallet);
 
-        const transferInstruction = createTransferInstruction(userMerAta, businessMerAta, publicKey, amountInSmallestUnit);
+        // We need to add an instruction to create the business's token account if it doesn't exist
+        const instructions = [];
+        const businessAtaInfo = await connection.getAccountInfo(businessMerAta);
+        if (!businessAtaInfo) {
+            instructions.push(
+                createAssociatedTokenAccountInstruction(publicKey, businessMerAta, businessWallet, MER_MINT)
+            );
+        }
         
-        const transaction = new Transaction().add(transferInstruction);
+        // Add the transfer instruction
+        instructions.push(
+            createTransferInstruction(userMerAta, businessMerAta, publicKey, amountInSmallestUnit)
+        );
+        
+        const transaction = new Transaction().add(...instructions);
         transaction.feePayer = publicKey;
         transaction.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
 
         setStatusMessage("Please approve the transaction in your wallet...");
-        const realSignature = await sendTransaction(transaction, connection); // Capture the real signature
+        const realSignature = await sendTransaction(transaction, connection);
 
         setStatusMessage("Confirming transaction on the blockchain...");
         await connection.confirmTransaction(realSignature, "confirmed");
-        signature = realSignature; // Assign the real signature
+        signature = realSignature;
       }
 
-      // --- SHARED LOGIC (This runs for both modes) ---
+      // --- SHARED LOGIC ---
       setStatusMessage("Saving booking details...");
       
-      // V-- START FIX --V
       const response = await fetch("/api/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -131,7 +142,6 @@ export const BookWidget = ({ car }: BookWidgetProps) => {
         }),
       });
 
-      // Check if the API call was successful. If not, throw an error.
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error || "Failed to save booking.");

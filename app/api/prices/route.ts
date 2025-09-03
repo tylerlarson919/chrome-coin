@@ -48,7 +48,7 @@ export async function GET() {
     const solPrice = solData?.data?.value || 0;
     const bopcoinPrice = bopcoinData?.data?.value || 0;
 
-    return NextResponse.json({ solPrice, bopcoinPrice });
+    return NextResponse.json({ solPrice, merPrice: bopcoinPrice });
 
   } catch (error) {
     console.error('Price API Fetch Failed:', error);
