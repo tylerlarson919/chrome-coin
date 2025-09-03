@@ -189,8 +189,8 @@ export const BookWidget = ({ car }: BookWidgetProps) => {
           <p className="text-xs text-neutral-400">1 $MER ≈ ${prices.merPrice > 0 ? prices.merPrice.toPrecision(4) : "..."}</p>
         </div>
         <div className="space-y-4">
-          <Input type="email" label="Email Address" value={email} onValueChange={setEmail} variant="bordered" classNames={{ label: "text-xs font-semibold text-neutral-300", inputWrapper: "border-neutral-700 bg-neutral-900", input: "text-white" }} />
-          <Input type="number" label="Rental Duration (Days)" value={days.toString()} onValueChange={(val) => setDays(Number(val) > 0 ? Number(val) : 1)} variant="bordered" endContent={<span className="text-sm text-neutral-500">Days</span>} classNames={{ label: "text-xs font-semibold text-neutral-300", input: "text-white font-semibold", inputWrapper: "border-neutral-700 bg-neutral-900", }} />
+          <Input type="email" label="Email Address" value={email} onValueChange={setEmail} variant="bordered" classNames={{ label: "text-xs font-semibold text-neutral-300", inputWrapper: "border-neutral-700 bg-neutral-900", input: "text-white text-[16px]" }} />
+          <Input type="number" label="Rental Duration (Days)" value={days.toString()} onValueChange={(val) => setDays(Number(val) > 0 ? Number(val) : 1)} variant="bordered" endContent={<span className="text-sm text-neutral-500">Days</span>} classNames={{ label: "text-xs font-semibold text-neutral-300", input: "text-[16px] text-white font-semibold", inputWrapper: "border-neutral-700 bg-neutral-900", }} />
           <div className="flex flex-col items-center gap-1 rounded-md bg-mer-orange/10 p-3 font-semibold text-white">
             <p className="text-sm">Total Cost: ${formatPrice(totalUSD)}</p>
             <p className="text-sm">Total $MER: {formatPrice(totalMER)}</p>
