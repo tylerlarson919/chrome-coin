@@ -5,11 +5,12 @@ import type { Metadata } from "next";
 import { ProductPageLoader } from "./ProductPageLoader"; // Import the new loader component
 
 type Props = {
-  params: { carId: string };
+  params: Promise<{ carId: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const car = products.find((p) => p.id === params.carId);
+  const resolvedParams = await params;
+  const car = products.find((p) => p.id === resolvedParams.carId);
   if (!car) {
     return {
       title: "Product Not Found",
@@ -21,7 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProductPage({ params }: Props) {
-  const car = products.find((p) => p.id === params.carId);
+  const resolvedParams = await params;
+  const car = products.find((p) => p.id === resolvedParams.carId);
 
   if (!car) {
     notFound();
