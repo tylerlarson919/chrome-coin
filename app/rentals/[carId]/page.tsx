@@ -4,11 +4,13 @@ import { products } from "@/data/products";
 import type { Metadata } from "next";
 import { ProductClientPage } from "./ProductClientPage";
 
-export async function generateMetadata({
-  params,
-}: {
+// Define a dedicated type for the page props
+type Props = {
   params: { carId: string };
-}): Promise<Metadata> {
+};
+
+// Apply the Props type to generateMetadata
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const car = products.find((p) => p.id === params.carId);
   if (!car) {
     return {
@@ -20,11 +22,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductPage({
-  params,
-}: {
-  params: { carId: string };
-}) {
+// Apply the Props type to the page component
+export default async function ProductPage({ params }: Props) {
   const car = products.find((p) => p.id === params.carId);
 
   if (!car) {
