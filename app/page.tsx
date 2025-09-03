@@ -18,35 +18,63 @@ export default function HomePage() {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-black text-white font-poppins mt-24">
-      {/* Hero Section - Now full-width */}
-      <section
-        className="relative w-full flex items-center justify-center text-center min-h-[500px] md:min-h-[600px]"
-      >
-        <Image
-          src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756825797/MER-night-ride_ijrgnv.jpg"
-          alt="Exotic car driving at night"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          priority
-          className="brightness-[0.8]"
-        />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+      {/* Hero Section */}
+<section className="relative flex w-full items-center justify-center text-center min-h-[500px] md:min-h-[600px]">
+  <Image
+    src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756825797/MER-night-ride_ijrgnv.jpg"
+    alt="Exotic car driving at night"
+    layout="fill"
+    objectFit="cover"
+    objectPosition="center"
+    priority
+    className="brightness-[0.8]"
+  />
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Drive the dream. Pay with crypto.</h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
-            Experience the thrill of driving Miami's most exclusive vehicles, now available for rent using cryptocurrency.
-          </p>
+  {/* Content */}
+  <div className="relative z-10 container mx-auto px-4">
+    {/* Main Hero Text */}
+    <div>
+      <h1 className="text-4xl font-bold drop-shadow-lg md:text-6xl mb-4">
+        Drive the dream. Pay with crypto.
+      </h1>
+      <p className="mx-auto max-w-2xl text-lg drop-shadow-md md:text-xl">
+        Experience the thrill of driving Miami's most exclusive vehicles, now available for rent using cryptocurrency.
+      </p>
+    </div>
+
+    {/* --- ADDED THIS BLOCK INSIDE THE HERO --- */}
+    <div className="mt-16 md:mt-20">
+      <a
+        href="https://miamiexoticrents.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group inline-block"
+      >
+        <p className="mb-4 text-sm uppercase tracking-widest text-gray-300">
+          The Official Crypto Platform for
+        </p>
+        <div className="flex flex-col items-center justify-center gap-x-4 gap-y-3 md:flex-row">
+          <Image
+            src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756887266/logo_1_g6fxhu.webp"
+            alt="Miami Exotic Rents Logo"
+            width={150}
+            height={30}
+            className="h-10 w-auto opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+          />
+          <span className="text-xl font-semibold text-white md:text-2xl">
+            Miami Exotic Rents
+          </span>
         </div>
-      </section>
+      </a>
+    </div>
+    {/* --- END BLOCK --- */}
+    
+  </div>
+</section>
       
       {/* Container for the rest of the page content */}
-      <div className="container mx-auto px-4 md:py-24"> 
-        {/* This div was empty, content will be added below */}
-      </div>
       <div className="w-full pointer-events-none z-[19]">
         <Ticker className="relative z-20" />
       </div>
@@ -112,35 +140,8 @@ export default function HomePage() {
         </div>
       </section>
 
-        {/* --- ADD THIS NEW SECTION START --- */}
-        <section className="border-y border-neutral-800 bg-black py-16">
-          <div className="container mx-auto px-4 text-center">
-            <a
-              href="https://miamiexoticrents.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-block"
-            >
-              <p className="mb-4 text-sm uppercase tracking-widest text-gray-400">
-                The Official Crypto Platform for
-              </p>
-              <Image
-                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756887266/logo_1_g6fxhu.webp"
-                alt="Miami Exotic Rents Logo"
-                width={250}
-                height={50}
-                className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
-              />
-              <p className="mt-4 max-w-xl mx-auto text-gray-500">
-                The premier provider of luxury and exotic car rentals in South Florida.
-              </p>
-            </a>
-          </div>
-        </section>
-        {/* --- ADD THIS NEW SECTION END --- */}
-
       {/* Two-Step Rental Process Section */}
-      <section className="container mx-auto px-4 mb-24">
+      <section className="container mx-auto px-4 mb-24 mt-10">
         {/* Contract Address - Full Width */}
         <div className="text-center mb-8 md:mb-16 max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Official $MER Contract Address</h2>
