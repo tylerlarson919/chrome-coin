@@ -90,14 +90,6 @@ export const Navbar = () => {
       { name: "MERONOMICS", href: "/meronomics" },
     ],
   },
-  {
-    name: "ECOSYSTEM",
-    items: [
-      { name: "EXOTIC CARS", href: "https://miamiexoticrents.com/exotic_cars", external: true },
-      { name: "YACHTS", href: "https://miamiexoticrents.com/yachts", external: true },
-      { name: "HOUSES", href: "https://miamiexoticrents.com/houses", external: true },
-    ],
-  },
   { name: "COMMUNITY", href: "/community" },
   { name: "HOW TO SWAP", href: "/swap" },
 ];
@@ -170,7 +162,7 @@ export const Navbar = () => {
           <div className="flex items-center space-x-4">
             <button 
               onClick={handleBuyClick}
-              className="hidden sm:block tracking-wider font-poppins text-white font-bold bg-mer-orange py-2 px-5 rounded-md border-2 border-white shadow-[2px_2px_0px_#ffffff] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] active:scale-95 transition-all duration-150"
+              className="hidden sm:block tracking-wider font-poppins text-white font-bold bg-mer-orange py-2 px-5 rounded-md shadow-[2px_2px_0px_#ffffff] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] active:scale-95 transition-all duration-150"
             >
               SWAP FOR $MER
             </button>

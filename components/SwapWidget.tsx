@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { Input } from '@heroui/input';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { VersionedTransaction, PublicKey } from '@solana/web3.js';
-import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { XCircleIcon } from '@heroicons/react/24/outline';
 import { useAppWallet } from '@/app/hooks/useAppWallet'; 
@@ -159,7 +158,7 @@ export const SwapWidget = () => {
         if (!publicKey) {
             return (
                 <WalletMultiButton
-                    className="w-full !py-3 !text-2xl !font-bangers !tracking-wider !text-white !bg-[#ea88ea] !border-2 !border-black !rounded-md !shadow-[4px_4px_0px_#000000] hover:!shadow-none hover:!translate-x-1 hover:!translate-y-1 !transition-all"
+                    className="w-full !py-3 !text-2xl !font-bangers !tracking-wider !text-white !bg-mer-orange !border-2 !border-black !rounded-md !shadow-[4px_4px_0px_#000000] hover:!shadow-none hover:!translate-x-1 hover:!translate-y-1 !transition-all"
                     style={{ justifyContent: 'center' }}
                 />
             );
@@ -179,7 +178,7 @@ export const SwapWidget = () => {
         return (
             <button
                 onClick={actionHandler}
-                className="w-full py-3 font-bold text-2xl font-bangers tracking-wider text-white bg-[#ea88ea] border-2 border-black rounded-md shadow-[4px_4px_0px_#000000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                className="w-full py-3 font-bold text-2xl font-bangers tracking-wider text-white bg-mer-orange border-2 border-black rounded-md shadow-[4px_4px_0px_#000000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
             >
                 {actionText}
             </button>

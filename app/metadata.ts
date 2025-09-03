@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mer-token.com'),
   title: {
     default: "$MER | Token for Luxury Rentals",
-    template: `%s - $MER`,
+    template: `$MER - %s`, // UPDATED LINE
   },
   description: "Swap SOL for $MER and unlock exclusive rentals of exotic cars with Miami Exotic Rents.",
   keywords: [
