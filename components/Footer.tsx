@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-
+import Image from "next/image"; // Import Image
 
 const socialLinks = [
   { name: "X", href: "https://x.com/miamiexoticrents", icon: FaXTwitter }, // Guessed link; update if needed
@@ -15,6 +15,25 @@ export function Footer() {
   return (
     <footer className="relative z-[5] bg-zinc-900 text-gray-400 font-poppins">
       <div className="container mx-auto px-4 py-8">
+        {/* --- ADDED THIS BLOCK --- */}
+        <div className="mb-10 text-center">
+          <a
+            href="https://miamiexoticrents.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex flex-col items-center gap-3"
+          >
+            <p className="text-xs text-gray-500">A Part of the Official</p>
+            <Image
+              src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756887266/logo_1_g6fxhu.webp"
+              alt="Miami Exotic Rents Logo"
+              width={200}
+              height={40}
+              className="h-10 w-auto opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+            />
+          </a>
+        </div>
+        {/* --- END BLOCK --- */}
         <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
           <div className="flex items-center gap-5">
             {socialLinks.map((social) => (

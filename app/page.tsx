@@ -112,7 +112,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Two-Step Rental Process Section */}
+        {/* --- ADD THIS NEW SECTION START --- */}
+        <section className="border-y border-neutral-800 bg-black py-16">
+          <div className="container mx-auto px-4 text-center">
+            <a
+              href="https://miamiexoticrents.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-block"
+            >
+              <p className="mb-4 text-sm uppercase tracking-widest text-gray-400">
+                The Official Crypto Platform for
+              </p>
+              <Image
+                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756887266/logo_1_g6fxhu.webp"
+                alt="Miami Exotic Rents Logo"
+                width={250}
+                height={50}
+                className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+              />
+              <p className="mt-4 max-w-xl mx-auto text-gray-500">
+                The premier provider of luxury and exotic car rentals in South Florida.
+              </p>
+            </a>
+          </div>
+        </section>
+        {/* --- ADD THIS NEW SECTION END --- */}
+
       {/* Two-Step Rental Process Section */}
       <section className="container mx-auto px-4 mb-24">
         {/* Contract Address - Full Width */}

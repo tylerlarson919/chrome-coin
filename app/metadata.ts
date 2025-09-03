@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mer-token.com'),
   title: {
-    default: "$MER | Token for Luxury Rentals",
+    default: "$MER | Drive the Dream. Pay with Crypto.",
     template: `$MER - %s`, // UPDATED LINE
   },
   description: "Swap SOL for $MER and unlock exclusive rentals of exotic cars with Miami Exotic Rents.",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: '/',
     siteName: '$MER',
-    title: '$MER | Token for Luxury Rentals',
-    description: 'Power your exotic rentals with $MER - the utility token for Miami Exotic Rents.',
+    title: '$MER | Drive the Dream. Pay with Crypto.',
+    description: 'Power your exotic rentals with $MER - the official token for Miami Exotic Rents.',
     images: [
       {
         url: '/og/default.png',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@MERofficial',
     creator: '@MERofficial',
-    title: '$MER | Token for Luxury Rentals',
+    title: '$MER | Drive the Dream. Pay with Crypto.',
     description: 'Swap SOL for $MER and rent exotic cars.',
     images: ['/og/default.png'],
   },
