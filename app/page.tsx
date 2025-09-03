@@ -36,7 +36,7 @@ export default function HomePage() {
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Luxury Car Rentals with Crypto</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Drive the dream. Pay with crypto.</h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
             Experience the thrill of driving Miami's most exclusive vehicles, now available for rent using cryptocurrency.
           </p>
@@ -148,7 +148,7 @@ export default function HomePage() {
           </div>
           
           {/* Card container that stretches to match sibling height */}
-          <div className="bg-[#fff] rounded-lg overflow-hidden w-full max-w-md flex flex-col flex-grow"> {/* Changed: Removed fixed height, added flex-grow */}
+          <div className="bg-[#fff] rounded-lg overflow-hidden w-full max-w-md flex flex-col flex-grow min-h-[424px]"> {/* Changed: Removed fixed height, added flex-grow */}
             <div className="h-[280px] w-full flex-shrink-0">
               <Image
                 src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756843903/photo_2025-08-14_17-00-55_sfmttl.jpg"
