@@ -9,6 +9,7 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
+    "@getbrevo/brevo": "^3.0.1",
     "@heroicons/react": "^2.2.0",
     "@heroui/button": "2.2.22",
     "@heroui/code": "2.2.16",
@@ -42,6 +43,8 @@
     "bs58": "^6.0.0",
     "clsx": "2.1.1",
     "cross-fetch": "^4.1.0",
+    "firebase": "^12.2.1",
+    "firebase-admin": "^13.5.0",
     "framer-motion": "^12.23.6",
     "google-auth-library": "^10.2.0",
     "google-spreadsheet": "^4.1.5",

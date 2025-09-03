@@ -127,7 +127,7 @@ export default function HomePage() {
         </div>
 
         {/* Steps Grid - Centered and responsive */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16 items-stretch justify-items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16 items-start lg:items-stretch justify-items-center">
           
           {/* Step 1: Get $MER */}
           <div className="w-full max-w-md">
@@ -140,36 +140,36 @@ export default function HomePage() {
           </div>
 
           {/* Step 2: Choose Your Car */}
-          <div className="w-full max-w-md">
-            <div className="text-center mb-8">
-              <span className="text-mer-orange font-bold">STEP 2</span>
-              <h2 className="text-3xl font-bold">Choose Your Car</h2>
-              <p className="text-gray-400 mt-2">Browse our exclusive fleet and book your dream ride.</p>
+          <div className="w-full max-w-md flex flex-col"> {/* Changed: Added flex and flex-col */}
+          <div className="text-center mb-8">
+            <span className="text-mer-orange font-bold">STEP 2</span>
+            <h2 className="text-3xl font-bold">Choose Your Car</h2>
+            <p className="text-gray-400 mt-2">Browse our exclusive fleet and book your dream ride.</p>
+          </div>
+          
+          {/* Card container that stretches to match sibling height */}
+          <div className="bg-[#fff] rounded-lg overflow-hidden w-full max-w-md flex flex-col flex-grow"> {/* Changed: Removed fixed height, added flex-grow */}
+            <div className="h-[280px] w-full flex-shrink-0">
+              <Image
+                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756843903/photo_2025-08-14_17-00-55_sfmttl.jpg"
+                alt="Exotic car ready for rental"
+                width={600}
+                height={400}
+                className="w-full h-full object-cover"
+              />
             </div>
-            
-            {/* Card container that stretches to match sibling height */}
-            <div className="bg-[#fff] rounded-lg overflow-hidden w-full max-w-md h-[424px] flex flex-col">
-              <div className="h-[280px] w-full flex-shrink-0">
-                <Image
-                  src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756843903/photo_2025-08-14_17-00-55_sfmttl.jpg"
-                  alt="Exotic car ready for rental"
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="px-6 text-center flex flex-col flex-grow justify-center gap-2">
-                <p className="text-gray-500">
-                  Your journey begins now. Select from our curated collection of supercars.
-                </p>
-                <Link href="/rentals" className="wallet-adapter-button wallet-adapter-button-trigger flex justify-center">
-                  Browse Rentals
-                </Link>
-              </div>
+            <div className="px-6 text-center flex flex-col flex-grow justify-center gap-2">
+              <p className="text-gray-500">
+                Your journey begins now. Select from our curated collection of supercars.
+              </p>
+              <Link href="/rentals" className="wallet-adapter-button wallet-adapter-button-trigger flex justify-center">
+                Browse Rentals
+              </Link>
             </div>
           </div>
-
         </div>
+
+      </div>
       </section>
     </div>
   );

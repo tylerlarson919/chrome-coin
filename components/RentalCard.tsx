@@ -9,7 +9,7 @@ interface RentalCardProps {
 
 export const RentalCard = ({ product }: RentalCardProps) => {
   return (
-    <div className="flex flex-col overflow-hidden rounded-xl border-2 border-white bg-black shadow-lg">
+    <div className="flex h-full flex-col overflow-hidden rounded-xl bg-black shadow-lg">
       <div className="relative aspect-[3/2] w-full">
         <Image
           src={product.images[0]}
