@@ -6,7 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 
 const socialLinks = [
-  { name: "X", href: "https://x.com/miamiexoticrents", icon: FaXTwitter },
+  { name: "X", href: "https://x.com/miamirentz", icon: FaXTwitter },
   { name: "Instagram", href: "https://instagram.com/miamiexoticrents", icon: FaInstagram },
   { name: "WhatsApp", href: "https://wa.me/19542682717", icon: FaWhatsapp },
 ];

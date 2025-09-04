@@ -15,8 +15,8 @@ const socialCards = [
     },
     { 
         name: "Twitter/X", 
-        handle: "@miamiexoticrents", 
-        href: "https://x.com/miamiexoticrents", 
+        handle: "@miamirentz", 
+        href: "https://x.com/miamirentz", 
         icon: FaXTwitter, 
         message: "Get real-time $MER news and community events." 
     },
@@ -38,7 +38,7 @@ const whatYoullSeeContent = [
 
 const followUsContent = [
     { platform: "TikTok", handle: "@miamiexoticrents", href: "https://tiktok.com/@miamiexoticrents" },
-    { platform: "Twitter/X", handle: "@miamiexoticrents", href: "https://x.com/miamiexoticrents" },
+    { platform: "Twitter/X", handle: "@miamirentz", href: "https://x.com/miamirentz" },
     { platform: "Instagram", handle: "@miamiexoticrents", href: "https://instagram.com/miamiexoticrents" },
 ];
 
