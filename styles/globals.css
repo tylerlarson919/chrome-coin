@@ -146,20 +146,30 @@
   width: 100% !important;
 }
 
-
 /* Base styles for the main connect button */
 .wallet-adapter-button-trigger {
   background-color: #63c79a !important;
   color: #ffffff !important;
   font-family: var(--font-montserrat), sans-serif !important; 
-  border-radius: 0.375rem !important;
-  transition: all 0.2s ease-in-out !important;
-  box-shadow: none !important;
+  font-weight: 700 !important;
+  border: 4px solid #000000 !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  transition: all 0.15s ease-out !important;
   width: 100% !important;
 }
 
+/* UPDATED: Added transform and box-shadow for hover effect */
 .wallet-adapter-button-trigger:hover {
   background-color: #52a57e !important;
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+}
+
+/* ADDED: Active state for the "pressed" effect */
+.wallet-adapter-button-trigger:active {
+  transform: translate(4px, 4px) !important;
+  box-shadow: none !important;
 }
 
 /* Modal Overlay & Wrapper */

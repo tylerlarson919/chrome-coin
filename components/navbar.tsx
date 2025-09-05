@@ -77,12 +77,13 @@ const WalletButton = () => {
     }
   };
 
-  const navIconClasses = "h-5 w-5 sm:h-6 sm:w-6";
+const navIconClasses = "h-5 w-5 sm:h-6 sm:w-6";
 
   if (!connected || !publicKey || !wallet) {
     return (
       <div className="navbar-wallet-button">
-        <WalletMultiButton className="!flex !items-center !justify-center !space-x-2 !w-auto active:!scale-95 h-10 sm:h-12 !font-bold sm:!tracking-wider">
+        {/* This button is now primarily styled via the CSS file */}
+        <WalletMultiButton className="!flex !items-center !justify-center !space-x-2">
           <HeroWalletIcon className={navIconClasses} />
           <span className="ml-2 whitespace-nowrap">Connect Wallet</span>
         </WalletMultiButton>
@@ -98,7 +99,7 @@ const WalletButton = () => {
     <div className="navbar-wallet-button">
       <button
         onClick={handleDisconnect}
-        className="btn-connected flex items-center justify-center space-x-2 w-auto transition-all duration-150 active:scale-95 bg-pixel-green text-white rounded-md hover:bg-opacity-80 !font-semibold tracking-normal h-12 font-bold sm:tracking-wider sm:h-12"
+        className="btn-connected flex items-center justify-center space-x-2 w-auto px-4 h-12 tracking-wider text-white font-bold border-4 border-black shadow-[4px_4px_0px_#000000] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150 bg-pixel-green hover:bg-green-600"
       >
         <HeroWalletIcon className={navIconClasses} />
         <span className="truncate">{shortAddress}</span>

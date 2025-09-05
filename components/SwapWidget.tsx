@@ -151,24 +151,27 @@ export const SwapWidget = () => {
     };
 
     const ActionButton = () => {
-        // Default styles for buttons within this widget
-        const defaultButtonClasses = "h-12 py-3 px-4 font-bold text-base tracking-wider";
+        const defaultButtonClasses = "h-14 py-3 px-4 font-bold text-base tracking-wider";
+        const pixelButtonClasses = "text-white font-bold border-4 border-black shadow-[4px_4px_0px_#000000] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150";
 
         if (!publicKey) {
             return (
-                <WalletMultiButton 
-                    className={`!w-full !flex !items-center !justify-center !space-x-2 active:!scale-95 ${defaultButtonClasses}`}
-                    style={{ justifyContent: 'center' }}
-                >
-                    <HeroWalletIcon className="h-6 w-6" />
-                    <span className="ml-2 whitespace-nowrap">Connect Wallet</span>
-                </WalletMultiButton>
+                // Added a wrapper div for specific CSS targeting
+                <div className="swap-widget-container">
+                    <WalletMultiButton 
+                        className="!w-full !flex !items-center !justify-center !space-x-2"
+                        style={{ justifyContent: 'center' }}
+                    >
+                        <HeroWalletIcon className="h-6 w-6" />
+                        <span className="ml-2 whitespace-nowrap">Connect Wallet</span>
+                    </WalletMultiButton>
+                </div>
             );
         }
 
         if (isLoading) {
             return (
-                <button disabled className={`w-full text-white bg-zinc-400 rounded-md ${defaultButtonClasses}`}>
+                <button disabled className={`w-full text-white bg-zinc-500 ${defaultButtonClasses} ${pixelButtonClasses} !shadow-none`}>
                     Processing...
                 </button>
             );
@@ -180,7 +183,7 @@ export const SwapWidget = () => {
         return (
             <button
                 onClick={actionHandler}
-                className={`w-full text-white bg-pixel-green rounded-md hover:bg-opacity-80 transition-all ${defaultButtonClasses}`}
+                className={`w-full bg-pixel-green hover:bg-green-600 ${defaultButtonClasses} ${pixelButtonClasses}`}
             >
                 {actionText}
             </button>

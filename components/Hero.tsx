@@ -6,8 +6,11 @@ export const Hero = () => {
   const mintAddress = process.env.NEXT_PUBLIC_PIXEL_MINT_ADDRESS || "";
   const photonUrl = `https://photon-sol.tinyastro.io/en/lp/${mintAddress}`;
   
-  // The ID of your shop/swap section. Make sure it matches.
   const shopSectionId = "#how-to-buy"; 
+
+  // Reusable class strings for the pixelated buttons
+  const primaryButtonClasses = "h-14 px-8 flex items-center justify-center text-white font-bold tracking-wider border-4 border-black shadow-[4px_4px_0px_#000000] bg-pixel-green hover:bg-green-600 hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150";
+  const secondaryButtonClasses = "h-14 px-8 flex items-center justify-center text-white font-bold tracking-wider border-4 border-black shadow-[4px_4px_0px_#000000] bg-zinc-700 hover:bg-zinc-600 hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150";
 
   return (
     <section className="relative w-full h-[80vh] md:h-[70vh] bg-zinc-800 flex justify-center overflow-hidden md:items-end">
@@ -24,7 +27,7 @@ export const Hero = () => {
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/60 md:to-black/0" />
 
-      {/* Content Container - Modified for new mobile layout */}
+      {/* Content Container */}
       <div className="relative z-10 flex h-full w-full flex-col items-center justify-between gap-4 px-8 pb-14 pt-28 text-center md:h-auto md:w-auto md:justify-center md:p-0 md:pb-24">
         
         {/* Top Content (Logo & Subtitle) */}
@@ -44,7 +47,7 @@ export const Hero = () => {
           {/* Primary CTA Button */}
           <a
             href={shopSectionId}
-            className="w-full sm:w-auto tracking-wider font-montserrat text-white font-bold bg-pixel-green py-3 px-8 rounded-md hover:bg-opacity-80 active:scale-95 transition-all duration-150 text-center"
+            className={`w-full sm:w-auto ${primaryButtonClasses}`}
           >
             Buy $PIXEL
           </a>
@@ -54,7 +57,7 @@ export const Hero = () => {
             href={photonUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto tracking-wider font-montserrat text-white font-bold bg-transparent border-2 border-white/80 py-3 px-8 rounded-md hover:bg-white/10 active:scale-95 transition-all duration-150 text-center backdrop-blur-sm"
+            className={`w-full sm:w-auto ${secondaryButtonClasses}`}
           >
             View Chart
           </a>
