@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       {
         url: '/og/default.jpg', // Make sure to create this image
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: 'Pixel World',
       },
     ],
