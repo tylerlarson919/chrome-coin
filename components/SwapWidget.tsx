@@ -192,22 +192,23 @@ export const SwapWidget = () => {
 
     return (
         <div className="relative z-10 w-full max-w-xl mx-auto font-montserrat">
-            <div className="relative z-10 w-full p-6 bg-white border-4 border-black rounded-xl shadow-[8px_8px_0px_#63c79a]">
-                <h2 className="text-2xl lg:text-3xl font-bold text-center text-black">
+            {/* Main container with new dark styles */}
+            <div className="relative z-10 w-full p-6 bg-zinc-900/80 border-2 border-zinc-700 rounded-lg backdrop-blur-sm">
+                <h2 className="text-2xl lg:text-3xl font-bold text-center text-zinc-200">
                     Swap SOL for $PIXEL
                 </h2>
                 {isClient && publicKey && wallet && (
-                    <div className="flex items-center justify-center gap-4 p-2 mt-4 bg-green-100/80 border border-green-400 rounded-lg">
+                    <div className="flex items-center justify-center gap-4 p-2 mt-4 bg-green-900/40 border border-green-700 rounded-lg">
                         <div className="flex items-center gap-2">
                             <img src={wallet.adapter.icon} alt={wallet.adapter.name} className="w-5 h-5" />
-                            <p className="font-mono text-xs font-bold text-green-900">
+                            <p className="font-mono text-xs font-bold text-green-300">
                                 {publicKey.toBase58().slice(0, 10)}...{publicKey.toBase58().slice(-4)}
                             </p>
                         </div>
                         <button 
                             onClick={disconnect} 
                             title="Disconnect Wallet"
-                            className="text-red-500 transition-transform duration-200 hover:text-red-700 hover:scale-110 active:scale-95"
+                            className="text-red-400 transition-transform duration-200 hover:text-red-300 hover:scale-110 active:scale-95"
                         >
                             <XCircleIcon className="w-6 h-6" />
                         </button>
@@ -215,8 +216,8 @@ export const SwapWidget = () => {
                 )}
 
                 <div className="mt-4 text-center">
-                    <p className="text-zinc-700 font-bold">YOUR $PIXEL ≈ {pixelBalance.toLocaleString()}</p>
-                    <p className="text-sm text-zinc-500">
+                    <p className="text-zinc-300 font-bold">YOUR $PIXEL ≈ {pixelBalance.toLocaleString()}</p>
+                    <p className="text-sm text-zinc-400">
                         1 $PIXEL ≈ ${prices.pixelPrice > 0 ? prices.pixelPrice.toPrecision(4) : '...'}
                     </p>
                 </div>
@@ -230,9 +231,9 @@ export const SwapWidget = () => {
                         variant="bordered"
                         endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1752807739/sol-logo_qufbpd.webp" alt="$SOL" className="w-8 h-8 rounded-lg" />}
                         classNames={{
-                            label: "text-sm font-bold text-zinc-300",
-                            input: "text-xl font-bold",
-                            inputWrapper: "border-2 border-black bg-zinc-100 data-[hover=true]:bg-zinc-200 group-data-[focus=true]:border-pixel-green",
+                            label: "text-sm font-bold text-zinc-400",
+                            input: "text-xl font-bold text-white",
+                            inputWrapper: "border-2 border-zinc-700 bg-zinc-800 data-[hover=true]:bg-zinc-700 group-data-[focus=true]:border-pixel-green",
                         }}
                     />
                     <Input
@@ -240,24 +241,23 @@ export const SwapWidget = () => {
                         label="Receive $PIXEL"
                         value={receiveAmount}
                         variant="bordered"
-                        endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757060371/pfp-dark-pix_1_rvfa4n.png" alt="$SOL" className="w-8 h-8 rounded-lg" />}
+                        endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757060371/pfp-dark-pix_1_rvfa4n.png" alt="$PIXEL" className="w-8 h-8 rounded-lg" />}
                         classNames={{
-                            label: "text-sm font-bold text-zinc-300",
-                            input: "text-xl font-bold",
-                            inputWrapper: "border-2 border-black bg-zinc-100",
+                            label: "text-sm font-bold text-zinc-400",
+                            input: "text-xl font-bold text-white",
+                            inputWrapper: "border-2 border-zinc-700 bg-zinc-800",
                         }}
                     />
                 </div>
                 
-                {isClient ? <ActionButton /> : <div className="w-full h-[52px] bg-zinc-200 border-2 border-black rounded-md animate-pulse" />}
+                {isClient ? <ActionButton /> : <div className="w-full h-[56px] bg-zinc-800 border-4 border-zinc-700 animate-pulse" />}
 
                 {statusMessage && (
-                    <div className={`mt-4 p-2 text-center rounded-md text-sm font-bold ${status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                    <div className={`mt-4 p-2 text-center rounded-md text-sm font-bold ${status === 'success' ? 'bg-green-900/50 text-green-300' : 'bg-red-900/50 text-red-300'}`}>
                         {statusMessage}
                     </div>
                 )}
                 
-                {/* Preserved wallet links and icons */}
                 <div className="flex items-center justify-between mt-4">
                     <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" className="text-sm underline text-zinc-400 hover:text-pixel-green">
                         Don&apos;t have a Solana wallet?

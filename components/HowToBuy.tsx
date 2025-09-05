@@ -54,13 +54,14 @@ export const HowToBuy = () => {
                 
                 {/* Left Side: Swap Widget */}
                 <div className="flex justify-center flex-col gap-4">
-                    <div className="relative z-10 w-full p-4 bg-white border-4 border-black rounded-xl shadow-[6px_6px_0px_#63c79a] flex items-center justify-between gap-4">
-                        <code className="text-sm sm:text-base text-zinc-400 truncate">
+                    {/* CA Copy Box with new dark styles */}
+                    <div className="relative z-10 w-full p-4 bg-zinc-900/80 border-2 border-zinc-700 rounded-lg backdrop-blur-sm flex items-center justify-between gap-4">
+                        <code className="text-sm sm:text-base text-zinc-300 truncate">
                             {contractAddress}
                         </code>
                         <button 
                             onClick={handleCopy} 
-                            className="text-zinc-500 hover:text-zinc-900 transition-colors text-lg"
+                            className="text-zinc-400 hover:text-white transition-colors text-lg"
                             aria-label="Copy contract address"
                         >
                             {isCopied ? <FaCheck className="text-pixel-green" /> : <FaCopy />}
