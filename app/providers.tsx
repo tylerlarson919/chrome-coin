@@ -49,7 +49,9 @@ export function Providers({ children }: ProvidersProps) {
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
           <HeroUIProvider navigate={router.push}>
-            <ToastProvider placement="bottom-center" />
+            <div className="relative z-[9999]">
+              <ToastProvider placement="bottom-center" />
+            </div>
             {children}
           </HeroUIProvider>
         </WalletModalProvider>

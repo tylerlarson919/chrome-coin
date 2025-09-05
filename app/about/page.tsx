@@ -1,131 +1,75 @@
-"use client";
 import Image from "next/image";
-import { Ticker } from "@/components/Ticker";
-// No longer need framer-motion or navigation for this simpler design
-// import { useState, useCallback, useRef, useEffect } from "react";
-// import { AnimatePresence, motion, Variants } from "framer-motion";
-// import { NavigationArrows } from "@/components/NavigationArrows";
+import { FaCube, FaPaintBrush, FaGlobe } from "react-icons/fa";
 
-// Removed crossfadeVariants and calloutVariants as sliders are gone
-
-const aboutContent = [
-  {
-    title: "THE UTILITY",
-    description: (
-      <>
-        <p className="mb-4">
-          $MER is a utility token for <strong>Miami Exotic Rents</strong>, enabling exclusive access to:
-        </p>
-        <ul className="list-disc list-inside space-y-2 text-lg leading-relaxed">
-          <li>Exotic car rentals.</li>
-          <li>Luxury yacht charters.</li>
-          <li>Premium house rentals.</li>
-        </ul>
-      </>
-    ),
-    imageSrc: "https://res.cloudinary.com/dqedckeaa/image/upload/v1756825797/MER-Lambo-exchange_yzyvin.jpg",
-    imageAlt: "Luxury car exchange",
-  },
-  {
-    title: "THE VISION",
-    description: (
-      <>
-        <p className="mb-4">
-          $MER transforms rental experiences, integrating Web3 into luxury lifestyles.
-        </p>
-        <p className="text-lg leading-relaxed">
-          Planned expansions include global rental networks and new $MER utilities.
-        </p>
-      </>
-    ),
-    imageSrc: "https://res.cloudinary.com/dqedckeaa/image/upload/v1756825797/MER-night-ride_ijrgnv.jpg",
-    imageAlt: "Night ride with exotic car",
-  },
-  {
-    title: "MARKET REACH",
-    description: (
-      <>
-        <p className="mb-4">
-          $MER aims to tap into the growing Web3 rental market, targeting <strong>1M+ users</strong> by 2026.
-        </p>
-        <p className="text-lg leading-relaxed">
-          Join a community driving luxury rentals with crypto innovation.
-        </p>
-      </>
-    ),
-    imageSrc: "https://res.cloudinary.com/dqedckeaa/image/upload/v1756829414/MER-peaceful-crib_ipkb9p.jpg",
-    imageAlt: "Peaceful luxury house",
-  },
+const corePrinciples = [
+    {
+        icon: FaCube,
+        title: "Simplicity First",
+        description: "In a world of complex DeFi protocols, we embrace the simple joy of pixels. No convoluted roadmaps, just pure, unadulterated nostalgia."
+    },
+    {
+        icon: FaPaintBrush,
+        title: "Community Canvas",
+        description: "Pixel World is a collaborative project. Our community members are the artists, meme-makers, and storytellers who bring our 8-bit universe to life."
+    },
+    {
+        icon: FaGlobe,
+        title: "Digital Playground",
+        description: "We're building a space for fun and creativity. Whether it's through our upcoming NFTs or community events, Pixel World is your escape to a simpler digital time."
+    }
 ];
 
 export default function AboutPage() {
-  // Removed state and handlers for slides
-
-  return (
-    <div className="relative min-h-screen overflow-x-hidden bg-black text-white">
-      {/* Main content wrapper with padding */}
-      <div className="relative z-[4] flex w-full flex-col pt-28 pb-16">
-
-        {/* Hero Section - Title and Main Image */}
-        <div className="relative w-full h-[500px] md:h-[650px] overflow-hidden mb-16">
-          <Image
-            src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756825797/MER-Parking-Garage_w7nxkt.jpg"
-            alt="What is $MER?"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            className="brightness-[0.7]" // Slightly darken the image
-          />
-          <div className="absolute inset-0 bg-black/40"></div> {/* Dark overlay for readability */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <h1
-              className="font-poppins text-white text-5xl md:text-6xl font-bold text-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.7)]"
-              data-text="What is $MER?" // For potential future styling
-            >
-              What is $MER?
-            </h1>
-          </div>
-        </div>
-
-        {/* About Content Sections */}
-        <main className="container mx-auto px-4 w-full max-w-6xl">
-          {aboutContent.map((section, index) => (
-            <div
-              key={section.title}
-              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-16 mb-24 md:mb-32`}
-            >
-              {/* Text Content */}
-              <div className="w-full lg:w-1/2 text-left">
-                <h2 className="font-poppins text-4xl md:text-5xl font-bold text-mer-orange mb-6 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
-                  {`0${index + 1} ${section.title}`}
-                </h2>
-                <div className="font-poppins text-gray-200 text-xl md:text-2xl leading-relaxed">
-                  {section.description}
+    return (
+        <div className="  pb-24 sm:pb-32 pt-8 font-montserrat ">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="max-w-3xl mx-auto text-center">
+                    <p className="text-base font-semibold leading-7 text-pixel-green tracking-widest">
+                        OUR STORY
+                    </p>
+                    <h1 className="mt-2 text-4xl font-bold tracking-tight  sm:text-6xl">
+                        From a Single Pixel
+                    </h1>
+                    <p className="mt-6 text-lg leading-8 text-zinc-500">
+                        In a forgotten corner of the blockchain, a single pixel blinked into existence. It wasn't trying to revolutionize finance or disrupt an industry. It was just... there. But it was soon joined by another, and another, until an entire 8-bit universe was born: <strong>Pixel World</strong>.
+                    </p>
                 </div>
-              </div>
-
-              {/* Image */}
-              <div className="w-full lg:w-1/2 relative h-[300px] md:h-[400px] lg:h-[450px] rounded-xl overflow-hidden shadow-[12px_12px_0_#ff6600] border-4 border-mer-orange">
-                <Image
-                  src={section.imageSrc}
-                  alt={section.imageAlt}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
-                  className="transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
             </div>
-          ))}
-        </main>
-      </div>
 
-      {/* Ticker at the bottom */}
-      <div className="absolute inset-x-0 bottom-0 z-[19] w-full">
-        <Ticker className="relative z-20" />
-      </div>
+            <div className="relative overflow-hidden py-8">
+                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    <Image
+                        src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757009173/2_hawznl.jpg"
+                        alt="Pixel World Landscape"
+                        width={2432}
+                        height={1442}
+                        className="rounded-xl"
+                    />
+                </div>
+            </div>
 
-      {/* Navigation Arrows removed */}
-    </div>
-  );
+            <div className="max-w-7xl mx-auto mt-16 px-6 lg:px-8">
+                <div className="max-w-3xl mx-auto lg:text-center">
+                    <h2 className="text-3xl font-bold tracking-tight  sm:text-5xl">The Philosophy of the Pixel</h2>
+                    <p className="mt-6 text-lg leading-8 text-zinc-500">
+                        We're a throwback to simpler times—a digital realm powered by nostalgia, memes, and zero-utility fun. We're not here to change the world, just to pixelate it, one block at a time.
+                    </p>
+                </div>
+                <div className="mt-16 max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                        {corePrinciples.map((principle) => (
+                            <div 
+                                key={principle.title} 
+                                className="rounded-lg border-4 border-black bg-white/95 p-6 backdrop-blur-sm shadow-[6px_6px_0_#16a34a] flex flex-col text-center transition-transform hover:scale-105 hover:-translate-y-2"
+                            >
+                                <principle.icon className="text-5xl mx-auto mb-4 text-pixel-green" aria-hidden="true" />
+                                <h4 className="font-montserrat text-xl font-bold text-black">{principle.title}</h4>
+                                <p className="font-montserrat text-sm mt-2 flex-grow text-zinc-700">{principle.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }

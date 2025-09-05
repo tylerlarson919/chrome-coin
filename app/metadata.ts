@@ -2,21 +2,20 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mer-token.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: {
-    default: "$MER | Drive the Dream. Pay with Crypto.",
-    template: `$MER - %s`, // UPDATED LINE
+    default: "Pixel World | Pixel by Pixel. Block by Block.",
+    template: `Pixel World - %s`,
   },
-  description: "Swap SOL for $MER and unlock exclusive rentals of exotic cars with Miami Exotic Rents.",
+  description: "A digital realm powered by nostalgia, memes, and zero-utility fun. Welcome to the world of $PIXEL.",
   keywords: [
-    'MER token',
-    'utility coin',
-    'crypto rentals',
-    'exotic cars',
-    'yachts',
-    'luxury houses',
-    'Solana token',
-    'Web3 utility',
+    'Pixel World',
+    'crypto',
+    'meme coin',
+    'pixel art',
+    'NFTs',
+    'blockchain',
+    '$PIXEL',
   ],
   robots: { index: true, follow: true },
   alternates: { canonical: '/' },
@@ -24,25 +23,23 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: '/',
-    siteName: '$MER',
-    title: '$MER | Drive the Dream. Pay with Crypto.',
-    description: 'Power your exotic rentals with $MER - the official token for Miami Exotic Rents.',
+    siteName: 'Pixel World',
+    title: 'Pixel World | Pixel by Pixel. Block by Block.',
+    description: 'A digital realm powered by nostalgia, memes, and zero-utility fun.',
     images: [
       {
-        url: '/og/default.png',
-        width: 1024,
-        height: 1024,
-        alt: '$MER Token',
+        url: '/og/default.png', // Make sure to create this image
+        width: 1200,
+        height: 630,
+        alt: 'Pixel World',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@MERofficial',
-    creator: '@MERofficial',
-    title: '$MER | Drive the Dream. Pay with Crypto.',
-    description: 'Swap SOL for $MER and rent exotic cars.',
-    images: ['/og/default.png'],
+    title: 'Pixel World | Pixel by Pixel. Block by Block.',
+    description: 'A digital realm powered by nostalgia, memes, and zero-utility fun.',
+    images: ['/og/default.png'], // Make sure to create this image
   },
   icons: {
     icon: '/favicon.ico',

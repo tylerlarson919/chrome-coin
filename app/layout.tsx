@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import clsx from "clsx";
-import { fontPoppins } from "@/config/fonts";
+import { fontMontserrat } from "@/config/fonts";
 import { ClientLayoutWrapper } from "./ClientLayoutWrapper";
 export { metadata } from "./metadata";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -16,8 +16,8 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-black font-poppins antialiased",
-          fontPoppins.variable
+          "min-h-screen bg-pixel-bg font-montserrat antialiased",
+          fontMontserrat.variable
         )}
       >
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>

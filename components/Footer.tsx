@@ -1,72 +1,29 @@
-"use client";
-
-import Link from "next/link";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import Image from "next/image";
-
-const socialLinks = [
-  { name: "X", href: "https://x.com/miamirentz", icon: FaXTwitter },
-  { name: "Instagram", href: "https://instagram.com/miamiexoticrents", icon: FaInstagram },
-  { name: "WhatsApp", href: "https://wa.me/19542682717", icon: FaWhatsapp },
-];
-
-export function Footer() {
-  return (
-    <footer className="relative z-[5] bg-zinc-900 text-gray-400 font-poppins">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
-          {/* Social Links */}
-          <div className="flex items-center gap-5">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.name}
-                className="text-gray-500 transition-colors duration-300 hover:text-mer-orange"
-              >
-                <social.icon className="h-6 w-6" />
-              </a>
-            ))}
-          </div>
-
-          {/* MER Description (Order changed for mobile view) */}
-          <p className="order-last text-center font-bold tracking-wider text-base text-gray-300 md:order-none md:text-right">
-            Luxury rentals powered by $MER.
-          </p>
-          
-          {/* Official Partner Logo */}
-          <a
-            href="https://miamiexoticrents.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col items-center gap-2 md:items-end"
-          >
-            <p className="text-xs text-gray-500">A Part of the Official</p>
-            <Image
-              src="https://res.cloudinary.com/dqedckeaa/image/upload/v1756887266/logo_1_g6fxhu.webp"
-              alt="Miami Exotic Rents Logo"
-              width={150}
-              height={30}
-              className="h-8 w-auto opacity-70 transition-opacity duration-300 group-hover:opacity-100"
-            />
-          </a>
-        </div>
-
-        <div className="mx-auto my-8 max-w-3xl space-y-3 text-center text-sm">
-          <p>$MER is a utility token for Miami Exotic Rents. Not financial advice.</p>
-        </div>
-
+export const Footer = () => {
+    return (
+        <footer className="relative w-full -mt-6 z-[100]">
+        <section id="community" className="w-full bg-pixel-green text-white rounded-t-3xl">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+                <h2 className="text-5xl font-extrabold mb-6">JOIN THE WORLD</h2>
+                <p className="max-w-lg mx-auto mb-8 text-white/90">
+                    Follow us on our socials to stay up to date with the latest news and become part of our pixelated universe.
+                </p>
+                <div className="flex justify-center items-center space-x-6">
+                    <a href="#" className="font-bold text-lg hover:underline">TELEGRAM ↗</a>
+                    <a href="#" className="font-bold text-lg hover:underline">TWITTER ↗</a>
+                    <a href="#" className="font-bold text-lg hover:underline">DISCORD ↗</a>
+                </div>
+            </div>
+        </section>
         <div>
-          <div className="mx-auto w-full max-w-lg border-t border-dashed border-gray-700" />
-          <div className="pt-4 text-center text-xs text-gray-500">
-            <p>8320 W Sunrise Blvd, Plantation, FL 33322 | +1 954-268-2717</p>
-            &copy; 2025 $MER. All Rights Reserved.
+          {/* Divider */}
+          <div className="w-full bg-pixel-green px-10 mx-auto">
+            <div className="h-[2px] bg-zinc-300"></div>
+            <div className="bg-pixel-green py-4 flex flex-col sm:flex-row justify-between items-center text-white">
+              <p className="mt-2 sm:mt-0 text-xs">&copy; {new Date().getFullYear()} Pixel World. All Rights Reserved.</p>
+              <p className="text-xs tracking-wider ">This site and token are not financial advice.</p>
+            </div>
           </div>
-        </div>
-      </div>
-    </footer>
-  );
+          </div>
+        </footer>
+    );
 }
