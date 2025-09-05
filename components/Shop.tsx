@@ -29,7 +29,7 @@ export const Shop = () => {
                 loop
                 muted
                 playsInline
-                className="h-64 md:h-96 w-auto"
+                className="h-64 md:h-96 w-auto rounded-xl"
               />
             </div>
           </div>
