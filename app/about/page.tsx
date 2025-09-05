@@ -91,22 +91,25 @@ const slideshowImages = [
 ];
 
 const MediaItem = ({ item, index, onOpen }: { item: MediaItemType, index: number, onOpen: (item: MediaItemType) => void }) => {
-    const [isInView, setIsInView] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
+    const [isIntersecting, setIsIntersecting] = useState(false);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
 
+    // This effect creates and manages the Intersection Observer
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsInView(true);
-                    observer.disconnect();
-                }
+                // Update state based on whether the element is in the viewport
+                setIsIntersecting(entry.isIntersecting);
             },
-            { rootMargin: "100px" } // Start loading 100px before it enters the viewport
+            { 
+                rootMargin: "0px",
+                threshold: 0.1 // Trigger when 10% of the item is visible
+            } 
         );
 
-        if (ref.current) {
-            observer.observe(ref.current);
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
         }
 
         return () => {
@@ -114,33 +117,49 @@ const MediaItem = ({ item, index, onOpen }: { item: MediaItemType, index: number
         };
     }, []);
 
+    // This effect plays or pauses the video based on the intersection state
+    useEffect(() => {
+        const videoElement = videoRef.current;
+        if (videoElement) {
+            if (isIntersecting) {
+                videoElement.play().catch(error => {
+                    // Autoplay was prevented, which can happen on mobile.
+                    // The video will wait for user interaction.
+                    console.error("Video autoplay prevented:", error);
+                });
+            } else {
+                videoElement.pause();
+            }
+        }
+    }, [isIntersecting]);
+
     return (
         <div
-            ref={ref}
+            ref={containerRef}
             className="relative overflow-hidden rounded-xl aspect-[4/3] bg-zinc-800 animate-fade-in-stagger cursor-pointer transition-transform hover:scale-105"
             style={{ animationDelay: `${index * 100}ms`, opacity: 0 }}
             onClick={() => onOpen(item)}
         >
-            {isInView && (
-                <>
-                    {item.type === 'image' ? (
-                        <Image
-                            src={item.src}
-                            alt={`Gallery image ${index + 1}`}
-                            layout="fill"
-                            objectFit="cover"
-                        />
-                    ) : (
-                        <video
-                            src={item.src}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="w-full h-full object-cover"
-                        />
-                    )}
-                </>
+            {item.type === 'image' ? (
+                <Image
+                    src={item.src}
+                    alt={`Gallery image ${index + 1}`}
+                    layout="fill"
+                    objectFit="cover"
+                />
+            ) : (
+                <video
+                    ref={videoRef}
+                    src={item.src}
+                    // Generate a poster image by replacing the video extension with .jpg
+                    poster={item.src.replace(/\.webm$/, '.jpg')}
+                    loop
+                    muted
+                    playsInline
+                    // Only preload metadata, not the full video file
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                />
             )}
         </div>
     );
