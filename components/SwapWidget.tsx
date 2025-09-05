@@ -182,7 +182,7 @@ export const SwapWidget = () => {
     };
 
     return (
-        <div className="relative z-10 w-full max-w-md mx-auto font-montserrat">
+        <div className="relative z-10 w-full max-w-xl mx-auto font-montserrat">
             <div className="relative z-10 w-full p-6 bg-white border-4 border-black rounded-xl shadow-[8px_8px_0px_#16a34a]">
                 <h2 className="text-2xl lg:text-3xl font-bold text-center text-black">
                     Swap SOL for $PIXEL

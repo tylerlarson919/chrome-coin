@@ -32,15 +32,32 @@ export default function CommunityPage() {
     return (
         <div className="min-h-screen font-montserrat">
             {/* Hero Section */}
-            <div className="pt-12 pb-16 pt-8 sm:pb-24">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-                    <div className="max-w-2xl mx-auto">
-                        <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-                            Join the Pixel Republic
-                        </h1>
-                        <p className="mt-6 text-lg leading-8 text-zinc-500">
-                            Pixel World is more than a token; it's a community of creators, dreamers, and meme enthusiasts. Find your home in our digital nation.
-                        </p>
+            <div className="pt-8 pb-16 sm:pb-24">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div className="flex flex-col md:flex-row md:items-center md:gap-12">
+                        {/* Left Side: Text */}
+                        <div className="md:w-1/2 text-center md:text-left">
+                            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+                                Join the Pixel Republic
+                            </h1>
+                            <p className="mt-6 text-lg leading-8 text-zinc-500">
+                                Pixel World is more than a token; it's a community of creators, dreamers, and meme enthusiasts. Find your home in our digital nation.
+                            </p>
+                        </div>
+
+                        {/* Right Side: Video */}
+                        <div className="mt-10 md:mt-0 md:w-1/2 flex justify-center md:justify-end">
+                            <div className="w-full max-w-sm">
+                                <video
+                                    src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757031113/-6403127588060313866_jkuyuo.webm"
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    className="w-full h-full rounded-2xl"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -54,7 +71,7 @@ export default function CommunityPage() {
                         Get Connected
                     </h2>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {socialLinks.map((link) => (
                         <a 

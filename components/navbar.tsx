@@ -42,7 +42,7 @@ const WalletButton = () => {
         if (connected && !prevConnected.current) {
             addToast({
                 title: "Wallet Connected",
-                description: "You're now ready to interact with the site.",
+                description: "Welcome to Pixel World.",
                 color: "success",
             });
         }
@@ -159,6 +159,9 @@ export const Navbar = () => {
         className={`lg:hidden fixed top-24 left-0 w-full h-[calc(100vh-6rem)] bg-pixel-bg overflow-y-auto z-[90] transition-all duration-300 ease-in-out ${isMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-4 pointer-events-none"}`}
       >
         <div className="flex flex-col items-center py-8">
+          <div className="mb-4">
+                <WalletButton />
+            </div>
           {[...navLinks, { name: 'HOW TO BUY', href: '/how-to-buy' }].map((link) => (
              <Link
                 href={link.href}
@@ -169,9 +172,6 @@ export const Navbar = () => {
                 {link.name}
               </Link>
           ))}
-            <div className="mt-6">
-                <WalletButton />
-            </div>
         </div>
       </div>
     </>

@@ -1,5 +1,8 @@
+"use client";
 import { SwapWidget } from "@/components/SwapWidget";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
+import { FaCopy, FaCheck } from "react-icons/fa";
 
 const steps = [
     {
@@ -20,13 +23,36 @@ const steps = [
 ];
 
 export default function HowToBuyPage() {
+    const [isCopied, setIsCopied] = useState(false);
+    const contractAddress = process.env.NEXT_PUBLIC_PIXEL_MINT_ADDRESS || "CA not available";
+
+    const handleCopy = () => {
+        if (navigator.clipboard) {
+        navigator.clipboard.writeText(contractAddress);
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 2000); // Reset icon after 2 seconds
+        }
+    };
+
     return (
         <div className="bg-pixel-bg pb-20 sm:pb-28 pt-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     
                     {/* Left Side: Swap Widget */}
-                    <div className="flex justify-center">
+                    <div className="flex justify-center flex-col gap-4">
+                        <div className="relative z-10 w-full p-4 bg-white border-4 border-black rounded-xl shadow-[6px_6px_0px_#16a34a] flex items-center justify-between gap-4">
+                            <code className="text-sm sm:text-base text-zinc-600 truncate">
+                                {contractAddress}
+                            </code>
+                            <button 
+                                onClick={handleCopy} 
+                                className="text-zinc-500 hover:text-zinc-900 transition-colors text-lg"
+                                aria-label="Copy contract address"
+                            >
+                                {isCopied ? <FaCheck className="text-pixel-green" /> : <FaCopy />}
+                            </button>
+                        </div>
                        <SwapWidget />
                     </div>
 

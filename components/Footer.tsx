@@ -2,7 +2,7 @@ export const Footer = () => {
     return (
         <footer className="relative w-full -mt-6 z-[100]">
         <section id="community" className="w-full bg-pixel-green text-white rounded-t-3xl">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center">
                 <h2 className="text-5xl font-extrabold mb-6">JOIN THE WORLD</h2>
                 <p className="max-w-lg mx-auto mb-8 text-white/90">
                     Follow us on our socials to stay up to date with the latest news and become part of our pixelated universe.

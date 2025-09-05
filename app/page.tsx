@@ -6,7 +6,7 @@ import { Testimonials } from "@/components/Testimonials";
 export default function HomePage() {
   return (
     <div className="w-full overflow-x-hidden">
-      <div className="w-full px-4 md:px-12">
+      <div className="w-full px-4 md:px-12 pt-4 md:pt-12">
         <Hero />
         <Shop />
       </div>

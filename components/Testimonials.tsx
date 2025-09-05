@@ -36,7 +36,7 @@ export const Testimonials = () => {
     const [swiper, setSwiper] = useState<SwiperClass | null>(null);
 
     return (
-        <section className="py-20 bg-white">
+        <section className="pb-12 pt-4 md:pt-10 md:py-20 bg-white">
             <h2 className="text-4xl font-extrabold text-zinc-800 text-center mb-6 px-4">
                 What the Pixels are Saying
             </h2>

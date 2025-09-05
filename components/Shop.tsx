@@ -43,11 +43,10 @@ export const Shop = () => {
   const cardItems = Array(itemCount).fill(0);
 
   return (
-    <section id="shop" className="py-20 bg-pixel-bg">
+    <section id="shop" className="py-4 md:py-10 bg-pixel-bg">
       <div className="max-w-8xl mx-auto">
-        <div className="flex items-center mb-10">
+        <div className="flex items-center mb-4 md:mb-10">
           <h2 className="text-3xl font-bold text-zinc-800">THE SHOP</h2>
-          <div className="flex-grow h-px bg-zinc-300 ml-4"></div>
         </div>
 
         {/* Updated grid classes for the new layout */}

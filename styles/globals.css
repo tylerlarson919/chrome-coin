@@ -261,13 +261,25 @@
 }
 
 @layer base {
-  /* Hides the scrollbar for WebKit browsers like Chrome, Safari, and Edge */
-  html::-webkit-scrollbar {
-    display: none;
-  }
+  /* This targets desktop screens (Tailwind's 'lg' breakpoint and up) */
+  @media (min-width: 1024px) {
+    /* Hides the scrollbar for WebKit browsers like Chrome, Safari, and Edge */
+    html::-webkit-scrollbar {
+      display: none;
+    }
 
-  /* Hides the scrollbar for Firefox */
-  html {
-    scrollbar-width: none;
+    /* Hides the scrollbar for Firefox */
+    html {
+      scrollbar-width: none;
+    }
+  }
+}
+
+@keyframes fill-circle {
+  from {
+    stroke-dashoffset: 283; 
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }

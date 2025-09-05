@@ -32,11 +32,22 @@ const config = {
           '50%': { transform: 'translateY(-20px)' },
           '100%': { transform: 'translateY(0px)' },
         },
+        'fade-in-stagger': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+        },
+      },
       },
       animation: {
         'ticker-ltr': 'ticker-ltr 80s linear infinite',
         ticker: 'ticker 40s linear infinite',
         float: 'float 6s ease-in-out infinite',
+        'fade-in-stagger': 'fade-in-stagger 0.5s ease-out forwards',
       },
     },
   },
