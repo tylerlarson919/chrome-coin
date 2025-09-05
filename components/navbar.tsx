@@ -129,9 +129,10 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // CHANGE: Apply blur if scrolled OR if the mobile menu is open
   const headerClasses = clsx(
     "fixed top-0 left-0 right-0 z-[100] h-24 transition-colors duration-300",
-    scrolled ? "bg-black/50 backdrop-blur-md" : "bg-transparent"
+    scrolled || isMenuOpen ? "bg-black/50 backdrop-blur-md" : "bg-transparent"
   );
 
   const navLinks = [
@@ -145,53 +146,53 @@ export const Navbar = () => {
     <>
       <header className={headerClasses}>
         <div className="max-w-8xl mx-auto px-4 sm:px-12 h-full flex items-center justify-between">
-  {/* Left: Logo */}
-  <Link
-    href="/"
-    onClick={() => setIsMenuOpen(false)}
-    className="flex items-center"
-    aria-label="Pixel World Home"
-  >
-    <Image
-      src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757101766/Artboard_5_copy_2_i2hzo0.png"
-      alt="Pixel World Logo"
-      width={56}
-      height={56}
-      priority
-      className="size-14 md:size-16 rounded-full"
-    />
-  </Link>
+          {/* Left: Logo */}
+          <Link
+            href="/"
+            onClick={() => setIsMenuOpen(false)}
+            className="flex items-center"
+            aria-label="Pixel World Home"
+          >
+            <Image
+              src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757101766/Artboard_5_copy_2_i2hzo0.png"
+              alt="Pixel World Logo"
+              width={56}
+              height={56}
+              priority
+              className="size-14 md:size-16 rounded-full"
+            />
+          </Link>
 
-  {/* Middle: Desktop Navigation Links */}
-  <div className="hidden min-[1111px]:flex items-center space-x-8">
-    {navLinks.map((link) => (
-      <Link
-        href={link.href}
-        key={link.name}
-        className="text-zinc-300 font-bold tracking-wider hover:text-pixel-green transition-colors duration-200"
-      >
-        {link.name}
-      </Link>
-    ))}
-    <Link
-      href="/#how-to-buy"
-      className="text-zinc-300 font-bold tracking-wider hover:text-pixel-green transition-colors duration-200"
-    >
-      HOW TO BUY
-    </Link>
-  </div>
+          {/* Middle: Desktop Navigation Links */}
+          <div className="hidden min-[1111px]:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                href={link.href}
+                key={link.name}
+                className="text-zinc-300 font-bold tracking-wider hover:text-pixel-green transition-colors duration-200"
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Link
+              href="/#how-to-buy"
+              className="text-zinc-300 font-bold tracking-wider hover:text-pixel-green transition-colors duration-200"
+            >
+              HOW TO BUY
+            </Link>
+          </div>
 
-  {/* Right: Wallet Button & Mobile Menu Icon */}
-  <div className="flex items-center">
-    <WalletButton />
-    <div className="min-[1111px]:hidden ml-4">
-      <HamburgerIcon
-        isOpen={isMenuOpen}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      />
-    </div>
-  </div>
-</div>
+          {/* Right: Wallet Button & Mobile Menu Icon */}
+          <div className="flex items-center">
+            <WalletButton />
+            <div className="min-[1111px]:hidden ml-4">
+              <HamburgerIcon
+                isOpen={isMenuOpen}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              />
+            </div>
+          </div>
+        </div>
       </header>
 
       {/* Mobile Menu */}
