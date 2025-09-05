@@ -151,7 +151,7 @@ export const Navbar = () => {
             </Link>
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
             <WalletButton />
             <div className="min-[1111px]:hidden">
               <HamburgerIcon
