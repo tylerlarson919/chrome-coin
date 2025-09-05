@@ -34,7 +34,7 @@ export const Shop = () => {
           </div>
 
           {/* Right Side: Main Video */}
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 flex justify-center md:justify-end">
             <video
               src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757102714/4080777719242116802_1_ckcfj3.webm"
               autoPlay
