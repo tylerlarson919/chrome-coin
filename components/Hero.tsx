@@ -17,7 +17,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
       {/* Container for the text, positioned at the bottom */}
-      <div className="relative text-center p-8 md:pb-8 z-10">
+      <div className="relative text-center pb-8 py-4 md:p-8 md:pb-8 z-10">
         <Image
           src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757019941/px-white_2x_juk2c6.png"
           alt="Pixel World Logo"
