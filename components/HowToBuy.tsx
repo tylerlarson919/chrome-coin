@@ -38,13 +38,13 @@ export const HowToBuy = () => {
   };
 
   return (
-    <section id="how-to-buy" className="pt-10 md:pt-20 pb-10 md:pb-12">
+    <section id="how-to-buy" className="pt-10 md:pt-20 mb-24 ">
       {/* Header styled like other homepage sections */}
       <div className="text-left mb-8 md:mb-12">
         <p className="text-pixel-green font-bold tracking-widest">
           GET STARTED
         </p>
-        <h2 className="text-4xl font-extrabold text-zinc-800">
+        <h2 className="text-4xl font-extrabold text-zinc-300">
           HOW TO BUY $PIXEL
         </h2>
       </div>
@@ -55,7 +55,7 @@ export const HowToBuy = () => {
                 {/* Left Side: Swap Widget */}
                 <div className="flex justify-center flex-col gap-4">
                     <div className="relative z-10 w-full p-4 bg-white border-4 border-black rounded-xl shadow-[6px_6px_0px_#63c79a] flex items-center justify-between gap-4">
-                        <code className="text-sm sm:text-base text-zinc-600 truncate">
+                        <code className="text-sm sm:text-base text-zinc-400 truncate">
                             {contractAddress}
                         </code>
                         <button 
@@ -75,8 +75,8 @@ export const HowToBuy = () => {
                         <div key={index} className="flex items-start">
                             <CheckBadgeIcon className="h-8 w-8 text-pixel-green flex-shrink-0 mt-1" />
                             <div className="ml-4">
-                                <h3 className="text-xl font-bold">{step.name}</h3>
-                                <p className="mt-1 text-zinc-600">{step.description}</p>
+                                <h3 className="text-xl font-bold text-zinc-300">{step.name}</h3>
+                                <p className="mt-1 text-zinc-400">{step.description}</p>
                                 <a 
                                     href={step.href} 
                                     target="_blank" 

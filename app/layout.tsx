@@ -4,7 +4,8 @@ import { fontMontserrat } from "@/config/fonts";
 import { ClientLayoutWrapper } from "./ClientLayoutWrapper";
 export { metadata } from "./metadata";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import { Background } from "@/components/Background";
 
 export default function RootLayout({
   children,
@@ -16,11 +17,15 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-pixel-bg font-montserrat antialiased",
+          "min-h-screen bg-black font-montserrat antialiased",
           fontMontserrat.variable
         )}
       >
-        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
+        <Background />
+        {/* Add a relative wrapper to ensure content appears above the fixed background */}
+        <main className="relative z-10">
+          <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
+        </main>
         <Analytics />
         <SpeedInsights />
       </body>

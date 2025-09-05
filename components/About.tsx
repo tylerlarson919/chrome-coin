@@ -7,10 +7,10 @@ export const About = () => {
           <p className="text-pixel-green font-bold tracking-widest">
             OUR STORY
           </p>
-          <h2 className="text-4xl font-extrabold text-zinc-800">
+          <h2 className="text-4xl font-extrabold text-zinc-300">
             WHAT IS PIXEL WORLD?
           </h2>
-          <p className="mt-2 md:mt-4 md:text-lg text-zinc-600">
+          <p className="mt-2 md:mt-4 md:text-lg text-zinc-400">
             It began with a single spark in the vastness of the blockchain. 
             A lone pixel that wasn't trying to change the world—just exist. But it wasn't alone 
             for long. More pixels joined, drawn together to create a vibrant, 8-bit universe: 

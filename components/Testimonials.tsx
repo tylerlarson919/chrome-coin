@@ -37,7 +37,7 @@ export const Testimonials = () => {
 
     return (
         <section className="pb-12 pt-4 md:pt-10 md:py-20 bg-white">
-            <h2 className="text-4xl font-extrabold text-zinc-800 text-center mb-4 md:mb-6 px-4">
+            <h2 className="text-4xl font-extrabold text-zinc-300 text-center mb-4 md:mb-6 px-4">
                 What the Pixels are Saying
             </h2>
             <div className="max-w-8xl mx-auto relative px-4 md:px-16">

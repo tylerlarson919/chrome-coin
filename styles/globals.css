@@ -302,3 +302,42 @@
     padding-right: 1rem !important;
   }
 }
+
+
+/* Starfield Background */
+@keyframes animateStars {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+#stars,
+#stars2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  background-repeat: repeat;
+  background-position: top center;
+  animation: animateStars linear infinite;
+}
+
+/* Layer 1: Farthest, smallest, slowest stars */
+#stars {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2000' height='2000'%3E%3Cg fill='%23fff' fill-opacity='0.4'%3E%3Ccircle cx='100' cy='100' r='1'/%3E%3Ccircle cx='300' cy='500' r='1'/%3E%3Ccircle cx='600' cy='200' r='1'/%3E%3Ccircle cx='800' cy='700' r='1'/%3E%3Ccircle cx='1100' cy='400' r='1'/%3E%3Ccircle cx='1300' cy='900' r='1'/%3E%3Ccircle cx='1500' cy='100' r='1'/%3E%3Ccircle cx='1800' cy='600' r='1'/%3E%3Ccircle cx='200' cy='1200' r='1'/%3E%3Ccircle cx='500' cy='1500' r='1'/%3E%3Ccircle cx='900' cy='1100' r='1'/%3E%3Ccircle cx='1200' cy='1800' r='1'/%3E%3Ccircle cx='1600' cy='1400' r='1'/%3E%3Ccircle cx='1900' cy='1900' r='1'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 2000px 2000px;
+  animation-duration: 200s;
+}
+
+/* Layer 2: Closer, bigger, faster stars */
+#stars2 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2000' height='2000'%3E%3Cg fill='%23fff' fill-opacity='0.6'%3E%3Ccircle cx='200' cy='300' r='2'/%3E%3Ccircle cx='500' cy='800' r='2'/%3E%3Ccircle cx='900' cy='100' r='2'/%3E%3Ccircle cx='1200' cy='600' r='2'/%3E%3Ccircle cx='1600' cy='1100' r='2'/%3E%3Ccircle cx='1900' cy='1500' r='2'/%3E%3Ccircle cx='100' cy='1400' r='2'/%3E%3Ccircle cx='700' cy='1800' r='2'/%3E%3Ccircle cx='1400' cy='200' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 2000px 2000px;
+  animation-duration: 120s;
+}

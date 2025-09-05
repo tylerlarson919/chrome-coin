@@ -13,7 +13,7 @@ const HamburgerIcon = ({
 }: { isOpen: boolean } & React.ComponentProps<"button">) => (
   <button 
     aria-label="Toggle menu"
-    className="relative h-8 w-8 text-zinc-800 focus:outline-none"
+    className="relative h-8 w-8 text-zinc-300 focus:outline-none"
     {...props}
   >
     <div className="absolute left-1/2 top-1/2 block w-7 -translate-x-1/2 -translate-y-1/2 transform">
@@ -182,7 +182,7 @@ export const Navbar = () => {
              <Link
                 href={link.href}
                 key={link.name}
-                className="text-zinc-800 text-xl font-bold tracking-wider py-4 w-full text-center hover:bg-zinc-200/50 transition-colors"
+                className="text-zinc-300 text-xl font-bold tracking-wider py-4 w-full text-center hover:bg-zinc-200/50 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}

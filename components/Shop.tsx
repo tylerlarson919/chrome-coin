@@ -43,11 +43,11 @@ export const Shop = () => {
   const cardItems = Array(itemCount).fill(0);
 
   return (
-    <section id="shop" className="py-4 md:py-10 bg-pixel-bg">
-      <div className="max-w-8xl mx-auto">
+    <section id="shop" className="py-4 md:py-10">
+      <div className="max-w-8xl px-4 md:px-12">
         <div className="flex flex-col justify-center mb-4 md:mb-6">
-          <h2 className="text-3xl font-bold text-zinc-800">THE SHOP</h2>
-          <p className="mt-2 md:mt-4 md:text-lg text-zinc-600">
+          <h2 className="text-3xl font-bold text-zinc-300">THE SHOP</h2>
+          <p className="mt-2 md:mt-4 md:text-lg text-zinc-400">
             A new dimension of 8-bit art is rendering. The official Pixel World NFT collection is coming soon, offering unique, verifiable ownership of a piece of our universe.
           </p>
         </div>
@@ -71,7 +71,7 @@ export const Shop = () => {
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-md md:text-xl font-bold text-zinc-800 tracking-wider text-center">
+                  <span className="text-md md:text-xl font-bold text-zinc-300 tracking-wider text-center">
                     COMING SOON
                   </span>
                 </div>
@@ -82,7 +82,7 @@ export const Shop = () => {
                 <p className="text-xs text-zinc-500 font-semibold uppercase tracking-wider">
                   Pixel World NFT's
                 </p>
-                <h3 className="mt-1 text-base font-bold text-zinc-800">
+                <h3 className="mt-1 text-base font-bold text-zinc-300">
                   COMING SOON
                 </h3>
               </div>

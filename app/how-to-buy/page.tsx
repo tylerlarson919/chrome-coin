@@ -42,7 +42,7 @@ export default function HowToBuyPage() {
                     {/* Left Side: Swap Widget */}
                     <div className="flex justify-center flex-col gap-4">
                         <div className="relative z-10 w-full p-4 bg-white border-4 border-black rounded-xl shadow-[6px_6px_0px_#63c79a] flex items-center justify-between gap-4">
-                            <code className="text-sm sm:text-base text-zinc-600 truncate">
+                            <code className="text-sm sm:text-base text-zinc-400 truncate">
                                 {contractAddress}
                             </code>
                             <button 
@@ -57,10 +57,10 @@ export default function HowToBuyPage() {
                     </div>
 
                     {/* Right Side: Instructions */}
-                    <div className="text-zinc-800">
+                    <div className="text-zinc-300">
                         <p className="font-bold text-pixel-green tracking-widest">GET STARTED</p>
                         <h1 className="text-4xl sm:text-5xl font-extrabold mt-2">How to Buy $PIXEL</h1>
-                        <p className="mt-4 text-lg text-zinc-600">
+                        <p className="mt-4 text-lg text-zinc-400">
                             Becoming a citizen of Pixel World is simple. Follow these three steps to mint your first $PIXEL tokens and join our 8-bit universe.
                         </p>
                         
@@ -70,7 +70,7 @@ export default function HowToBuyPage() {
                                     <CheckBadgeIcon className="h-8 w-8 text-pixel-green flex-shrink-0 mt-1" />
                                     <div className="ml-4">
                                         <h3 className="text-xl font-bold">{step.name}</h3>
-                                        <p className="mt-1 text-zinc-600">{step.description}</p>
+                                        <p className="mt-1 text-zinc-400">{step.description}</p>
                                         <a 
                                             href={step.href} 
                                             target="_blank" 

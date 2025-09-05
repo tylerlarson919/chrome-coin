@@ -66,7 +66,7 @@ export const PixelPlan = () => {
         <p className="text-pixel-green font-bold tracking-widest">
           PIXELNOMICS
         </p>
-        <h2 className="text-4xl font-extrabold text-zinc-800">
+        <h2 className="text-4xl font-extrabold text-zinc-300">
           THE PIXEL PLAN
         </h2>
       </div>
@@ -84,7 +84,7 @@ export const PixelPlan = () => {
 
         <div className="w-full max-w-md">
           <div className="rounded-lg border-2 border-zinc-200 bg-white p-6 shadow-sm">
-            <h3 className="text-center text-3xl font-bold text-zinc-800">
+            <h3 className="text-center text-3xl font-bold text-black">
               Token Distribution
             </h3>
             <div className="mt-4 space-y-2">
@@ -114,7 +114,7 @@ export const PixelPlan = () => {
                     />
                     <span className="text-zinc-700">{item.name}</span>
                   </div>
-                  <span className="font-bold text-zinc-800">
+                  <span className="font-bold text-black">
                     {item.value}%
                   </span>
                 </div>
@@ -122,7 +122,7 @@ export const PixelPlan = () => {
             </div>
             <div className="mt-6 border-t-2 border-dashed border-zinc-300 pt-4 text-center">
               <p className="text-base text-zinc-600">Total Supply:</p>
-              <p className="text-2xl font-bold tracking-wider text-zinc-800">
+              <p className="text-2xl font-bold tracking-wider text-black">
                 1,000,000,000 $PIXEL
               </p>
             </div>
@@ -138,8 +138,8 @@ export const PixelPlan = () => {
             className="rounded-lg border-2 border-zinc-200 bg-zinc-50/50 p-5 flex flex-col text-center transition-transform hover:scale-105 hover:-translate-y-1 shadow-sm hover:shadow-lg"
           >
             <phase.icon className="text-4xl mx-auto mb-4 text-pixel-green" />
-            <h4 className="text-lg font-bold text-zinc-800">{phase.title}</h4>
-            <p className="text-sm mt-2 flex-grow text-zinc-600">
+            <h4 className="text-lg font-bold text-zinc-300">{phase.title}</h4>
+            <p className="text-sm mt-2 flex-grow text-zinc-400">
               {phase.description}
             </p>
           </div>

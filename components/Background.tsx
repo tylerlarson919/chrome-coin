@@ -174,7 +174,6 @@ export function Background() {
           <ambientLight ref={ambientLightRef} />
           <Suspense fallback={null}>
             <Starfield isMobile={isMobile} />
-            <InteractiveSmoke isMobile={isMobile} />
           </Suspense>
         </Canvas>
       </div>

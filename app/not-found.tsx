@@ -5,10 +5,10 @@ export default function NotFoundPage() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center bg-pixel-bg p-4 text-center z-10">
       <div className="flex flex-col items-center">
-        <h1 className="font-montserrat text-zinc-800 text-8xl font-extrabold tracking-wider">
+        <h1 className="font-montserrat text-zinc-300 text-8xl font-extrabold tracking-wider">
           404
         </h1>
-        <p className="mt-2 text-lg text-zinc-600/80 md:text-xl font-montserrat">
+        <p className="mt-2 text-lg text-zinc-400/80 md:text-xl font-montserrat">
           This pixel seems to be misplaced.
         </p>
         <Link

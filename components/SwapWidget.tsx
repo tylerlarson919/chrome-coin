@@ -227,7 +227,7 @@ export const SwapWidget = () => {
                         variant="bordered"
                         endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1752807739/sol-logo_qufbpd.webp" alt="$SOL" className="w-8 h-8 rounded-lg" />}
                         classNames={{
-                            label: "text-sm font-bold text-zinc-800",
+                            label: "text-sm font-bold text-zinc-300",
                             input: "text-xl font-bold",
                             inputWrapper: "border-2 border-black bg-zinc-100 data-[hover=true]:bg-zinc-200 group-data-[focus=true]:border-pixel-green",
                         }}
@@ -239,7 +239,7 @@ export const SwapWidget = () => {
                         variant="bordered"
                         endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757060371/pfp-dark-pix_1_rvfa4n.png" alt="$SOL" className="w-8 h-8 rounded-lg" />}
                         classNames={{
-                            label: "text-sm font-bold text-zinc-800",
+                            label: "text-sm font-bold text-zinc-300",
                             input: "text-xl font-bold",
                             inputWrapper: "border-2 border-black bg-zinc-100",
                         }}
@@ -256,7 +256,7 @@ export const SwapWidget = () => {
                 
                 {/* Preserved wallet links and icons */}
                 <div className="flex items-center justify-between mt-4">
-                    <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" className="text-sm underline text-zinc-600 hover:text-pixel-green">
+                    <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" className="text-sm underline text-zinc-400 hover:text-pixel-green">
                         Don&apos;t have a Solana wallet?
                     </a>
                     <div className="flex items-center space-x-2">

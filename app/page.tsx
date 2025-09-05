@@ -8,15 +8,14 @@ import { HowToBuy } from "@/components/HowToBuy";
 export default function HomePage() {
   return (
     <div className="w-full overflow-x-hidden">
-      <div className="w-full px-4 md:px-12 pt-4 md:pt-12">
+      <div className="w-full">
         <Hero />
         <Shop />
       </div>
-      <div className="w-full px-4 md:px-12 bg-white">
+      <div className="w-full px-4 md:px-12">
         <About />
         <PixelPlan />
         <HowToBuy />
-        <Testimonials />
       </div>
     </div>
   );
