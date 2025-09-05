@@ -68,7 +68,7 @@ const WalletButton = () => {
 
     const connectedButtonClasses = "!font-normal tracking-normal h-10 text-xs sm:font-bold sm:tracking-wider sm:h-12 sm:text-xs";
     const multiButtonLayoutClasses = "!flex !items-center !justify-center !space-x-2 !w-auto active:!scale-95 h-10 sm:h-12";
-    const desktopTextClasses = "sm:font-bold sm:tracking-wider sm:text-xs";
+    const desktopTextClasses = "font-bold sm:tracking-wider sm:text-xs";
     const navIconClasses = "h-5 w-5 sm:h-6 sm:w-6";
 
     if (!connected || !publicKey || !wallet) {
