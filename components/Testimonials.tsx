@@ -68,7 +68,7 @@ export const Testimonials = () => {
 
                 <button
                     onClick={() => swiper?.slidePrev()}
-                    className="absolute top-1/2 -translate-y-1/2 -left-5 md:left-0 z-10 p-2 transition-transform hover:scale-125"
+                    className="absolute top-1/2 -translate-y-1/2 -left-3 md:left-0 z-10 p-2 transition-transform hover:scale-125"
                     aria-label="Previous testimonial"
                 >
                     <ChevronLeftIcon className="h-10 w-10 text-pixel-green" strokeWidth={2}/>
@@ -76,7 +76,7 @@ export const Testimonials = () => {
 
                 <button
                     onClick={() => swiper?.slideNext()}
-                    className="absolute top-1/2 -translate-y-1/2 -right-5 md:right-0 z-10 p-2 transition-transform hover:scale-125"
+                    className="absolute top-1/2 -translate-y-1/2 -right-3 md:right-0 z-10 p-2 transition-transform hover:scale-125"
                     aria-label="Next testimonial"
                 >
                     <ChevronRightIcon className="h-10 w-10 text-pixel-green" strokeWidth={2} />
