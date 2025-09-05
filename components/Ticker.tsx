@@ -2,7 +2,7 @@ import React from 'react';
 
 const TickerItem = () => (
     <div className="flex-shrink-0 flex items-center space-x-4 px-4 font-poppins">
-        <span className="font-poppins text-xl font-semibold tracking-widest text-mer-orange">$MER</span>
+        <span className="font-poppins text-xl font-semibold tracking-widest text-mer-orange">BUY $PIXEL</span>
     </div>
 );
 

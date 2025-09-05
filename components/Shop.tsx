@@ -1,14 +1,16 @@
 "use client";
+import { Ticker } from "@/components/Ticker";
 
 export const Shop = () => {
   return (
     <section
       id="shop"
-      className="relative py-12 md:py-20 overflow-hidden"
+      className="relative pb-12 md:pb-20 overflow-hidden"
     >
-      <div className="max-w-8xl px-4 md:px-12">
+      <Ticker/>
+      <div className="max-w-8xl px-4 md:px-12 pt-12 md:pt-20">
         {/* Main layout container */}
-        <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-16">
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-stretch justify-center gap-10 md:gap-16">
           {/* Left Side: Text Content */}
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-4xl lg:text-5xl font-bold text-zinc-200 tracking-tight">
@@ -28,7 +30,7 @@ export const Shop = () => {
                 loop
                 muted
                 playsInline
-                className="size-64 rounded-md"
+                className="h-64 md:h-96 w-auto"
               />
             </div>
           </div>
@@ -41,7 +43,7 @@ export const Shop = () => {
               loop
               muted
               playsInline
-              className="rounded-lg shadow-2xl w-full max-w-sm lg:max-w-md border-4 border-zinc-800"
+              className="rounded-lg shadow-2xl w-full max-w-sm lg:max-w-xl border-4 border-zinc-800 md:h-full md:object-cover"
             />
           </div>
         </div>
