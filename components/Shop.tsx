@@ -1,4 +1,4 @@
-"use client"; // This component now needs to be a client component to detect screen size
+"use client";
 
 import { useState, useEffect } from "react";
 
@@ -8,9 +8,11 @@ const useBreakpoint = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 640) { // Tailwind's 'sm' breakpoint
+      if (window.innerWidth < 640) {
+        // Tailwind's 'sm' breakpoint
         setBreakpoint("mobile");
-      } else if (window.innerWidth < 1024) { // Tailwind's 'lg' breakpoint
+      } else if (window.innerWidth < 1024) {
+        // Tailwind's 'lg' breakpoint
         setBreakpoint("tablet");
       } else {
         setBreakpoint("desktop");
@@ -26,17 +28,18 @@ const useBreakpoint = () => {
   return breakpoint;
 };
 
-
 export const Shop = () => {
   const breakpoint = useBreakpoint();
+  const imageUrl = "https://res.cloudinary.com/dqedckeaa/image/upload/v1757033000/photo_2023-01-26_09-55-14_hjelge.jpg";
 
   // Determine the number of items to render based on the current breakpoint
   let itemCount: number;
-  if (breakpoint === 'desktop') {
+  if (breakpoint === "desktop") {
     itemCount = 5;
-  } else if (breakpoint === 'tablet') {
+  } else if (breakpoint === "tablet") {
     itemCount = 3;
-  } else { // mobile
+  } else {
+    // mobile
     itemCount = 2;
   }
 
@@ -48,30 +51,28 @@ export const Shop = () => {
         <div className="flex flex-col justify-center mb-4 md:mb-6">
           <h2 className="text-3xl font-bold text-zinc-300">THE SHOP</h2>
           <p className="mt-2 md:mt-4 md:text-lg text-zinc-400">
-            A new dimension of 8-bit art is rendering. The official Pixel World NFT collection is coming soon, offering unique, verifiable ownership of a piece of our universe.
+            A new dimension of 8-bit art is rendering. The official Pixel World
+            NFT collection is coming soon, offering unique, verifiable
+            ownership of a piece of our universe.
           </p>
         </div>
 
-        {/* Updated grid classes for the new layout */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-8 md:gap-x-6">
           {cardItems.map((_, index) => (
-            // Grid Item Container: Holds both the card and the text below it
             <div key={index}>
               {/* Interactive Card with Hover Effect */}
               <div
-                className="group relative bg-white rounded-lg shadow-md p-4 flex items-center justify-center aspect-square border border-zinc-200 overflow-hidden"
+                className="group relative rounded-lg shadow-md aspect-square overflow-hidden bg-cover bg-center"
+                style={{ backgroundImage: `url('${imageUrl}')` }}
               >
                 {/* SOON Chip */}
                 <div className="absolute top-3 left-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10">
                   SOON
                 </div>
 
-                {/* Floating Diamond */}
-                <div className="animate-float text-6xl sm:text-7xl">💎</div>
-
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-md md:text-xl font-bold text-zinc-300 tracking-wider text-center">
+                <div className="absolute inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-md md:text-xl font-bold text-zinc-200 tracking-wider text-center">
                     COMING SOON
                   </span>
                 </div>
