@@ -13,9 +13,9 @@ import Image from "next/image"; // Import the Image component
 // Data for the donut chart (no changes)
 const tokenData = [
   { name: "Liquidity Pool", value: 85, color: "#22c55e" },
-  { name: "Marketing & CEX", value: 3, color: "#55a07eff" },
-  { name: "NFT Airdrops", value: 7, color: "#15803d" },
-  { name: "Team (Locked)", value: 5, color: "#166534" },
+  { name: "Marketing & CEX", value: 7, color: "#55a07eff" },
+  { name: "NFT Airdrops", value: 5, color: "#15803d" },
+  { name: "Team (Locked)", value: 3, color: "#166534" },
 ];
 
 // Data for the roadmap cards (no changes)
