@@ -39,10 +39,6 @@ const galleryVideos = [
     "https://res.cloudinary.com/dqedckeaa/video/upload/v1757031116/1739080017582903615_tlykdg.webm",
     "https://res.cloudinary.com/dqedckeaa/video/upload/v1757033453/5929365956074049906_ngcu6r.webm",
     "https://res.cloudinary.com/dqedckeaa/video/upload/v1757031118/-5325187677875775982_cqagqg.webm",
-    "https://res.cloudinary.com/dqedckeaa/video/upload/v1757031114/1115_1_gcqz1o.webm",
-    "https://res.cloudinary.com/dqedckeaa/video/upload/v1757031114/yeee_c70non.webm",
-    "https://res.cloudinary.com/dqedckeaa/video/upload/v1757031113/123__1_ydeyok.webm",
-    "https://res.cloudinary.com/dqedckeaa/video/upload/v1757033247/-1059633275316738819_iahl5g.webm",
 ];
 
 type MediaItemType = { type: 'image' | 'video'; src: string };
@@ -77,10 +73,6 @@ const mobileMixedMedia: MediaItemType[] = [
     { type: "video", src: galleryVideos[4] },
     { type: "video", src: galleryVideos[5] },
     { type: "image", src: galleryImages[5] },
-    { type: "video", src: galleryVideos[6] },
-    { type: "video", src: galleryVideos[7] },
-    { type: "video", src: galleryVideos[8] },
-    { type: "video", src: galleryVideos[9] },
 ];
 
 // Images for the 16:9 slideshow
