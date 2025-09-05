@@ -23,7 +23,7 @@ export const Hero = () => {
           alt="Pixel World Logo"
           width={600}
           height={60}
-          className="w-full max-w-lg h-auto"
+          className="w-full max-w-[600px] h-auto"
         />
         <p className="mt-2 text-lg md:text-xl text-white/90 font-semibold drop-shadow-md">
            Build our universe, one block at a time.
