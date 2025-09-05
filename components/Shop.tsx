@@ -71,7 +71,7 @@ export const Shop = () => {
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-2xl md:text-xl font-bold text-zinc-800 tracking-wider">
+                  <span className="text-md md:text-xl font-bold text-zinc-800 tracking-wider text-center">
                     COMING SOON
                   </span>
                 </div>
