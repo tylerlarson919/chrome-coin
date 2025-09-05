@@ -66,29 +66,40 @@ const WalletButton = () => {
         }
     };
 
-    // Renders the "LINK WALLET" button when disconnected
+    const connectedButtonClasses = "!font-normal tracking-normal h-10 text-xs sm:font-bold sm:tracking-wider sm:h-12 sm:text-xs";
+    const multiButtonLayoutClasses = "!flex !items-center !justify-center !space-x-2 !w-auto active:!scale-95 h-10 sm:h-12";
+    const desktopTextClasses = "sm:font-bold sm:tracking-wider sm:text-xs";
+    const navIconClasses = "h-5 w-5 sm:h-6 sm:w-6";
+
     if (!connected || !publicKey || !wallet) {
         return (
-            <WalletMultiButton 
-                className="!w-[172px] !h-12 !tracking-wider !font-montserrat !text-white !font-bold !bg-pixel-green !py-3 !px-6 !rounded-md hover:!bg-opacity-80 active:!scale-95 !transition-all !duration-150"
-            />
+            <div className="navbar-wallet-button">
+                <WalletMultiButton
+                    className={`${multiButtonLayoutClasses} ${desktopTextClasses}`}
+                >
+                    <HeroWalletIcon className={navIconClasses} />
+                    <span className="ml-2 whitespace-nowrap">Connect Wallet</span>
+                </WalletMultiButton>
+            </div>
         );
     }
 
     const shortAddress = `${publicKey.toBase58().slice(0, 4)}...${publicKey.toBase58().slice(-4)}`;
 
-    // Renders the connected wallet button, which now disconnects on click
     return (
-        <button
-            onClick={handleDisconnect}
-            className="w-[172px] h-12 flex items-center justify-center space-x-2 tracking-wider font-montserrat text-white font-bold bg-pixel-green py-3 px-4 rounded-md hover:bg-opacity-80 active:scale-95 transition-all duration-150"
-        >
-            <HeroWalletIcon className="h-6 w-6"/>
-            <span className="truncate">{shortAddress}</span>
-        </button>
+        // ADDED: Wrapper div to match the other button state.
+        <div className="navbar-wallet-button">
+            <button
+                onClick={handleDisconnect}
+                // ADDED: A unique class `btn-connected` for CSS targeting.
+                className={`btn-connected flex items-center justify-center space-x-2 w-auto transition-all duration-150 active:scale-95 bg-pixel-green text-white rounded-md hover:bg-opacity-80 ${connectedButtonClasses}`}
+            >
+                <HeroWalletIcon className={navIconClasses}/>
+                <span className="truncate">{shortAddress}</span>
+            </button>
+        </div>
     );
 };
-
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -118,11 +129,11 @@ export const Navbar = () => {
                 width={180}
                 height={18}
                 priority
-                className="dark:invert" // Add this if the logo is white and needs to be visible on a light background
+                className="h-auto w-36 sm:w-[180px] dark:invert" 
             />
         </Link>
 
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden min-[1111px]:flex items-center space-x-8">
             {navLinks.map((link) => (
                 <Link
                   href={link.href}
@@ -140,11 +151,9 @@ export const Navbar = () => {
             </Link>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <div className="hidden sm:block">
-                <WalletButton />
-            </div>
-            <div className="lg:hidden">
+          <div className="flex items-center space-x-2">
+            <WalletButton />
+            <div className="min-[1111px]:hidden">
               <HamburgerIcon
                 isOpen={isMenuOpen}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -156,12 +165,9 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-24 left-0 w-full h-[calc(100vh-6rem)] bg-pixel-bg overflow-y-auto z-[90] transition-all duration-300 ease-in-out ${isMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-4 pointer-events-none"}`}
+        className={`min-[1111px]:hidden fixed top-24 left-0 w-full h-[calc(100vh-6rem)] bg-pixel-bg overflow-y-auto z-[90] transition-all duration-300 ease-in-out ${isMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-4 pointer-events-none"}`}
       >
         <div className="flex flex-col items-center py-8">
-          <div className="mb-4">
-                <WalletButton />
-            </div>
           {[...navLinks, { name: 'HOW TO BUY', href: '/how-to-buy' }].map((link) => (
              <Link
                 href={link.href}

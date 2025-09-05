@@ -79,7 +79,7 @@ export default function CommunityPage() {
                             href={link.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-lg border-4 border-black bg-white/95 p-6 backdrop-blur-sm shadow-[6px_6px_0_#16a34a] flex flex-col text-center transition-transform hover:scale-105 hover:-translate-y-2 group"
+                            className="rounded-lg border-4 border-black bg-white/95 p-6 backdrop-blur-sm shadow-[6px_6px_0_#63c79a] flex flex-col text-center transition-transform hover:scale-105 hover:-translate-y-2 group"
                         >
                             <link.icon className={`text-6xl mx-auto mb-4 ${link.textColor}`} aria-hidden="true" />
                             <h4 className="font-montserrat text-2xl font-bold text-black">{link.name}</h4>

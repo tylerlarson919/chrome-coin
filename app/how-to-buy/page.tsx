@@ -41,7 +41,7 @@ export default function HowToBuyPage() {
                     
                     {/* Left Side: Swap Widget */}
                     <div className="flex justify-center flex-col gap-4">
-                        <div className="relative z-10 w-full p-4 bg-white border-4 border-black rounded-xl shadow-[6px_6px_0px_#16a34a] flex items-center justify-between gap-4">
+                        <div className="relative z-10 w-full p-4 bg-white border-4 border-black rounded-xl shadow-[6px_6px_0px_#63c79a] flex items-center justify-between gap-4">
                             <code className="text-sm sm:text-base text-zinc-600 truncate">
                                 {contractAddress}
                             </code>

@@ -16,8 +16,6 @@ export const About = () => {
             for long. More pixels joined, drawn together to create a vibrant, 8-bit universe: 
             Pixel World. This is a tribute to the golden age of gaming, powered by nostalgia, memes, 
             and the simple joy of creating something together. Here, we're offering a digital playground.
-
-
           </p>
         </div>
 

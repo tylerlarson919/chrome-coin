@@ -6,6 +6,7 @@ import { VersionedTransaction, PublicKey } from '@solana/web3.js';
 import { XCircleIcon } from '@heroicons/react/24/outline';
 import { useAppWallet } from '@/app/hooks/useAppWallet'; 
 import { useConnection } from '@solana/wallet-adapter-react';
+import { WalletIcon as HeroWalletIcon } from "@heroicons/react/24/outline";
 
 const WalletIcon = ({ src, alt }: { src: string, alt: string }) => (
     <img src={src} alt={alt} className="w-8 h-8 rounded-[8px]" />
@@ -150,31 +151,36 @@ export const SwapWidget = () => {
     };
 
     const ActionButton = () => {
+        // Default styles for buttons within this widget
+        const defaultButtonClasses = "h-12 py-3 px-4 font-bold text-base tracking-wider";
+
         if (!publicKey) {
             return (
-                <WalletMultiButton
-                    className="w-full !py-3 !text-xl !font-bold !tracking-wider !text-white !bg-pixel-green !border-2 !border-black !rounded-md !shadow-[4px_4px_0px_#000000] hover:!shadow-none hover:!translate-x-1 hover:!translate-y-1 !transition-all"
+                <WalletMultiButton 
+                    className={`!w-full !flex !items-center !justify-center !space-x-2 active:!scale-95 ${defaultButtonClasses}`}
                     style={{ justifyContent: 'center' }}
-                />
+                >
+                    <HeroWalletIcon className="h-6 w-6" />
+                    <span className="ml-2 whitespace-nowrap">Connect Wallet</span>
+                </WalletMultiButton>
             );
         }
 
         if (isLoading) {
             return (
-                <button disabled className="w-full py-3 text-xl font-bold tracking-wider text-white bg-zinc-400 border-2 border-black rounded-md">
+                <button disabled className={`w-full text-white bg-zinc-400 rounded-md ${defaultButtonClasses}`}>
                     Processing...
                 </button>
             );
         }
         
-        // Preserved activeTab logic
         const actionText = activeTab === 'CARD' ? 'Buy with Card' : `Swap SOL for $PIXEL`;
         const actionHandler = activeTab === 'CARD' ? handleCardPayment : handleSwap;
         
         return (
             <button
                 onClick={actionHandler}
-                className="w-full py-3 font-bold text-xl tracking-wider text-white bg-pixel-green border-2 border-black rounded-md shadow-[4px_4px_0px_#000000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                className={`w-full text-white bg-pixel-green rounded-md hover:bg-opacity-80 transition-all ${defaultButtonClasses}`}
             >
                 {actionText}
             </button>
@@ -183,7 +189,7 @@ export const SwapWidget = () => {
 
     return (
         <div className="relative z-10 w-full max-w-xl mx-auto font-montserrat">
-            <div className="relative z-10 w-full p-6 bg-white border-4 border-black rounded-xl shadow-[8px_8px_0px_#16a34a]">
+            <div className="relative z-10 w-full p-6 bg-white border-4 border-black rounded-xl shadow-[8px_8px_0px_#63c79a]">
                 <h2 className="text-2xl lg:text-3xl font-bold text-center text-black">
                     Swap SOL for $PIXEL
                 </h2>

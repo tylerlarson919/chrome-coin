@@ -5,7 +5,7 @@ import { FaPalette, FaUsers, FaLock, FaChartLine, FaGift, FaRocket } from 'react
 
 const tokenData = [
   { name: "Liquidity Pool", value: 45, color: "#22c55e" },      // green-500
-  { name: "Marketing & CEX", value: 25, color: "#16a34a" },     // green-600
+  { name: "Marketing & CEX", value: 25, color: "#63c79a" },     // green-600
   { name: "NFT Airdrops", value: 15, color: "#15803d" },        // green-700
   { name: "Community Treasury", value: 10, color: "#166534" }, // green-800
   { name: "Team (Locked)", value: 5, color: "#14532d" },        // green-900
@@ -69,7 +69,7 @@ export default function PixelnomicsPage() {
           </div>
 
           <div className="w-full max-w-md">
-            <div className="rounded-lg border-4 border-black bg-white/95 p-6 text-black backdrop-blur-sm shadow-[8px_8px_0_#16a34a]">
+            <div className="rounded-lg border-4 border-black bg-white/95 p-6 text-black backdrop-blur-sm shadow-[8px_8px_0_#63c79a]">
               <h2 className="text-center font-montserrat text-4xl font-bold text-black">
                 Token Distribution
               </h2>
@@ -121,7 +121,7 @@ export default function PixelnomicsPage() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                 {roadmapPhases.map((phase) => (
-                    <div key={phase.title} className="rounded-lg border-4 border-black bg-white/95 p-5 backdrop-blur-sm shadow-[6px_6px_0_#16a34a] flex flex-col text-center transition-transform hover:scale-105 hover:-translate-y-2">
+                    <div key={phase.title} className="rounded-lg border-4 border-black bg-white/95 p-5 backdrop-blur-sm shadow-[6px_6px_0_#63c79a] flex flex-col text-center transition-transform hover:scale-105 hover:-translate-y-2">
                        <phase.icon className="text-5xl mx-auto mb-4 text-pixel-green"/>
                        <h4 className="font-montserrat text-xl font-bold text-black">{phase.title}</h4>
                        <p className="font-montserrat text-sm mt-2 flex-grow text-zinc-700">{phase.description}</p>

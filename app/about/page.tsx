@@ -213,7 +213,7 @@ export default function AboutPage() {
                         {corePrinciples.map((principle) => (
                             <div 
                                 key={principle.title} 
-                                className="rounded-lg border-4 border-black bg-white/95 p-6 backdrop-blur-sm shadow-[6px_6px_0_#16a34a] flex flex-col text-center transition-transform hover:scale-105 hover:-translate-y-2"
+                                className="rounded-lg border-4 border-black bg-white/95 p-6 backdrop-blur-sm shadow-[6px_6px_0_#63c79a] flex flex-col text-center transition-transform hover:scale-105 hover:-translate-y-2"
                             >
                                 <principle.icon className="text-5xl mx-auto mb-4 text-pixel-green" aria-hidden="true" />
                                 <h4 className="font-montserrat text-xl font-bold text-black">{principle.title}</h4>
