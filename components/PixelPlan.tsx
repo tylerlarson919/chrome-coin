@@ -8,8 +8,9 @@ import {
   FaGift,
   FaRocket,
 } from "react-icons/fa";
+import Image from "next/image"; // Import the Image component
 
-// Data for the donut chart
+// Data for the donut chart (no changes)
 const tokenData = [
   { name: "Liquidity Pool", value: 45, color: "#22c55e" },
   { name: "Marketing & CEX", value: 25, color: "#63c79a" },
@@ -18,7 +19,7 @@ const tokenData = [
   { name: "Team (Locked)", value: 5, color: "#14532d" },
 ];
 
-// Data for the roadmap cards
+// Data for the roadmap cards (no changes)
 const roadmapPhases = [
   {
     icon: FaRocket,
@@ -58,10 +59,13 @@ export const PixelPlan = () => {
   const handleTap = (index: number) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? -1 : index));
   };
+  
+  // Self-contained SVG for the pixel vine decoration
+  const vineSvg = `data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2363c79a'%3E%3Crect x='28' y='0' width='4' height='40' shape-rendering='crispEdges'/%3E%3Crect x='24' y='12' width='4' height='4' shape-rendering='crispEdges'/%3E%3Crect x='32' y='20' width='8' height='4' shape-rendering='crispEdges'/%3E%3Crect x='20' y='28' width='8' height='4' shape-rendering='crispEdges'/%3E%3Crect x='32' y='36' width='4' height='4' shape-rendering='crispEdges'/%3E%3C/g%3E%3C/svg%3E`;
 
   return (
     <section id="pixelplan" className="pt-10 md:pt-20">
-      {/* Header styled like the About component */}
+      {/* Header */}
       <div className="text-left mb-8 md:mb-12">
         <p className="text-pixel-green font-bold tracking-widest">
           PIXELNOMICS
@@ -83,8 +87,9 @@ export const PixelPlan = () => {
         </div>
 
         <div className="w-full max-w-md">
-          <div className="rounded-lg border-2 border-zinc-200 bg-white p-6 shadow-sm">
-            <h3 className="text-center text-3xl font-bold text-black">
+          {/* UPDATED: Token Distribution card with dark theme */}
+          <div className="rounded-lg border-2 border-zinc-700 bg-zinc-900/80 backdrop-blur-sm p-6">
+            <h3 className="text-center text-3xl font-bold text-zinc-200">
               Token Distribution
             </h3>
             <div className="mt-4 space-y-2">
@@ -95,8 +100,8 @@ export const PixelPlan = () => {
                   tabIndex={0}
                   className={`flex items-center justify-between rounded-md p-2 -m-2 text-base cursor-pointer transition-all duration-300 ${
                     activeIndex === index
-                      ? "scale-[102%] bg-green-100/80"
-                      : "hover:bg-zinc-100/80"
+                      ? "scale-[102%] bg-green-900/50"
+                      : "hover:bg-zinc-800/60"
                   }`}
                   onMouseEnter={() => setActiveIndex(index)}
                   onMouseLeave={() => setActiveIndex(-1)}
@@ -109,39 +114,47 @@ export const PixelPlan = () => {
                 >
                   <div className="flex items-center gap-3">
                     <div
-                      className="h-4 w-4 flex-shrink-0 rounded-sm border border-zinc-300"
+                      className="h-4 w-4 flex-shrink-0 rounded-sm border border-zinc-600"
                       style={{ backgroundColor: item.color }}
                     />
-                    <span className="text-zinc-700">{item.name}</span>
+                    <span className="text-zinc-300">{item.name}</span>
                   </div>
-                  <span className="font-bold text-black">
+                  <span className="font-bold text-white">
                     {item.value}%
                   </span>
                 </div>
               ))}
             </div>
-            <div className="mt-6 border-t-2 border-dashed border-zinc-300 pt-4 text-center">
-              <p className="text-base text-zinc-600">Total Supply:</p>
-              <p className="text-2xl font-bold tracking-wider text-black">
+            <div className="mt-6 border-t-2 border-dashed border-zinc-700 pt-4 text-center">
+              <p className="text-base text-zinc-400">Total Supply:</p>
+              <p className="text-2xl font-bold tracking-wider text-zinc-200">
                 1,000,000,000 $PIXEL
               </p>
             </div>
           </div>
         </div>
-        
       </div>
-      {/* Roadmap Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      
+      {/* UPDATED: Roadmap Cards Section with Pixel Art Style */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-y-16 gap-x-6 pt-12">
         {roadmapPhases.map((phase) => (
-          <div
-            key={phase.title}
-            className="rounded-lg border-2 border-zinc-200 bg-zinc-50/50 p-5 flex flex-col text-center transition-transform hover:scale-105 hover:-translate-y-1 shadow-sm hover:shadow-lg"
-          >
-            <phase.icon className="text-4xl mx-auto mb-4 text-pixel-green" />
-            <h4 className="text-lg font-bold text-zinc-300">{phase.title}</h4>
-            <p className="text-sm mt-2 flex-grow text-zinc-400">
-              {phase.description}
-            </p>
+          <div key={phase.title} className="relative">
+            {/* Pixel Vine Decoration */}
+            <Image
+              src={vineSvg}
+              alt=""
+              width={60}
+              height={60}
+              className="absolute -top-12 left-1/2 -translate-x-1/2 h-16 w-auto pointer-events-none"
+            />
+            {/* Pixelated Card */}
+            <div className="h-full bg-zinc-900/80 backdrop-blur-sm border-4 border-zinc-700 p-5 flex flex-col text-center transition-colors duration-300 hover:border-pixel-green">
+              <phase.icon className="text-4xl mx-auto mb-4 text-pixel-green" />
+              <h4 className="text-lg font-bold text-white">{phase.title}</h4>
+              <p className="text-sm mt-2 flex-grow text-zinc-300">
+                {phase.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>
