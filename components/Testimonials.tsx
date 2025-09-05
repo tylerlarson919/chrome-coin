@@ -13,19 +13,19 @@ const testimonials = [
     name: "Zephyr",
     avatar: "https://res.cloudinary.com/dqedckeaa/image/upload/v1757009986/Zephyr_mnfquu.jpg",
     stars: 5,
-    text: "I recently joined the Pixel World community and I couldn't be happier with my decision. The quality of the memes is top-notch and it glides smoothly on every surface.",
+    text: "The team is active, the memes are top-tier, and the concept is simple and fun. It's refreshing to be part of a project that knows exactly what it is—a tribute to the pixel art that started it all.",
   },
   {
     name: "Alex",
     avatar: "https://res.cloudinary.com/dqedckeaa/image/upload/v1757009987/Alex_erccfc.jpg",
     stars: 5,
-    text: "I bought some $PIXEL online and I am extremely satisfied with my purchase. The vibes arrived promptly and were exactly as described on the website. Pure nostalgia.",
+    text: "Finally, a project that doesn't take itself too seriously. I swapped some SOL for $PIXEL and immediately felt at home in the community. No promises of lambos, just good times.",
   },
   {
     name: "Christopher",
     avatar: "https://res.cloudinary.com/dqedckeaa/image/upload/v1757009987/Christopher_jlwbyh.jpg",
     stars: 5,
-    text: "The community is amazing. It's great to be part of a project that values fun and nostalgia above all else. The vibes are immaculate.",
+    text: "I'm here for the community. It's a breath of fresh air to be in a group that's all about creativity, memes, and building a cool retro world. It’s a genuine digital hangout.",
   },
 ];
 
@@ -37,7 +37,7 @@ export const Testimonials = () => {
 
     return (
         <section className="pb-12 pt-4 md:pt-10 md:py-20 bg-white">
-            <h2 className="text-4xl font-extrabold text-zinc-800 text-center mb-6 px-4">
+            <h2 className="text-4xl font-extrabold text-zinc-800 text-center mb-4 md:mb-6 px-4">
                 What the Pixels are Saying
             </h2>
             <div className="max-w-8xl mx-auto relative px-4 md:px-16">

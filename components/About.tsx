@@ -3,19 +3,21 @@ export const About = () => {
   return (
     <section id="about" className="pt-4 md:pt-10">
       <div className="">
-        <div className="text-left mb-12">
+        <div className="text-left mb-4 md:mb-6">
           <p className="text-pixel-green font-bold tracking-widest">
             OUR STORY
           </p>
           <h2 className="text-4xl font-extrabold text-zinc-800">
             WHAT IS PIXEL WORLD?
           </h2>
-          <p className="mt-4 text-lg text-zinc-600">
-            In a forgotten corner of the blockchain, a single pixel blinked into
-            existence. Soon, an entire 8-bit universe was born — Pixel World.
-            It's a throwback to simpler times. A digital realm powered by
-            nostalgia, memes, and zero-utility fun. We're not here to change
-            the world, just to pixelate it.
+          <p className="mt-2 md:mt-4 md:text-lg text-zinc-600">
+            It began with a single spark in the vastness of the blockchain. 
+            A lone pixel that wasn't trying to change the world—just exist. But it wasn't alone 
+            for long. More pixels joined, drawn together to create a vibrant, 8-bit universe: 
+            Pixel World. This is a tribute to the golden age of gaming, powered by nostalgia, memes, 
+            and the simple joy of creating something together. Here, we're offering a digital playground.
+
+
           </p>
         </div>
 

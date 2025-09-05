@@ -25,7 +25,7 @@ export const Hero = () => {
           height={60}
         />
         <p className="mt-2 text-lg md:text-xl text-white/90 font-semibold drop-shadow-md">
-          Pixel by Pixel. Block by Block.
+           Build our universe, one block at a time.
         </p>
       </div>
     </section>

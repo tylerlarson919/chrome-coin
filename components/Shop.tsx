@@ -45,8 +45,11 @@ export const Shop = () => {
   return (
     <section id="shop" className="py-4 md:py-10 bg-pixel-bg">
       <div className="max-w-8xl mx-auto">
-        <div className="flex items-center mb-4 md:mb-10">
+        <div className="flex flex-col justify-center mb-4 md:mb-6">
           <h2 className="text-3xl font-bold text-zinc-800">THE SHOP</h2>
+          <p className="mt-2 md:mt-4 md:text-lg text-zinc-600">
+            A new dimension of 8-bit art is rendering. The official Pixel World NFT collection is coming soon, offering unique, verifiable ownership of a piece of our universe.
+          </p>
         </div>
 
         {/* Updated grid classes for the new layout */}

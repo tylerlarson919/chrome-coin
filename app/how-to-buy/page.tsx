@@ -6,18 +6,18 @@ import { FaCopy, FaCheck } from "react-icons/fa";
 
 const steps = [
     {
-        name: "1. Get a Solana Wallet",
-        description: "Download a Solana-compatible wallet like Phantom or Solflare from the app store or as a browser extension. This is your gateway to the Solana ecosystem.",
+        name: "1. Create a Solana Wallet",
+        description: "Download a Solana-compatible wallet like Phantom or Solflare. You can get it from the app store for your phone or as a browser extension for your desktop. This wallet is your personal key to the Solana ecosystem.",
         href: "https://phantom.app/download"
     },
     {
-        name: "2. Fund Your Wallet with SOL",
-        description: "Buy SOL from a major exchange (like Coinbase or Binance) and send it to your new Solana wallet address. You'll need SOL for the swap and for transaction fees (gas).",
+        name: "2. Add SOL to Your Wallet",
+        description: "You'll need Solana's native currency, SOL, to trade for $PIXEL and to pay for small network fees (gas). Purchase SOL on a major exchange like Coinbase or Binance and transfer it to your new wallet's public address.",
         href: "https://www.coinbase.com/how-to-buy/solana"
     },
     {
-        name: "3. Swap for $PIXEL",
-        description: "Return to this page, connect your wallet using the widget, enter the amount of SOL you wish to swap, and confirm the transaction. Welcome to Pixel World!",
+        name: "3. Swap SOL for $PIXEL",
+        description: "Return to this page and connect your wallet on the swap widget. Enter the amount of SOL you wish to spend, approve the transaction, and the $PIXEL tokens will appear in your wallet. Welcome to the World!",
         href: "#"
     }
 ];
@@ -61,7 +61,7 @@ export default function HowToBuyPage() {
                         <p className="font-bold text-pixel-green tracking-widest">GET STARTED</p>
                         <h1 className="text-4xl sm:text-5xl font-extrabold mt-2">How to Buy $PIXEL</h1>
                         <p className="mt-4 text-lg text-zinc-600">
-                            Joining the Pixel World community is easy. Follow these three simple steps to acquire your first $PIXEL tokens and become part of our 8-bit universe.
+                            Becoming a citizen of Pixel World is simple. Follow these three steps to mint your first $PIXEL tokens and join our 8-bit universe.
                         </p>
                         
                         <div className="mt-12 space-y-8">

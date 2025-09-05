@@ -5,7 +5,7 @@ export const Footer = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center">
                 <h2 className="text-5xl font-extrabold mb-6">JOIN THE WORLD</h2>
                 <p className="max-w-lg mx-auto mb-8 text-white/90">
-                    Follow us on our socials to stay up to date with the latest news and become part of our pixelated universe.
+                    Follow us on our socials to watch our universe expand in real-time. Become a citizen of Pixel World today.
                 </p>
                 <div className="flex justify-center items-center space-x-6">
                     <a href="#" className="font-bold text-lg hover:underline">TELEGRAM ↗</a>

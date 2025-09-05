@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: {
-    default: "Pixel World | Pixel by Pixel. Block by Block.",
+    default: "Pixel World |  Build our universe, one block at a time.",
     template: `Pixel World - %s`,
   },
   description: "A digital realm powered by nostalgia, memes, and zero-utility fun. Welcome to the world of $PIXEL.",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: '/',
     siteName: 'Pixel World',
-    title: 'Pixel World | Pixel by Pixel. Block by Block.',
+    title: 'Pixel World |  Build our universe, one block at a time.',
     description: 'A digital realm powered by nostalgia, memes, and zero-utility fun.',
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pixel World | Pixel by Pixel. Block by Block.',
+    title: 'Pixel World |  Build our universe, one block at a time.',
     description: 'A digital realm powered by nostalgia, memes, and zero-utility fun.',
     images: ['/og/default.png'], // Make sure to create this image
   },

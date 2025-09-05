@@ -7,18 +7,18 @@ import { Slideshow } from "@/components/Slideshow";
 const corePrinciples = [
     {
         icon: FaCube,
-        title: "Simplicity First",
-        description: "In a world of complex DeFi protocols, we embrace the simple joy of pixels. No convoluted roadmaps, just pure, unadulterated nostalgia."
+        title: "Simplicity is Our Code",
+        description: "In a world of over-engineered protocols and confusing whitepapers, we embrace the elegance of the 8-bit aesthetic. Our mission is clear, our community is open, and our only goal is to create."
     },
     {
         icon: FaPaintBrush,
         title: "Community Canvas",
-        description: "Pixel World is a collaborative project. Our community members are the artists, meme-makers, and storytellers who bring our 8-bit universe to life."
+        description: "Pixel World is a collaborative project. Every citizen—every artist, meme-maker, and storyteller—holds the brush. You are the architects of this universe."
     },
     {
         icon: FaGlobe,
-        title: "Digital Playground",
-        description: "We're building a space for fun and creativity. Whether it's through our upcoming NFTs or community events, Pixel World is your escape to a simpler digital time."
+        title: "A Digital Arcade",
+        description: "We are building a space for creativity and fun. From our upcoming NFT mints to community-led events and contests, Pixel World is your escape to a simpler digital era."
     }
 ];
 
@@ -130,10 +130,10 @@ export default function AboutPage() {
                         OUR STORY
                     </p>
                     <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-6xl">
-                        From a Single Pixel
+                        The World Booted Up
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-zinc-500">
-                        In a forgotten corner of the blockchain, a single pixel blinked into existence. It wasn't trying to revolutionize finance or disrupt an industry. It was just... there. But it was soon joined by another, and another, until an entire 8-bit universe was born: <strong>Pixel World</strong>.
+                        In a forgotten corner of the blockchain, a single pixel blinked into existence. It carried no complex code, no promise of revolutionizing finance. Its purpose was simple: to be the first block. Soon, others followed, drawn by a shared sense of nostalgia. Together, they formed an entire 8-bit universe: <strong>Pixel World</strong>.
                     </p>
                 </div>
             </div>
@@ -162,9 +162,9 @@ export default function AboutPage() {
 
             <div className="max-w-7xl mx-auto mt-24 px-6 lg:px-8">
                 <div className="max-w-3xl mx-auto lg:text-center">
-                    <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">The Philosophy of the Pixel</h2>
+                    <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">The Pixel Philosophy</h2>
                     <p className="mt-6 text-lg leading-8 text-zinc-500">
-                        We're a throwback to simpler times—a digital realm powered by nostalgia, memes, and zero-utility fun. We're not here to change the world, just to pixelate it, one block at a time.
+                        We are a monument to simpler times. A digital realm powered by retro gaming culture, memes, and zero-pressure fun. We&apos;re not here to build the future of finance; we&apos;re here to pixelate the present, one block at a time.
                     </p>
                 </div>
                 <div className="mt-16 max-w-6xl mx-auto">

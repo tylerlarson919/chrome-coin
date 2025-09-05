@@ -14,28 +14,28 @@ const tokenData = [
 const roadmapPhases = [
     {
         icon: FaRocket,
-        title: "Phase 1: Launch",
-        description: "Fair launch on Raydium, initial marketing push, and community building on X and Telegram.",
+        title: "Phase 1: Bootup",
+        description: "Fair launch on Raydium to ensure equal access for all. Ignite our community on X and Telegram, establishing the core foundation of Pixel World.",
     },
     {
         icon: FaUsers,
-        title: "Phase 2: Growth",
-        description: "Expand community reach, partnerships with influencers, and initial CEX listings.",
+        title: "Phase 2: The Render",
+        description: "Amplify our presence with strategic marketing and influencer partnerships. Secure listings on key centralized exchanges (CEX) to make $PIXEL accessible to a wider audience.",
     },
     {
         icon: FaPalette,
-        title: "Phase 3: NFT Mint",
-        description: "Launch the first official Pixel World NFT collection, creating unique digital assets for holders.",
+        title: "Phase 3: The Minting Machine",
+        description: "Launch the first official Pixel World NFT collection. These aren't just JPEGs; they're digital artifacts that grant holders a unique identity and stake in our universe.",
     },
     {
         icon: FaGift,
-        title: "Phase 4: Rewards",
-        description: "Implement airdrops and rewards for token and NFT holders, strengthening the ecosystem.",
+        title: "Phase 4: The Treasury Unlocks",
+        description: "Activate our rewards system. Implement airdrops for loyal token and NFT holders and empower the community treasury, giving citizens a voice in the project's future.",
     },
     {
         icon: FaChartLine,
-        title: "Phase 5: Expansion",
-        description: "Explore further utility, potential mini-games, and expand the Pixel World brand.",
+        title: "Phase 5: World Expansion",
+        description: "Explore the creation of pixel-based mini-games and interactive experiences. Develop the Pixel World brand into a recognized name in retro digital culture.",
     },
 ];
 
