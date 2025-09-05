@@ -36,9 +36,6 @@ export const Hero = () => {
               height={60}
               className="w-full max-w-[600px] h-auto object-contain"
             />
-            <p className="sm:mt-2 text-lg md:text-xl text-white/90 font-semibold drop-shadow-md">
-              Build our universe, one block at a time.
-            </p>
         </div>
 
         {/* Bottom Content (Buttons) */}
