@@ -28,7 +28,7 @@ export const Shop = () => {
                 loop
                 muted
                 playsInline
-                className="w-48 h-48 rounded-md shadow-xl border-2 border-zinc-700"
+                className="size-64 rounded-md"
               />
             </div>
           </div>
@@ -36,7 +36,7 @@ export const Shop = () => {
           {/* Right Side: Main Video */}
           <div className="flex-1 flex justify-center">
             <video
-              src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757100720/4080777719242116802_nywaec.webm"
+              src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757102714/4080777719242116802_1_ckcfj3.webm"
               autoPlay
               loop
               muted
