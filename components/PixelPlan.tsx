@@ -61,7 +61,7 @@ export const PixelPlan = () => {
   };
   
   // Self-contained SVG for the pixel vine decoration
-  const vineSvg = `data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2363c79a'%3E%3Crect x='28' y='0' width='4' height='40' shape-rendering='crispEdges'/%3E%3Crect x='24' y='12' width='4' height='4' shape-rendering='crispEdges'/%3E%3Crect x='32' y='20' width='8' height='4' shape-rendering='crispEdges'/%3E%3Crect x='20' y='28' width='8' height='4' shape-rendering='crispEdges'/%3E%3Crect x='32' y='36' width='4' height='4' shape-rendering='crispEdges'/%3E%3C/g%3E%3C/svg%3E`;
+  const vineUrl = "https://res.cloudinary.com/dqedckeaa/image/upload/v1757106626/vines_qw6nl9.png";
 
   return (
     <section id="pixelplan" className="pt-10 md:pt-20">
@@ -76,7 +76,7 @@ export const PixelPlan = () => {
       </div>
 
       {/* Donut Chart and Tokenomics Section */}
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 md:px-4 pb-6 md:pb-8">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 md:px-4 pb-4 md:pb-8">
         <div className="w-full max-w-md lg:max-w-lg">
           <DonutChart
             data={tokenData}
@@ -141,11 +141,11 @@ export const PixelPlan = () => {
           <div key={phase.title} className="relative">
             {/* Pixel Vine Decoration */}
             <Image
-              src={vineSvg}
+              src={vineUrl}
               alt=""
               width={60}
               height={60}
-              className="absolute -top-12 left-1/2 -translate-x-1/2 h-16 w-auto pointer-events-none"
+              className="absolute -top-16 left-1/2 -translate-x-1/2 h-16 w-auto pointer-events-none"
             />
             {/* Pixelated Card */}
             <div className="h-full bg-zinc-900/80 backdrop-blur-sm border-4 border-zinc-700 p-5 flex flex-col text-center transition-colors duration-300 hover:border-pixel-green">

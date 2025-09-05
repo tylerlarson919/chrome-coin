@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const About = () => {
   const gifUrl =
-    "https://res.cloudinary.com/dqedckeaa/image/upload/v1757103951/5472274962897794227-min_omhhxs.gif";
+    "https://res.cloudinary.com/dqedckeaa/image/upload/v1757106215/Christopher_bscefz.png";
 
   return (
     <section id="about" className="pt-4 md:pt-10 overflow-hidden">
