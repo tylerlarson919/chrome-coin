@@ -237,7 +237,7 @@ export const SwapWidget = () => {
                         label="Receive $PIXEL"
                         value={receiveAmount}
                         variant="bordered"
-                        endContent={<div className="w-8 h-8 rounded-lg bg-pixel-green text-white font-bold flex items-center justify-center text-lg">P</div>}
+                        endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757060371/pfp-dark-pix_1_rvfa4n.png" alt="$SOL" className="w-8 h-8 rounded-lg" />}
                         classNames={{
                             label: "text-sm font-bold text-zinc-800",
                             input: "text-xl font-bold",
