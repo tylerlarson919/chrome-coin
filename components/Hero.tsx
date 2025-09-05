@@ -28,7 +28,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/60 md:to-black/0" />
 
       {/* Content Container */}
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-between gap-4 px-8 pb-14 pt-28 text-center md:h-auto md:w-auto md:justify-center md:p-0 md:pb-24">
+      <div className="relative z-10 flex h-full w-full flex-col items-center justify-between gap-6 px-8 pb-14 pt-28 text-center md:h-auto md:w-auto md:justify-center md:p-0 md:pb-24">
         
         {/* Top Content (Logo & Subtitle) */}
         <div className="flex flex-col items-center">

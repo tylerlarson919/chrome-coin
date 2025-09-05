@@ -1,5 +1,4 @@
 "use client";
-import { Ticker } from "@/components/Ticker";
 
 export const Shop = () => {
   return (
@@ -7,7 +6,7 @@ export const Shop = () => {
       id="shop"
       className="relative pb-12 md:pb-20 overflow-hidden"
     >
-      <Ticker/>
+      
       <div className="max-w-8xl px-4 md:px-12 pt-12 md:pt-20">
         {/* Main layout container */}
         <div className="flex flex-col-reverse md:flex-row items-center md:items-stretch justify-center gap-10 md:gap-16">
