@@ -30,7 +30,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/60 md:to-black/0" />
 
       {/* Content Container */}
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-between gap-6 px-8 pb-14 pt-28 text-center md:h-auto md:w-auto md:justify-center md:p-0 md:pb-24">
+      <div className="relative z-10 flex h-full w-full flex-col items-center justify-between gap-6 px-8 pb-14 pt-32 text-center md:h-auto md:w-auto md:justify-center md:p-0 md:pb-24">
         
         {/* Top Content (Logo & Subtitle) */}
         <div className="flex flex-col items-center">
@@ -45,8 +45,7 @@ export const Hero = () => {
 
         {/* Bottom Content (Buttons) */}
         <div className="flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row">
-          
-          {/* Primary CTA Button */}
+          {/* Primary CTA Button (No changes) */}
           <a
             href={shopSectionId}
             className={`w-full sm:w-auto ${primaryButtonClasses}`}
@@ -54,29 +53,37 @@ export const Hero = () => {
             Buy $PIXEL
           </a>
 
-          {/* Secondary CTA Button */}
-          <a
-            href={photonUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`w-full sm:w-auto flex items-center justify-center ${secondaryButtonClasses}`}
-            aria-label="View on DEXTools" // Added for accessibility
-          >
-            <Image
-              src="/dextools.svg" // Path to your SVG in the /public folder
-              alt="DEXTools Logo"
-              width={28} // Adjust size as needed
-              height={28} // Adjust size as needed
-            />
-          </a>
-          <a
-            href={xlink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`w-full sm:w-auto ${secondaryButtonClasses}`}
-          >
-            <FaXTwitter className="size-6"/>
-          </a>
+          {/* NEW: Wrapper for the two icon buttons */}
+          <div className="flex w-full gap-4 sm:w-auto">
+            {/* DEXTools Button */}
+            <a
+              href={photonUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              // CHANGE: Use flex-1 for mobile width, keep sm:w-auto for desktop
+              className={`flex-1 sm:w-auto flex items-center justify-center ${secondaryButtonClasses}`}
+              aria-label="View on DEXTools"
+            >
+              <Image
+                src="/dextools.svg"
+                alt="DEXTools Logo"
+                width={28}
+                height={28}
+              />
+            </a>
+
+            {/* Twitter Button */}
+            <a
+              href={xlink}
+              target="_blank"
+              rel="noopener noreferrer"
+              // CHANGE: Use flex-1 for mobile width, keep sm:w-auto for desktop
+              className={`flex-1 sm:w-auto flex items-center justify-center ${secondaryButtonClasses}`}
+              aria-label="View on X/Twitter"
+            >
+              <FaXTwitter className="size-6" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
