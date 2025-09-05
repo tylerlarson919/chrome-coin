@@ -51,7 +51,7 @@ export const Shop = () => {
           {/* Right Side: Main Video */}
           <div className="flex-1 flex justify-center md:justify-end">
             {/* CHANGE #2: Removed md:h-full and re-added width constraints to control the square's size */}
-            <div className="relative w-full max-w-sm lg:max-w-xl aspect-square border-4  overflow-hidden border-4 border-transparent rounded-xl bg-[repeating-linear-gradient(-45deg,theme(colors.gray.600),theme(colors.gray.600)_5px,theme(colors.gray.700)_5px,theme(colors.gray.700)_10px)] [mask-composite:exclude_padding] [mask:linear-gradient(white_0_0)]">
+            <div className="relative w-full max-w-sm lg:max-w-xl aspect-square border-4 border-transparent rounded-xl bg-gradient-to-b from-zinc-300 via-zinc-500 to-zinc-400 [mask-composite:exclude_padding] [mask:linear-gradient(white_0_0)] overflow-hidden">
               <video
                 src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757102714/4080777719242116802_1_ckcfj3.webm"
                 autoPlay
