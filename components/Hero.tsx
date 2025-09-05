@@ -57,7 +57,7 @@ export const Hero = () => {
             href={photonUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto tracking-wider font-montserrat text-white font-bold bg-transparent border-2 border-white/80 py-3 px-8 rounded-md hover:bg-white/10 active:scale-95 transition-all duration-150 text-center"
+            className="w-full sm:w-auto tracking-wider font-montserrat text-white font-bold bg-transparent border-2 border-white/80 py-3 px-8 rounded-md hover:bg-white/10 active:scale-95 transition-all duration-150 text-center backdrop-blur-sm"
           >
             View Chart
           </a>

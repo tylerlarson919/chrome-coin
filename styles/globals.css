@@ -280,8 +280,8 @@
 
 @media (max-width: 639px) {
   .navbar-wallet-button .wallet-adapter-button-trigger {
-    font-size: 12px !important;
-    font-weight: 600 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
     letter-spacing: normal !important;
   }
 

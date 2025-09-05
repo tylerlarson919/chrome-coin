@@ -66,9 +66,9 @@ const WalletButton = () => {
         }
     };
 
-    const connectedButtonClasses = "!font-normal tracking-normal h-10 text-xs sm:font-bold sm:tracking-wider sm:h-12 sm:text-xs";
+    const connectedButtonClasses = "!font-semibold tracking-normal h-12 font-bold sm:tracking-wider sm:h-12";
     const multiButtonLayoutClasses = "!flex !items-center !justify-center !space-x-2 !w-auto active:!scale-95 h-10 sm:h-12";
-    const desktopTextClasses = "font-bold sm:tracking-wider sm:text-xs";
+    const desktopTextClasses = "font-bold sm:tracking-wider";
     const navIconClasses = "h-5 w-5 sm:h-6 sm:w-6";
 
     if (!connected || !publicKey || !wallet) {
@@ -84,7 +84,7 @@ const WalletButton = () => {
         );
     }
 
-    const shortAddress = `${publicKey.toBase58().slice(0, 4)}...${publicKey.toBase58().slice(-4)}`;
+    const shortAddress = `${publicKey.toBase58().slice(0, 5)}...${publicKey.toBase58().slice(-4)}`;
 
     return (
         // ADDED: Wrapper div to match the other button state.
@@ -123,13 +123,23 @@ export const Navbar = () => {
       <nav className="sticky top-0 left-0 right-0 h-24 font-montserrat z-[100] bg-pixel-bg/80 shadow-sm backdrop-blur-md">
         <div className="max-w-8xl mx-auto px-4 sm:px-12 h-full flex items-center justify-between">
           <Link href="/" onClick={() => setIsMenuOpen(false)} className="h-full flex items-center">
+            {/* Desktop Logo (visible on sm screens and up) */}
             <Image
-                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757019941/px-white_2x_juk2c6.png"
+                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757019941/px-black_2x_icaqxf.png"
                 alt="Pixel World Logo"
                 width={180}
                 height={18}
                 priority
-                className="h-auto w-36 sm:w-[180px] dark:invert" 
+                className="hidden sm:block h-auto w-[180px]"
+            />
+            {/* Mobile Logo (visible below sm screens) */}
+            <Image
+                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757062419/black-logo-transparent_2x_bpewgh.png"
+                alt="Pixel World Logo Mobile"
+                width={40}
+                height={40}
+                priority
+                className="block sm:hidden h-10 w-10"
             />
         </Link>
 
@@ -151,7 +161,7 @@ export const Navbar = () => {
             </Link>
           </div>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-6">
             <WalletButton />
             <div className="min-[1111px]:hidden">
               <HamburgerIcon
