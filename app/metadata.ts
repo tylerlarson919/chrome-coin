@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: 'A digital realm powered by nostalgia, memes, and zero-utility fun.',
     images: [
       {
-        url: '/og/default.png', // Make sure to create this image
+        url: '/og/default.jpg', // Make sure to create this image
         width: 1200,
         height: 630,
         alt: 'Pixel World',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pixel World |  Build our universe, one block at a time.',
     description: 'A digital realm powered by nostalgia, memes, and zero-utility fun.',
-    images: ['/og/default.png'], // Make sure to create this image
+    images: ['/og/default.jpg'], // Make sure to create this image
   },
   icons: {
     icon: '/favicon.ico',
