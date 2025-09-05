@@ -21,7 +21,6 @@ export default function RootLayout({
           fontMontserrat.variable
         )}
       >
-        <Background />
         {/* Add a relative wrapper to ensure content appears above the fixed background */}
         <main className="relative z-10">
           <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
