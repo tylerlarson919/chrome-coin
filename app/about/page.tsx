@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FaCube, FaPaintBrush, FaGlobe } from "react-icons/fa";
 import { Slideshow } from "@/components/Slideshow";
 
@@ -90,31 +90,61 @@ const slideshowImages = [
     "https://res.cloudinary.com/dqedckeaa/image/upload/v1757009173/2_hawznl.jpg",
 ];
 
-const MediaItem = ({ item, index, onOpen }: { item: MediaItemType, index: number, onOpen: (item: MediaItemType) => void }) => (
-    <div
-        className="relative overflow-hidden rounded-xl aspect-[4/3] bg-zinc-800 animate-fade-in-stagger cursor-pointer transition-transform hover:scale-105"
-        style={{ animationDelay: `${index * 100}ms`, opacity: 0 }}
-        onClick={() => onOpen(item)}
-    >
-        {item.type === 'image' ? (
-            <Image
-                src={item.src}
-                alt={`Gallery image ${index + 1}`}
-                layout="fill"
-                objectFit="cover"
-            />
-        ) : (
-            <video
-                src={item.src}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-            />
-        )}
-    </div>
-);
+const MediaItem = ({ item, index, onOpen }: { item: MediaItemType, index: number, onOpen: (item: MediaItemType) => void }) => {
+    const [isInView, setIsInView] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsInView(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: "100px" } // Start loading 100px before it enters the viewport
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
+    return (
+        <div
+            ref={ref}
+            className="relative overflow-hidden rounded-xl aspect-[4/3] bg-zinc-800 animate-fade-in-stagger cursor-pointer transition-transform hover:scale-105"
+            style={{ animationDelay: `${index * 100}ms`, opacity: 0 }}
+            onClick={() => onOpen(item)}
+        >
+            {isInView && (
+                <>
+                    {item.type === 'image' ? (
+                        <Image
+                            src={item.src}
+                            alt={`Gallery image ${index + 1}`}
+                            layout="fill"
+                            objectFit="cover"
+                        />
+                    ) : (
+                        <video
+                            src={item.src}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover"
+                        />
+                    )}
+                </>
+            )}
+        </div>
+    );
+};
 
 export default function AboutPage() {
   const [selectedMedia, setSelectedMedia] = useState<MediaItemType | null>(null);

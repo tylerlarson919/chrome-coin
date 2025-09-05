@@ -53,7 +53,7 @@ export const Shop = () => {
         </div>
 
         {/* Updated grid classes for the new layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-8 md:gap-x-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-8 md:gap-x-6">
           {cardItems.map((_, index) => (
             // Grid Item Container: Holds both the card and the text below it
             <div key={index}>
