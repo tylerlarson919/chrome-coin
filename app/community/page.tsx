@@ -1,14 +1,15 @@
-import { FaTwitter, FaTelegramPlane, FaDiscord } from 'react-icons/fa';
+import { FaTelegramPlane, FaDiscord } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
 import { Testimonials } from '@/components/Testimonials';
 
 const socialLinks = [
     {
-        name: 'Twitter / X',
+        name: 'X',
         handle: '@PixelWorldCoin',
         href: '#', // Replace with your Twitter link
-        icon: FaTwitter,
-        description: 'For the latest announcements, memes, and 280-character bursts of pixelated wisdom.',
-        textColor: 'text-sky-500'
+        icon: FaXTwitter,
+        description: 'For the latest announcements, memes, and bursts of pixelated wisdom.',
+        textColor: 'text-gray-800'
     },
     {
         name: 'Telegram',
@@ -30,7 +31,7 @@ const socialLinks = [
 
 export default function CommunityPage() {
     return (
-        <div className="min-h-screen font-montserrat">
+        <div className="min-h-screen font-montserrat overflow-x-hidden">
             {/* Hero Section */}
             <div className="pt-8 pb-16 sm:pb-24">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
