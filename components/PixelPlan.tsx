@@ -12,11 +12,10 @@ import Image from "next/image"; // Import the Image component
 
 // Data for the donut chart (no changes)
 const tokenData = [
-  { name: "Liquidity Pool", value: 45, color: "#22c55e" },
-  { name: "Marketing & CEX", value: 25, color: "#63c79a" },
-  { name: "NFT Airdrops", value: 15, color: "#15803d" },
-  { name: "Community Treasury", value: 10, color: "#166534" },
-  { name: "Team (Locked)", value: 5, color: "#14532d" },
+  { name: "Liquidity Pool", value: 85, color: "#22c55e" },
+  { name: "Marketing & CEX", value: 3, color: "#55a07eff" },
+  { name: "NFT Airdrops", value: 7, color: "#15803d" },
+  { name: "Team (Locked)", value: 5, color: "#166534" },
 ];
 
 // Data for the roadmap cards (no changes)
@@ -77,13 +76,24 @@ export const PixelPlan = () => {
 
       {/* Donut Chart and Tokenomics Section */}
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 md:px-4 pb-4 md:pb-8">
-        <div className="w-full max-w-md lg:max-w-lg">
+        <div className="relative w-full max-w-md lg:max-w-lg">
           <DonutChart
             data={tokenData}
             activeIndex={activeIndex}
             onHover={setActiveIndex}
             onTap={handleTap}
           />
+          {/* Centered GIF */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <Image
+               src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757103951/5472274962897794227-min_omhhxs.gif"
+               alt="Pixel Character"
+               width={200}
+               height={200}
+               unoptimized
+               className="h-[170px] w-[170px] md:h-[200px] md:w-[200px]"
+             />
+          </div>
         </div>
 
         <div className="w-full max-w-md">

@@ -85,7 +85,7 @@ const PixelSlice = React.memo(
             width={pixelSize}
             height={pixelSize}
             fill={color}
-            stroke="#0000002c"
+            stroke="#ffffff2c"
             strokeWidth={0.5}
           />
         ))}
@@ -109,10 +109,10 @@ export const DonutChart = ({
   onHover,
   onTap,
 }: DonutChartProps) => {
-  const size = 350;
+  const size = 400;
   const pixelSize = 12; // Adjust for more or less pixelation
   const outerRadius = size / 2.2;
-  const innerRadius = size / 4;
+  const innerRadius = size / 3;
   const center = size / 2;
 
   const total = data.reduce((acc, slice) => acc + slice.value, 0);
