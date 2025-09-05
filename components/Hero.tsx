@@ -1,16 +1,18 @@
 "use client";
 
 import { Image } from "@heroui/image";
+import { FaXTwitter } from "react-icons/fa6";
 
 export const Hero = () => {
   const mintAddress = process.env.NEXT_PUBLIC_PIXEL_MINT_ADDRESS || "";
-  const photonUrl = `https://photon-sol.tinyastro.io/en/lp/${mintAddress}`;
-  
+  const photonUrl = `https://www.dextools.io/app/en/solana/pair-explorer/${mintAddress}`;
+  const xlink = `https://www.dextools.io/app/en/solana/pair-explorer/${mintAddress}`;
+
   const shopSectionId = "#how-to-buy"; 
 
   // Reusable class strings for the pixelated buttons
   const primaryButtonClasses = "h-14 px-8 flex items-center justify-center text-white font-bold tracking-wider border-4 border-black shadow-[4px_4px_0px_#000000] bg-pixel-green hover:bg-green-600 hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150";
-  const secondaryButtonClasses = "h-14 px-8 flex items-center justify-center text-white font-bold tracking-wider border-4 border-black shadow-[4px_4px_0px_#000000] bg-zinc-700 hover:bg-zinc-600 hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150";
+  const secondaryButtonClasses = "h-14 px-4 flex items-center justify-center text-white font-bold tracking-wider border-4 border-black shadow-[4px_4px_0px_#000000] bg-zinc-700 hover:bg-zinc-600 hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150";
 
   return (
     <section className="relative w-full h-[80vh] md:h-[70vh] bg-zinc-800 flex justify-center overflow-hidden md:items-end">
@@ -57,9 +59,23 @@ export const Hero = () => {
             href={photonUrl}
             target="_blank"
             rel="noopener noreferrer"
+            className={`w-full sm:w-auto flex items-center justify-center ${secondaryButtonClasses}`}
+            aria-label="View on DEXTools" // Added for accessibility
+          >
+            <Image
+              src="/dextools.svg" // Path to your SVG in the /public folder
+              alt="DEXTools Logo"
+              width={28} // Adjust size as needed
+              height={28} // Adjust size as needed
+            />
+          </a>
+          <a
+            href={xlink}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`w-full sm:w-auto ${secondaryButtonClasses}`}
           >
-            View Chart
+            <FaXTwitter className="size-6"/>
           </a>
         </div>
       </div>

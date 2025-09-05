@@ -136,8 +136,8 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: "SHOP", href: "/#shop" },
-    { name: "ABOUT", href: "/about" },
-    { name: "PIXELNOMICS", href: "/pixelnomics" },
+    { name: "ABOUT", href: "/#about" },
+    { name: "PIXELNOMICS", href: "/#pixelplan" },
     { name: "COMMUNITY", href: "/community" },
   ];
 
@@ -174,7 +174,7 @@ export const Navbar = () => {
       </Link>
     ))}
     <Link
-      href="/how-to-buy"
+      href="/#how-to-buy"
       className="text-zinc-300 font-bold tracking-wider hover:text-pixel-green transition-colors duration-200"
     >
       HOW TO BUY
