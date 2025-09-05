@@ -10,7 +10,7 @@ export const About = () => {
         <div className="flex flex-col md:flex-row items-center justify-between md:gap-12">
           {/* Text Content - Left on Desktop, Top on Mobile */}
           <div className="flex-1 text-center md:text-left mb-8 md:mb-0">
-            <p className="text-pixel-green font-bold tracking-widest text-lg md:text-xl">
+            <p className="text-pixel-green font-bold tracking-widest text-lg md:text-xl text-lg md:text-xl">
               OUR STORY
             </p>
             <h2 className="text-4xl lg:text-5xl font-extrabold text-zinc-300 mt-2">

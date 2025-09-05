@@ -1,3 +1,5 @@
+// PixelPlan.tsx
+
 "use client";
 import { useState } from "react";
 import { DonutChart } from "@/components/DonutChart";
@@ -8,7 +10,7 @@ import {
   FaGift,
   FaRocket,
 } from "react-icons/fa";
-import Image from "next/image"; // Import the Image component
+import Image from "next/image";
 
 // Data for the donut chart (no changes)
 const tokenData = [
@@ -59,17 +61,16 @@ export const PixelPlan = () => {
     setActiveIndex((prevIndex) => (prevIndex === index ? -1 : index));
   };
   
-  // Self-contained SVG for the pixel vine decoration
   const vineUrl = "https://res.cloudinary.com/dqedckeaa/image/upload/v1757106626/vines_qw6nl9.png";
 
   return (
     <section id="pixelplan" className="pt-10 md:pt-20">
       {/* Header */}
       <div className="text-left mb-8 md:mb-12">
-        <p className="text-pixel-green font-bold tracking-widest">
+        <p className="text-pixel-green font-bold tracking-widest text-lg md:text-xl">
           PIXELNOMICS
         </p>
-        <h2 className="text-4xl font-extrabold text-zinc-300">
+        <h2 className="text-4xl lg:text-5xl font-extrabold text-zinc-300 mt-2">
           THE PIXEL PLAN
         </h2>
       </div>
@@ -83,22 +84,21 @@ export const PixelPlan = () => {
             onHover={setActiveIndex}
             onTap={handleTap}
           />
-          {/* Centered GIF */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <Image
-               src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757103951/5472274962897794227-min_omhhxs.gif"
-               alt="Pixel Character"
-               width={200}
-               height={200}
-               unoptimized
-               className="h-[170px] w-[170px] md:h-[200px] md:w-[200px]"
-             />
+                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757103951/5472274962897794227-min_omhhxs.gif"
+                alt="Pixel Character"
+                width={200}
+                height={200}
+                unoptimized
+                className="h-[170px] w-[170px] md:h-[200px] md:w-[200px]"
+              />
           </div>
         </div>
 
         <div className="w-full max-w-md">
-          {/* UPDATED: Token Distribution card with dark theme */}
-          <div className="rounded-lg border-2 border-zinc-700 bg-zinc-900/80 backdrop-blur-sm p-6">
+          {/* FONT CHANGE: Added 'font-pixel' to this card */}
+          <div className="rounded-lg border-2 border-zinc-700 bg-zinc-900/80 backdrop-blur-sm p-6 font-pixelify tracking-wider">
             <h3 className="text-center text-3xl font-bold text-zinc-200">
               Token Distribution
             </h3>
@@ -129,7 +129,7 @@ export const PixelPlan = () => {
                     />
                     <span className="text-zinc-300">{item.name}</span>
                   </div>
-                  <span className="font-bold text-white">
+                  <span className="font-bold text-white text-2xl">
                     {item.value}%
                   </span>
                 </div>
@@ -145,11 +145,10 @@ export const PixelPlan = () => {
         </div>
       </div>
       
-      {/* UPDATED: Roadmap Cards Section with Pixel Art Style */}
+      {/* Roadmap Cards Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-y-16 gap-x-6 pt-12">
         {roadmapPhases.map((phase) => (
           <div key={phase.title} className="relative">
-            {/* Pixel Vine Decoration */}
             <Image
               src={vineUrl}
               alt=""
@@ -157,11 +156,11 @@ export const PixelPlan = () => {
               height={60}
               className="absolute -top-16 left-1/2 -translate-x-1/2 h-16 w-auto pointer-events-none"
             />
-            {/* Pixelated Card */}
-            <div className="h-full bg-zinc-900/80 backdrop-blur-sm border-4 border-zinc-700 p-5 flex flex-col text-center transition-colors duration-300 hover:border-pixel-green">
+            {/* FONT CHANGE: Added 'font-pixel' to the phase cards */}
+            <div className="h-full bg-zinc-900/80 backdrop-blur-sm border-4 border-zinc-700 p-5 flex flex-col text-center transition-colors duration-300 hover:border-pixel-green ">
               <phase.icon className="text-4xl mx-auto mb-4 text-pixel-green" />
-              <h4 className="text-lg font-bold text-white">{phase.title}</h4>
-              <p className="text-sm mt-2 flex-grow text-zinc-300">
+              <h4 className="text-2xl font-bold text-white font-pixelify tracking-wider">{phase.title}</h4>
+              <p className="text-md mt-2 flex-grow text-zinc-300 font-pixelify tracking-wider">
                 {phase.description}
               </p>
             </div>

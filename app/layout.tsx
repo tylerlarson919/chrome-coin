@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import clsx from "clsx";
-import { fontMontserrat } from "@/config/fonts";
+// IMPORT BOTH FONTS
+import { fontMontserrat, fontPixel, fontPixelify } from "@/config/fonts";
 import { ClientLayoutWrapper } from "./ClientLayoutWrapper";
 export { metadata } from "./metadata";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -18,7 +19,10 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen bg-black font-montserrat antialiased",
-          fontMontserrat.variable
+          // ADD THE PIXEL FONT VARIABLE HERE
+          fontMontserrat.variable,
+          fontPixel.variable,
+          fontPixelify.variable
         )}
       >
         {/* Add a relative wrapper to ensure content appears above the fixed background */}

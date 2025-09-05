@@ -41,10 +41,10 @@ export const HowToBuy = () => {
     <section id="how-to-buy" className="pt-10 md:pt-20 mb-24 ">
       {/* Header styled like other homepage sections */}
       <div className="text-left mb-8 md:mb-12">
-        <p className="text-pixel-green font-bold tracking-widest">
+        <p className="text-pixel-green font-bold tracking-widest text-lg md:text-xl">
           GET STARTED
         </p>
-        <h2 className="text-4xl font-extrabold text-zinc-300">
+        <h2 className="text-4xl lg:text-5xl font-extrabold text-zinc-300 mt-2">
           HOW TO BUY $PIXEL
         </h2>
       </div>

@@ -13,6 +13,8 @@ const config = {
     extend: {
       fontFamily: {
         montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        pixel: ['var(--font-pixel)', 'monospace'],
+        pixelify: ['var(--font-pixelify)', 'sans-serif'],
       },
       colors: {
         'pixel-green': '#63c79a',
