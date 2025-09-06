@@ -138,7 +138,7 @@ export const PixelPlan = () => {
             <div className="mt-6 border-t-2 border-dashed border-zinc-700 pt-4 text-center">
               <p className="text-base text-zinc-400">Total Supply:</p>
               <p className="text-2xl font-bold tracking-wider text-zinc-200">
-                1,000,000,000 $PIXEL
+                12,000,000 $PIXEL
               </p>
             </div>
           </div>
