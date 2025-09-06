@@ -12,7 +12,7 @@ export const Shop = () => {
           - Default: Single-column grid for mobile stacking.
           - Desktop ('md:'): 2x2 grid.
         */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start md:items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
 
           {/* --- Block 1: Main Video (Square) --- */}
           {/* On Mobile: 'order-1' places it at the top. */}
@@ -37,7 +37,7 @@ export const Shop = () => {
           {/* --- Block 2: Text Content --- */}
           {/* On Mobile: 'order-2' places it below the main video. */}
           {/* On Desktop: It naturally flows to the top-left cell. */}
-          <div className="order-2 md:order-none text-center md:text-left">
+          <div className="order-1 md:order-none text-center md:text-left">
             <h2 className="text-4xl lg:text-5xl font-bold text-zinc-200 tracking-tight">
               THE COLLECTION IS RENDERING
             </h2>
@@ -49,7 +49,7 @@ export const Shop = () => {
           {/* --- Block 3: Claim Component --- */}
           {/* On Mobile: 'order-3' places it below the text. */}
           {/* On Desktop: It naturally flows to the top-right cell. This container aligns it right. */}
-          <div className="order-3 md:order-none w-full flex flex-col items-center md:items-end">
+          <div className="order-2 md:order-none w-full flex flex-col items-center md:items-end">
             <ClaimNft />
           </div>
           
