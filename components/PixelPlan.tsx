@@ -76,7 +76,7 @@ export const PixelPlan = () => {
       </div>
 
       {/* Donut Chart and Tokenomics Section */}
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 md:px-4 pb-4 md:pb-8">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-28 md:px-4 pb-4 md:pb-8">
         <div className="relative w-full max-w-md lg:max-w-lg">
           <DonutChart
             data={tokenData}
