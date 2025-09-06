@@ -113,11 +113,11 @@ export const ClaimNft = () => {
   const isButtonDisabled = isClaimed || remaining === 0 || isLoading || remaining === null;
   
   return (
-    <div className="w-full flex flex-col items-center gap-4 mt:mt-8 text-center">
-      <div className="max-w-xl">
-          <p className="md:text-lg text-zinc-400">
-            Be one of the first 50 to connect your wallet and secure a <strong>FREE NFT</strong> before the official launch.
-          </p>
+    <div className="w-full flex flex-col items-center gap-4 text-center md:text-center">
+      <div className="hidden md:block max-w-xl">
+        <p className="md:text-lg text-zinc-400">
+          Be one of the first 50 to connect your wallet and secure a <strong>FREE NFT</strong> before the official launch.
+        </p>
       </div>
 
       <div className="w-full sm:w-auto">
