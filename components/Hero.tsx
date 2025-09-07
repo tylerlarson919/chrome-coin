@@ -15,7 +15,8 @@ export const Hero = () => {
   const secondaryButtonClasses = "h-14 px-4 flex items-center justify-center text-white font-bold tracking-wider border-4 border-black shadow-[4px_4px_0px_#000000] bg-zinc-700 hover:bg-zinc-600 hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150";
 
   return (
-    <section className="relative w-full h-[80vh] md:h-[70vh] bg-zinc-800 flex justify-center overflow-hidden md:items-end">
+    <section className="relative w-full h-[80vh] md:h-[70vh] bg-zinc-800 flex justify-center overflow-hidden md:items-center">
+
       {/* Background video */}
       <video
         src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757031116/-8652648916557767945_kcfia3.webm"
@@ -30,8 +31,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/60 md:to-black/0" />
 
       {/* Content Container */}
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-between gap-6 px-8 pb-14 pt-32 text-center md:h-auto md:w-auto md:justify-center md:p-0 md:pb-24">
-        
+      <div className="relative z-10 flex h-full w-full flex-col items-center justify-between gap-6 px-8 pb-14 pt-32 text-center md:justify-center md:py-0">
         {/* Top Content (Logo & Subtitle) */}
         <div className="flex flex-col items-center">
             <Image
@@ -65,10 +65,10 @@ export const Hero = () => {
               aria-label="View on DEXTools"
             >
               <Image
-                src="/dextools.svg"
+                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757277715/4_ozmaii.png"
                 alt="DEXTools Logo"
-                width={28}
-                height={28}
+                width={32}
+                height={32}
               />
             </a>
 
@@ -81,7 +81,12 @@ export const Hero = () => {
               className={`flex-1 sm:w-auto flex items-center justify-center ${secondaryButtonClasses}`}
               aria-label="View on X/Twitter"
             >
-              <FaXTwitter className="size-6" />
+              <Image
+                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757277713/3_znu7hj.png"
+                alt="TWITTER LOGO"
+                width={32}
+                height={32}
+              />
             </a>
           </div>
         </div>

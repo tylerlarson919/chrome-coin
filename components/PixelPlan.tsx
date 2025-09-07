@@ -127,7 +127,7 @@ export const PixelPlan = () => {
                       className="h-4 w-4 flex-shrink-0 rounded-sm border border-zinc-600"
                       style={{ backgroundColor: item.color }}
                     />
-                    <span className="text-zinc-300">{item.name}</span>
+                    <span className="text-zinc-100">{item.name}</span>
                   </div>
                   <span className="font-bold text-white text-2xl">
                     {item.value}%
@@ -136,9 +136,9 @@ export const PixelPlan = () => {
               ))}
             </div>
             <div className="mt-6 border-t-2 border-dashed border-zinc-700 pt-4 text-center">
-              <p className="text-base text-zinc-400">Total Supply:</p>
+              <p className="text-base text-zinc-200">Total Supply:</p>
               <p className="text-2xl font-bold tracking-wider text-zinc-200">
-                12,000,000 $PIXEL
+                120,000,000 $PIXEL
               </p>
             </div>
           </div>
@@ -158,9 +158,8 @@ export const PixelPlan = () => {
             />
             {/* FONT CHANGE: Added 'font-pixel' to the phase cards */}
             <div className="h-full bg-zinc-900/80 backdrop-blur-sm border-4 border-zinc-700 p-5 flex flex-col text-center transition-colors duration-300 hover:border-pixel-green ">
-              <phase.icon className="text-4xl mx-auto mb-4 text-pixel-green" />
               <h4 className="text-2xl font-bold text-white font-pixelify tracking-wider">{phase.title}</h4>
-              <p className="text-md mt-2 flex-grow text-zinc-300 font-pixelify tracking-wider">
+              <p className="text-md mt-2 flex-grow text-zinc-200 font-pixelify tracking-wider">
                 {phase.description}
               </p>
             </div>
