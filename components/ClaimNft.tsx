@@ -6,48 +6,38 @@ import { useAppWallet } from "@/app/hooks/useAppWallet";
 import { useWalletModal } from '@solana/wallet-adapter-react-ui';
 import { db } from '@/data/firebase';
 import { doc, onSnapshot } from "firebase/firestore";
+import { addToast } from "@heroui/toast"; // 1. Import addToast
 
-export const ClaimNft = () => {
+interface ClaimNftProps {
+  onClaimSuccess: () => void;
+}
+
+export const ClaimNft = ({ onClaimSuccess }: ClaimNftProps) => {
   const { publicKey, connected } = useAppWallet();
   const { setVisible } = useWalletModal();
 
   const [remaining, setRemaining] = useState<number | null>(null);
-  const [total, setTotal] = useState<number | null>(null); // Add this line
+  const [total, setTotal] = useState<number | null>(null);
   const [isClaimed, setIsClaimed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+  // 2. Error and success message states are no longer needed
 
-  // Listen to real-time updates for remaining spots
   useEffect(() => {
     const counterDocRef = doc(db, "nftEarlyAccess", "v1_launch");
     const unsubscribe = onSnapshot(counterDocRef, (doc) => {
       if (doc.exists()) {
         setRemaining(doc.data().remaining);
+        setTotal(doc.data().total);
       } else {
-        setError("Could not fetch claim data.");
+        // Use toast for critical data fetching errors
+        addToast({ title: "Error", description: "Could not fetch claim data.", color: "danger" });
         setRemaining(0);
+        setTotal(0);
       }
     });
-    return () => unsubscribe(); // Cleanup listener on unmount
-  }, []);
-  useEffect(() => {
-    const counterDocRef = doc(db, "nftEarlyAccess", "v1_launch");
-    const unsubscribe = onSnapshot(counterDocRef, (doc) => {
-      if (doc.exists()) {
-        setRemaining(doc.data().remaining);
-        setTotal(doc.data().total); // Also fetch the total
-      } else {
-        setError("Could not fetch claim data.");
-        setRemaining(0);
-        setTotal(0); // Set total on error too
-      }
-    });
-    return () => unsubscribe(); // Cleanup listener on unmount
+    return () => unsubscribe();
   }, []);
 
-
-  // Check if the connected wallet has already claimed
   useEffect(() => {
     if (!publicKey) {
       setIsClaimed(false);
@@ -55,45 +45,40 @@ export const ClaimNft = () => {
     }
     const claimDocRef = doc(db, "claims", publicKey.toBase58());
     const unsubscribe = onSnapshot(claimDocRef, (doc) => {
-      setIsClaimed(doc.exists());
       if (doc.exists()) {
-        setSuccessMessage("You've already secured your spot!");
+        setIsClaimed(true);
+        onClaimSuccess();
       }
     });
     return () => unsubscribe();
-  }, [publicKey]);
+  }, [publicKey, onClaimSuccess]);
 
   const handleClaim = async () => {
-    // 1. If wallet is not connected, open the modal and stop.
     if (!connected || !publicKey) {
       setVisible(true);
       return;
     }
 
     setIsLoading(true);
-    setError('');
-    setSuccessMessage('');
 
     try {
       const response = await fetch('/api/claim-nft', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ walletAddress: publicKey.toBase58() }),
       });
 
       const data = await response.json();
-
       if (!response.ok) {
         throw new Error(data.error || 'Something went wrong.');
       }
       
-      setSuccessMessage(data.message);
+      addToast({ title: "Success!", description: data.message, color: "success" }); // 3. Use success toast
       setIsClaimed(true);
+      onClaimSuccess();
 
     } catch (err: any) {
-      setError(err.message);
+      addToast({ title: "Claim Failed", description: err.message, color: "danger" }); // 4. Use error toast
     } finally {
       setIsLoading(false);
     }
@@ -122,16 +107,15 @@ export const ClaimNft = () => {
 
       <div className="w-full sm:w-auto">
          <button
-            onClick={handleClaim}
-            disabled={isButtonDisabled}
-            className={buttonStyle}
-          >
-            {getButtonText()}
-          </button>
-          {error && <p className="mt-2 text-red-400 font-semibold">{error}</p>}
-          {successMessage && !error && <p className="mt-2 text-pixel-green font-semibold">{successMessage}</p>}
+           onClick={handleClaim}
+           disabled={isButtonDisabled}
+           className={buttonStyle}
+         >
+           {getButtonText()}
+         </button>
+         {/* 5. Removed the old error and success message p tags */}
       </div>
-      {/* --- ADD THIS NEW DIV --- */}
+      
       <div className="h-6 font-bold tracking-wider text-lg text-zinc-100">
         {remaining !== null && total !== null ? (
           <p>{remaining} / {total} SPOTS REMAINING</p>

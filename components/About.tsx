@@ -7,67 +7,86 @@ export const About = () => {
     "https://res.cloudinary.com/dqedckeaa/image/upload/v1757276636/IMG_6525_1_ayxvdw.jpg";
 
   return (
-    <section id="about" className="pt-4 md:pt-10 overflow-hidden">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between md:gap-12">
-          {/* Left Section: Artist Image and Text Content */}
-          <div className="flex-1 text-center md:text-left mb-8 md:mb-0">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
-              {/* Circular Image Wrapper */}
-              <div className="relative w-32 h-32 flex-shrink-0 rounded-full overflow-hidden border-4 border-pixel-green shadow-lg">
-                <Image
-                  src={artistImageUrl}
-                  alt="Meet the artist"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-              <div className="mt-4 md:mt-0">
-                <p className="text-pixel-green font-bold tracking-widest text-lg md:text-xl">
-                  MEET THE ARTIST
-                </p>
-                <h2 className="text-4xl lg:text-5xl font-extrabold text-zinc-300 mt-2">
-                  IVAN PASSERNI
-                </h2>
-              </div>
+    <section id="about" className="overflow-hidden py-12 md:py-20">
+      <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+        {/* Top Section: Text Content */}
+        <div className="mx-auto mb-12 max-w-8xl text-center md:mb-20">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-6">
+            <div className="relative h-32 w-32 flex-shrink-0 overflow-hidden rounded-full border-4 border-pixel-green shadow-lg">
+              <Image
+                src={artistImageUrl}
+                alt="Meet the artist"
+                layout="fill"
+                objectFit="cover"
+              />
             </div>
-
-            {/* Description Paragraphs */}
-            <div className="mt-6 md:mt-8 space-y-4 md:text-lg text-zinc-400 max-w-xl md:max-w-none mx-auto md:mx-0 leading-relaxed">
-              <p>
-                When I was a little kid, school wasn&apos;t exactly easy for me. I
-                was short, quieter, and different enough that it made me a
-                target. I&apos;d get picked on in class, shoved in the halls, and
-                sometimes I&apos;d just sit there pretending it didn&apos;t bother me, but
-                it always did. I didn&apos;t know how to fight back, so instead I&apos;d
-                go home and escape into my own world.
+            <div className="mt-4 text-center sm:mt-0 sm:text-left">
+              <p className="text-lg font-bold tracking-widest text-pixel-green md:text-xl">
+                MEET THE ARTIST
               </p>
-              <p>
-                That world was digital art. I remember the first time I opened
-                up a drawing program on my old computer—it felt like a secret
-                door nobody else knew about. I could sit there for hours,
-                creating characters, little worlds, and scenes that made me feel
-                powerful and safe. The bullies couldn&apos;t touch me there.
-              </p>
-              <p>
-                As I got older, art stopped being just an escape and became my
-                voice. Every piece I made was like reclaiming the confidence I
-                lost in those classrooms and hallways. And even though the
-                bullying hurt, I honestly think without it, I wouldn&apos;t have
-                pushed myself to create the way I do today.
-              </p>
+              <h2 className="mt-2 text-4xl font-extrabold text-zinc-300 lg:text-5xl">
+                IVAN PASSERNI
+              </h2>
             </div>
           </div>
 
-          {/* Right Section: GIF */}
-          <div className="flex-1 flex items-center justify-center md:justify-end mt-8 md:mt-0">
+          <div className="mt-8 space-y-4 text-left text-lg leading-relaxed text-zinc-400 sm:text-center">
+            <p>
+              When I was a little kid, school wasn&apos;t exactly easy for me. I
+              was short, quieter, and different enough that it made me a
+              target. I&apos;d get picked on in class, shoved in the halls, and
+              sometimes I&apos;d just sit there pretending it didn&apos;t
+              bother me, but it always did. I didn&apos;t know how to fight
+              back, so instead I&apos;d go home and escape into my own world.
+            </p>
+            <p>
+              That world was digital art. I remember the first time I opened up
+              a drawing program on my old computer—it felt like a secret door
+              nobody else knew about. I could sit there for hours, creating
+              characters, little worlds, and scenes that made me feel powerful
+              and safe. The bullies couldn&apos;t touch me there.
+            </p>
+            <p>
+              As I got older, art stopped being just an escape and became my
+              voice. Every piece I made was like reclaiming the confidence I
+              lost in those classrooms and hallways. And even though the
+              bullying hurt, I honestly think without it, I wouldn&apos;t have
+              pushed myself to create the way I do today.
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom Section: Visuals */}
+        <div className="flex flex-col items-center justify-center gap-12 md:flex-row md:gap-16">
+          {/* Left Column: Main Collection Video (Moved from Shop.tsx) */}
+          <div className="relative h-96 w-96 overflow-hidden rounded-xl border-4 border-transparent bg-gradient-to-b from-zinc-300 via-zinc-500 to-zinc-400 [mask-composite:exclude_padding] [mask:linear-gradient(white_0_0)] md:h-[28rem] md:w-[28rem]">
+            <video
+              src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757102714/4080777719242116802_1_ckcfj3.webm"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50">
+              <Image
+                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757109618/lock_1_lfxkud.png"
+                alt="Locked NFT"
+                width={100}
+                height={100}
+                className="h-24 w-24 object-contain md:h-32 md:w-32"
+              />
+            </div>
+          </div>
+
+          {/* Right Column: Static Character Image */}
+          <div className="relative h-96 w-96 overflow-hidden md:h-[28rem] md:w-[28rem]">
             <Image
               src={gifUrl}
               alt="Dancing Pixel Character"
-              width={400}
-              height={400}
+              layout="fill"
+              objectFit="cover"
               unoptimized
-              className="h-64 md:h-96 w-auto object-contain" // Ensures the GIF fits well
             />
           </div>
         </div>

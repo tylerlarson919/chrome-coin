@@ -35,20 +35,8 @@ const roadmapPhases = [
       "Amplify our presence with strategic marketing and influencer partnerships. Secure listings on key centralized exchanges (CEX) to make $PIXEL accessible to a wider audience.",
   },
   {
-    icon: FaPalette,
-    title: "Phase 3: The Minting Machine",
-    description:
-      "Launch the first official Pixel World NFT collection. These aren't just JPEGs; they're digital artifacts that grant holders a unique identity and stake in our universe.",
-  },
-  {
-    icon: FaGift,
-    title: "Phase 4: The Treasury Unlocks",
-    description:
-      "Activate our rewards system. Implement airdrops for loyal token and NFT holders and empower the community treasury, giving citizens a voice in the project's future.",
-  },
-  {
     icon: FaChartLine,
-    title: "Phase 5: World Expansion",
+    title: "Phase 3: World Expansion",
     description:
       "Explore the creation of pixel-based mini-games and interactive experiences. Develop the Pixel World brand into a recognized name in retro digital culture.",
   },
@@ -146,7 +134,7 @@ export const PixelPlan = () => {
       </div>
       
       {/* Roadmap Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-y-16 gap-x-6 pt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-16 gap-x-6 pt-12">
         {roadmapPhases.map((phase) => (
           <div key={phase.title} className="relative">
             <Image
@@ -159,9 +147,6 @@ export const PixelPlan = () => {
             {/* FONT CHANGE: Added 'font-pixel' to the phase cards */}
             <div className="h-full bg-zinc-900/80 backdrop-blur-sm border-4 border-zinc-700 p-5 flex flex-col text-center transition-colors duration-300 hover:border-pixel-green ">
               <h4 className="text-2xl font-bold text-white font-pixelify tracking-wider">{phase.title}</h4>
-              <p className="text-md mt-2 flex-grow text-zinc-200 font-pixelify tracking-wider">
-                {phase.description}
-              </p>
             </div>
           </div>
         ))}

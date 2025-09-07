@@ -1,16 +1,21 @@
+import Image from "next/image";
+
 export const Footer = () => {
     return (
         <footer className="relative w-full -mt-6 z-[100]">
         <section id="community" className="w-full bg-pixel-green text-white rounded-t-3xl">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center">
-                <h2 className="text-5xl font-extrabold mb-6">JOIN THE WORLD</h2>
-                <p className="max-w-lg mx-auto mb-8 text-white/90">
-                    Follow us on our socials to watch our universe expand in real-time. Become a citizen of Pixel World today.
-                </p>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
                 <div className="flex justify-center items-center space-x-6">
-                    <a href="#" className="font-bold text-lg hover:underline">TELEGRAM ↗</a>
-                    <a href="#" className="font-bold text-lg hover:underline">TWITTER ↗</a>
-                    <a href="#" className="font-bold text-lg hover:underline">DISCORD ↗</a>
+                    <a href="https://x.com/PixelWorldChain" className="font-bold text-lg hover:underline flex flex-col items-center gap-2">
+                      <Image
+                        src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757277713/3_znu7hj.png"
+                        alt="TWITTER LOGO"
+                        width={32}
+                        height={32}
+                      />
+                      TWITTER
+
+                    </a>
                 </div>
             </div>
         </section>
