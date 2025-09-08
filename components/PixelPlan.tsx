@@ -26,13 +26,13 @@ const roadmapPhases = [
     icon: FaRocket,
     title: "Phase 1: Bootup",
     description:
-      "Fair launch on Raydium to ensure equal access for all. Ignite our community on X and Telegram, establishing the core foundation of Pixel World.",
+      "I would like to present an NFT project called Pixel World. The coin will launch on the 7th of September, 2025. We're doing a fair launch for Pixel World where there will be just 12% of the total supply set aside for the team and marketing. You get in early if you get in early.",
   },
   {
     icon: FaUsers,
     title: "Phase 2: The Render",
     description:
-      "Amplify our presence with strategic marketing and influencer partnerships. Secure listings on key centralized exchanges (CEX) to make $PIXEL accessible to a wider audience.",
+      "Good organic volume is what we want. So first, we need to pre-purchase the DEX. Then, if the project is popular, people will ape. The project will exceed bonding. Then, we need to have good volume and at least sustain $1M+ volume in the first 24 hours so that we can get listed on listings like CoinMarketCap, Moonshot, etc.",
   },
   {
     icon: FaChartLine,
