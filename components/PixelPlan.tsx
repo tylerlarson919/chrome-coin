@@ -26,19 +26,19 @@ const roadmapPhases = [
     icon: FaRocket,
     title: "Phase 1: Bootup",
     description:
-      "I would like to present an NFT project called Pixel World. The coin will launch on the 7th of September, 2025. We're doing a fair launch for Pixel World where there will be just 12% of the total supply set aside for the team and marketing. You get in early if you get in early.",
+      "I would like to present an NFT project called Pixel World. The coin will launch on the 7th of September, 2025. We're doing a fair launch for Pixel World where there will be just 12% of the total supply set aside for the team and marketing. If you get in early, you get in early.",
   },
   {
     icon: FaUsers,
     title: "Phase 2: The Render",
     description:
-      "Good organic volume is what we want. So first, we need to pre-purchase the DEX. Then, if the project is popular, people will ape. The project will exceed bonding. Then, we need to have good volume and at least sustain $1M+ volume in the first 24 hours so that we can get listed on listings like CoinMarketCap, Moonshot, etc.",
+      "Good organic volume is what we want. So first, we need to pre-purchase the DEX. Then, if the project is popular, people will ape. The project will exceed bonding. Then, we need to have good volume and at sustain at least $1M+ volume in the first 24 hours so that we can get listed on listings like CoinMarketCap, Moonshot, etc.",
   },
   {
     icon: FaChartLine,
     title: "Phase 3: World Expansion",
     description:
-      "Once we are listed on large platforms like Moonshot, CoinGecko, and CoinMarketCap, then we will receive the exposure that we need in order to make headway. Then, we can move forward to get listed on centralized exchanges like MEXC and BitUnix. Upon receiving these listings, it should provide even more exposure for Pixel World. That is when we can then spend some funds on marketing to continue promoting the project. We still want to keep it as authentic as possible — no KOL collaboration with payments. We're aiming for authentic promotion in the real world — maybe having our NFTs featured in big, high-end restaurants or collaborating with biggest stars.",
+      "Once we are listed on large platforms like Moonshot, CoinGecko, and CoinMarketCap, then we will receive the exposure that we need in order to make headway. We still want to keep it as authentic as possible — no KOL collaboration with payments. We're aiming for authentic promotion in the real world — having our NFTs featured in big, high-end restaurants or collaborating with bigger influencers.",
   },
 ];
 
