@@ -32,7 +32,7 @@ const roadmapPhases = [
     icon: FaUsers,
     title: "Phase 2: The Render",
     description:
-      "Good organic volume is what we want. So first, we need to pre-purchase the DEX. Then, if the project is popular, people will ape. The project will exceed bonding. Then, we need to have good volume and at sustain at least $1M+ volume in the first 24 hours so that we can get listed on listings like CoinMarketCap, Moonshot, etc.",
+      "I want to remind you, we want to keep this project as organic as possible — no volume bots, no paying for KOLs. If they like the project, they’ll promote it.",
   },
   {
     icon: FaChartLine,
