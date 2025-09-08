@@ -27,7 +27,7 @@ const testimonials = [
     stars: 5,
     text: "I'm here for the community. It's a breath of fresh air to be in a group that's all about creativity, memes, and building a cool retro world. It’s a genuine digital hangout.",
   },
-];
+];g
 
 // 1. Duplicate the array to enable infinite looping on desktop
 const loopedTestimonials = [...testimonials, ...testimonials];

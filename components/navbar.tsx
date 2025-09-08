@@ -139,7 +139,6 @@ export const Navbar = () => {
     { name: "SHOP", href: "/#shop" },
     { name: "ABOUT", href: "/#about" },
     { name: "PIXELNOMICS", href: "/#pixelplan" },
-    { name: "COMMUNITY", href: "/community" },
   ];
 
   return (
