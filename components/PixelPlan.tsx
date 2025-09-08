@@ -38,7 +38,7 @@ const roadmapPhases = [
     icon: FaChartLine,
     title: "Phase 3: World Expansion",
     description:
-      "Explore the creation of pixel-based mini-games and interactive experiences. Develop the Pixel World brand into a recognized name in retro digital culture.",
+      "Once we are listed on large platforms like Moonshot, CoinGecko, and CoinMarketCap, then we will receive the exposure that we need in order to make headway. Then, we can move forward to get listed on centralized exchanges like MEXC and BitUnix. Upon receiving these listings, it should provide even more exposure for Pixel World. That is when we can then spend some funds on marketing to continue promoting the project. We still want to keep it as authentic as possible — no KOL collaboration with payments. We're aiming for authentic promotion in the real world — maybe having our NFTs featured in big, high-end restaurants or collaborating with biggest stars.",
   },
 ];
 
