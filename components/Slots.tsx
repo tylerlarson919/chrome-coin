@@ -28,7 +28,7 @@ export const Slots = ({ isClaimed = false }: SlotsProps) => {
   }, []);
 
   return (
-    <div className="relative h-96 w-96 overflow-hidden rounded-xl border-4 border-transparent bg-gradient-to-b from-zinc-300 via-zinc-500 to-zinc-400 [mask-composite:exclude_padding] [mask:linear-gradient(white_0_0)] md:h-[28rem] md:w-[28rem]">
+    <div className="relative w-full aspect-square overflow-hidden rounded-xl border-4 border-transparent bg-gradient-to-b from-zinc-300 via-zinc-500 to-zinc-400 [mask-composite:exclude_padding] [mask:linear-gradient(white_0_0)] md:h-[28rem] md:w-[28rem] md:aspect-auto">
       <Image
         src={slotImages[currentIndex]}
         alt="Pixel character"
@@ -52,7 +52,7 @@ export const Slots = ({ isClaimed = false }: SlotsProps) => {
           />
           {/* Checkmark SVG Icon */}
           <div
-            className={`absolute inset-0 transform-gpu p-4 text-pixel-green transition-all duration-500 ease-in-out ${
+            className={`absolute inset-0 transform-gpu p-8 text-pixel-green transition-all duration-500 ease-in-out ${
               isClaimed ? "scale-100 opacity-100" : "scale-50 opacity-0"
             }`}
           >

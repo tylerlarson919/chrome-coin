@@ -50,20 +50,18 @@ export const Shop = () => {
           {/* --- Left Column --- */}
           <div className="flex flex-col gap-8 md:gap-16 h-full md:justify-between">
             <div className="order-1 text-center md:text-left">
-              <h2 className="text-4xl font-bold tracking-tight text-zinc-200 lg:text-5xl">
-                THE COLLECTION IS RENDERING
-              </h2>
-              <p className="mx-auto mt-4 max-w-xl text-zinc-400 md:mx-0 md:text-lg">
+              <h2 className="text-4xl font-bold tracking-tight text-zinc-200 lg:text-5xl uppercase">
                 200 rare NFTs dropping 9/14/25.
-              </p>
+              </h2>
             </div>
 
             {/* Block 2: Sneak Peek Video */}
+
             <div
-              className="order-3 cursor-pointer self-center transition-transform duration-200 hover:scale-[1.02] md:order-2 md:self-start"
+              className="order-3 cursor-pointer self-center transition-transform duration-200 hover:scale-[1.02] md:order-2 md:self-end pr-0 md:pr-4"
               onClick={handleSneakPeekClick}
             >
-              <div className="relative h-96 w-96 overflow-hidden rounded-xl border-4 border-transparent bg-gradient-to-b from-zinc-300 via-zinc-500 to-zinc-400 [mask-composite:exclude_padding] [mask:linear-gradient(white_0_0)] md:h-[28rem] md:w-[28rem]">
+              <div className="relative w-full aspect-square overflow-hidden rounded-xl border-4 border-transparent bg-gradient-to-b from-zinc-300 via-zinc-500 to-zinc-400 [mask-composite:exclude_padding] [mask:linear-gradient(white_0_0)] md:h-[28rem] md:w-[28rem] md:aspect-auto">
                 <video
                   src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757031113/-6403127588060313866_jkuyuo.webm"
                   autoPlay
@@ -119,7 +117,7 @@ export const Shop = () => {
           </div>
 
           {/* --- Right Column --- */}
-          <div className="order-2 flex flex-col items-center gap-8 md:order-3 md:items-center md:gap-16">
+          <div className="order-2 flex flex-col items-center gap-8 md:order-3 md:items-start md:gap-16 pl-0 md:pl-4">
             <div className="w-full">
               <ClaimNft onClaimSuccess={handleClaimSuccess} />
             </div>

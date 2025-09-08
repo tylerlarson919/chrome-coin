@@ -8,7 +8,7 @@ export const About = () => {
 
   return (
     <section id="about" className="overflow-hidden py-12 md:py-20">
-      <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-8xl px-0 sm:px-6 lg:px-8">
         {/* Top Section: Text Content */}
         <div className="mx-auto mb-12 max-w-8xl text-center md:mb-20">
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-6">
@@ -59,7 +59,7 @@ export const About = () => {
         {/* Bottom Section: Visuals */}
         <div className="flex flex-col items-center justify-center gap-12 md:flex-row md:gap-16">
           {/* Left Column: Main Collection Video (Moved from Shop.tsx) */}
-          <div className="relative h-96 w-96 overflow-hidden rounded-xl border-4 border-transparent bg-gradient-to-b from-zinc-300 via-zinc-500 to-zinc-400 [mask-composite:exclude_padding] [mask:linear-gradient(white_0_0)] md:h-[28rem] md:w-[28rem]">
+          <div className="relative w-full aspect-square overflow-hidden rounded-xl border-4 border-transparent bg-gradient-to-b from-zinc-300 via-zinc-500 to-zinc-400 [mask-composite:exclude_padding] [mask:linear-gradient(white_0_0)] md:h-[28rem] md:w-[28rem] md:aspect-auto">
             <video
               src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757102714/4080777719242116802_1_ckcfj3.webm"
               autoPlay
