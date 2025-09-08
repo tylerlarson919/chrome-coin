@@ -86,7 +86,7 @@ export const PixelPlan = () => {
 
         <div className="w-full max-w-md">
           {/* FONT CHANGE: Added 'font-pixel' to this card */}
-          <div className="rounded-lg border-2 border-zinc-700 bg-zinc-900/80 backdrop-blur-sm p-6 font-pixelify tracking-wider">
+          <div className="rounded-lg border-2 border-zinc-700 bg-zinc-900/80 backdrop-blur-sm p-6 tracking-wider">
             <h3 className="text-center text-3xl font-bold text-zinc-200">
               Token Distribution
             </h3>
@@ -147,6 +147,9 @@ export const PixelPlan = () => {
             {/* FONT CHANGE: Added 'font-pixel' to the phase cards */}
             <div className="h-full bg-zinc-900/80 backdrop-blur-sm border-4 border-zinc-700 p-5 flex flex-col text-center transition-colors duration-300 hover:border-pixel-green ">
               <h4 className="text-2xl font-bold text-white font-pixelify tracking-wider">{phase.title}</h4>
+              <p className="text-md mt-2 flex-grow text-zinc-300 font-pixelify tracking-wider">
+                {phase.description}
+              </p>
             </div>
           </div>
         ))}

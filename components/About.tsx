@@ -7,7 +7,7 @@ export const About = () => {
     "https://res.cloudinary.com/dqedckeaa/image/upload/v1757276636/IMG_6525_1_ayxvdw.jpg";
 
   return (
-    <section id="about" className="overflow-hidden py-12 md:py-20">
+    <section id="about" className="overflow-hidden pb-0 pt-12 md:pt-20">
       <div className="mx-auto max-w-8xl px-0 sm:px-6 lg:px-8">
         {/* Top Section: Text Content */}
         <div className="mx-auto mb-12 max-w-8xl text-center md:mb-20">
@@ -59,35 +59,33 @@ export const About = () => {
         {/* Bottom Section: Visuals */}
         <div className="flex flex-col items-center justify-center gap-12 md:flex-row md:gap-16">
           {/* Left Column: Main Collection Video (Moved from Shop.tsx) */}
-          <div className="relative w-full aspect-square overflow-hidden rounded-xl border-4 border-transparent bg-gradient-to-b from-zinc-300 via-zinc-500 to-zinc-400 [mask-composite:exclude_padding] [mask:linear-gradient(white_0_0)] md:h-[28rem] md:w-[28rem] md:aspect-auto">
-            <video
-              src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757102714/4080777719242116802_1_ckcfj3.webm"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50">
-              <Image
-                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757109618/lock_1_lfxkud.png"
-                alt="Locked NFT"
-                width={100}
-                height={100}
-                className="h-24 w-24 object-contain md:h-32 md:w-32"
-              />
-            </div>
-          </div>
-
-          {/* Right Column: Static Character Image */}
-          <div className="relative h-96 w-96 overflow-hidden md:h-[28rem] md:w-[28rem]">
-            <Image
-              src={gifUrl}
-              alt="Dancing Pixel Character"
-              layout="fill"
-              objectFit="cover"
-              unoptimized
-            />
+          <div className="flex flex-col items-center">
+             <p className="mb-4 text-2xl font-bold tracking-widest text-zinc-200 lg:text-3xl">
+               DELUXE EDITION
+             </p>
+             {/* Left Column: Main Collection Video (Moved from Shop.tsx) */}
+             <div className="relative w-full aspect-square overflow-hidden rounded-xl border-4 border-transparent bg-gradient-to-b from-zinc-300 via-zinc-500 to-zinc-400 [mask-composite:exclude_padding] [mask:linear-gradient(white_0_0)] md:h-[28rem] md:w-[28rem] md:aspect-auto">
+               <video
+                 src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757102714/4080777719242116802_1_ckcfj3.webm"
+                 autoPlay
+                 loop
+                 muted
+                 playsInline
+                 className="h-full w-full object-cover"
+               />
+               <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50">
+                 <Image
+                   src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757109618/lock_1_lfxkud.png"
+                   alt="Locked NFT"
+                   width={100}
+                   height={100}
+                   className="h-24 w-24 object-contain md:h-32 md:w-32"
+                 />
+               </div>
+             </div>
+             <p className="mt-4 text-lg md:text-xl font-pixel tracking-widest text-zinc-200 whitespace-nowrap">
+               COMING SOON...
+             </p>
           </div>
         </div>
       </div>
