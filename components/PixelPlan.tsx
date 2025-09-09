@@ -14,7 +14,7 @@ import Image from "next/image";
 
 // Data for the donut chart (no changes)
 const tokenData = [
-  { name: "Liquidity Pool", value: 85, color: "#22c55e" },
+  { name: "Liquidity Pool", value: 88, color: "#22c55e" },
   { name: "Marketing & CEX", value: 5, color: "#55a07eff" },
   { name: "NFT Airdrops", value: 4, color: "#15803d" },
   { name: "Team (Locked)", value: 3, color: "#166534" },
