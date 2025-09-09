@@ -26,7 +26,7 @@ const roadmapPhases = [
     icon: FaRocket,
     title: "Phase 1: Bootup",
     description:
-      "I would like to present an NFT project called Pixel World. The coin will launch on the 7th of September, 2025. We're doing a fair launch for Pixel World where there will be just 12% of the total supply set aside for the team and marketing. If you get in early, you get in early.",
+      "I would like to present an NFT project called Pixel World. The coin will launch on the 8th of September, 2025. We're doing a fair launch for Pixel World where there will be just 12% of the total supply set aside for the team and marketing. If you get in early, you get in early.",
   },
   {
     icon: FaUsers,
