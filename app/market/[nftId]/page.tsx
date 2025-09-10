@@ -5,12 +5,13 @@ import type { Metadata } from "next";
 import { ProductPageLoader } from "./ProductPageLoader";
 
 type Props = {
-  params: { nftId: string };
+  params: Promise<{ nftId: string }>;
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { nftId } = params;
+  const resolvedParams = await params;
+  const { nftId } = resolvedParams;
   const product = products.find((p) => p.id === nftId);
 
   if (!product) {
@@ -25,7 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProductPage({ params }: Props) {
-  const { nftId } = params;
+  const resolvedParams = await params;
+  const { nftId } = resolvedParams;
   const product = products.find((p) => p.id === nftId);
 
   if (!product) {
