@@ -1,48 +1,39 @@
-// PixelPlan.tsx
-
+// components/ChromePlan.tsx
 "use client";
 import { useState } from "react";
 import { DonutChart } from "@/components/DonutChart";
-import {
-  FaPalette,
-  FaUsers,
-  FaChartLine,
-  FaGift,
-  FaRocket,
-} from "react-icons/fa";
+import { FaUsers, FaChartLine, FaRocket } from "react-icons/fa";
 import Image from "next/image";
 
-// Data for the donut chart (no changes)
 const tokenData = [
-  { name: "Liquidity Pool", value: 88, color: "#22c55e" },
-  { name: "Marketing & CEX", value: 5, color: "#55a07eff" },
-  { name: "NFT Airdrops", value: 4, color: "#15803d" },
-  { name: "Team (Locked)", value: 3, color: "#166534" },
+  { name: "Liquidity Pool", value: 88, color: "#9333ea" }, // purple-600
+  { name: "Marketing & CEX", value: 5, color: "#a855f7" }, // purple-500
+  { name: "NFT Airdrops", value: 4, color: "#7e22ce" }, // purple-700
+  { name: "Team (Locked)", value: 3, color: "#6b21a8" }, // purple-800
 ];
 
-// Data for the roadmap cards (no changes)
 const roadmapPhases = [
   {
     icon: FaRocket,
-    title: "Phase 1: Bootup",
+    title: "Phase 1: Genesis",
     description:
-      "I would like to present an NFT project called Pixel World. The coin will launch on the 8th of September, 2025. We're doing a fair launch for Pixel World where there will be just 12% of the total supply set aside for the team and marketing. If you get in early, you get in early.",
+      "Launch of the $CHROME token and the Genesis NFT collection. Establishing a core community through a fair launch, with a focus on organic growth and authentic engagement.",
   },
   {
     icon: FaUsers,
-    title: "Phase 2: The Render",
+    title: "Phase 2: The Forge",
     description:
-      "I want to remind you, we want to keep this project as organic as possible — no volume bots, no paying for KOLs. If they like the project, they’ll promote it.",
+      "Community-driven design contests and collaborations. Holders get exclusive access to vote on future designs and collections, shaping the future of the $CHROME brand.",
   },
   {
     icon: FaChartLine,
-    title: "Phase 3: World Expansion",
+    title: "Phase 3: The Gallery",
     description:
-      "Once we are listed on large platforms like Moonshot, CoinGecko, and CoinMarketCap, then we will receive the exposure that we need in order to make headway. We still want to keep it as authentic as possible — no KOL collaboration with payments. We're aiming for authentic promotion in the real world — having our NFTs featured in big, high-end restaurants or collaborating with bigger influencers.",
+      "Expansion into high-end digital galleries and metaverse integrations. Collaborations with major streetwear influencers and brands to bridge the gap between digital and physical collectibles.",
   },
 ];
 
-export const PixelPlan = () => {
+export const ChromePlan = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const handleTap = (index: number) => {
@@ -52,18 +43,16 @@ export const PixelPlan = () => {
   const vineUrl = "https://res.cloudinary.com/dqedckeaa/image/upload/v1757106626/vines_qw6nl9.png";
 
   return (
-    <section id="pixelplan" className="pt-10 md:pt-20">
-      {/* Header */}
+    <section id="chromeplan" className="pt-10 md:pt-20">
       <div className="text-left mb-8 md:mb-12">
-        <p className="text-pixel-green font-bold tracking-widest text-lg md:text-xl">
-          PIXELNOMICS
+        <p className="text-purple-400 font-bold tracking-widest text-lg md:text-xl">
+          CHROMENOMICS
         </p>
         <h2 className="text-4xl lg:text-5xl font-extrabold text-zinc-300 mt-2">
-          THE PIXEL PLAN
+          THE $CHROME PLAN
         </h2>
       </div>
 
-      {/* Donut Chart and Tokenomics Section */}
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-28 md:px-4 pb-4 md:pb-8">
         <div className="relative w-full max-w-md lg:max-w-lg">
           <DonutChart
@@ -74,18 +63,17 @@ export const PixelPlan = () => {
           />
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <Image
-                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757103951/5472274962897794227-min_omhhxs.gif"
-                alt="Pixel Character"
-                width={200}
-                height={200}
-                unoptimized
-                className="h-[170px] w-[170px] md:h-[200px] md:w-[200px]"
-              />
+              src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757103951/5472274962897794227-min_omhhxs.gif"
+              alt="$CHROME Character"
+              width={200}
+              height={200}
+              unoptimized
+              className="h-[170px] w-[170px] md:h-[200px] md:w-[200px]"
+            />
           </div>
         </div>
 
         <div className="w-full max-w-md">
-          {/* FONT CHANGE: Added 'font-pixel' to this card */}
           <div className="rounded-lg border-2 border-zinc-700 bg-zinc-900/80 backdrop-blur-sm p-6 tracking-wider">
             <h3 className="text-center text-3xl font-bold text-zinc-200">
               Token Distribution
@@ -98,7 +86,7 @@ export const PixelPlan = () => {
                   tabIndex={0}
                   className={`flex items-center justify-between rounded-md p-2 -m-2 text-base cursor-pointer transition-all duration-300 ${
                     activeIndex === index
-                      ? "scale-[102%] bg-green-900/50"
+                      ? "scale-[102%] bg-purple-900/50"
                       : "hover:bg-zinc-800/60"
                   }`}
                   onMouseEnter={() => setActiveIndex(index)}
@@ -126,14 +114,13 @@ export const PixelPlan = () => {
             <div className="mt-6 border-t-2 border-dashed border-zinc-700 pt-4 text-center">
               <p className="text-base text-zinc-200">Total Supply:</p>
               <p className="text-2xl font-bold tracking-wider text-zinc-200">
-                120,000,000 $PIXEL
+                120,000,000 $CHROME
               </p>
             </div>
           </div>
         </div>
       </div>
       
-      {/* Roadmap Cards Section */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-16 gap-x-6 pt-12">
         {roadmapPhases.map((phase) => (
           <div key={phase.title} className="relative">
@@ -144,10 +131,9 @@ export const PixelPlan = () => {
               height={60}
               className="absolute -top-16 left-1/2 -translate-x-1/2 h-16 w-auto pointer-events-none"
             />
-            {/* FONT CHANGE: Added 'font-pixel' to the phase cards */}
-            <div className="h-full bg-zinc-900/80 backdrop-blur-sm border-4 border-zinc-700 p-5 flex flex-col text-center transition-colors duration-300 hover:border-pixel-green ">
-              <h4 className="text-2xl font-bold text-white font-pixelify tracking-wider">{phase.title}</h4>
-              <p className="text-md mt-2 flex-grow text-zinc-300 font-pixelify tracking-wider">
+            <div className="h-full bg-zinc-900/80 backdrop-blur-sm border-4 border-zinc-700 p-5 flex flex-col text-center transition-colors duration-300 hover:border-purple-400 ">
+              <h4 className="text-2xl font-bold text-white tracking-wider">{phase.title}</h4>
+              <p className="text-md mt-2 flex-grow text-zinc-300 tracking-wider">
                 {phase.description}
               </p>
             </div>

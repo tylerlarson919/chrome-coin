@@ -1,3 +1,4 @@
+// components/HowToBuy.tsx
 "use client";
 import { useState } from "react";
 import { SwapWidget } from "@/components/SwapWidget";
@@ -18,10 +19,10 @@ const steps = [
     cta: "Buy SOL",
   },
   {
-    name: "3. Swap for $PIXEL",
-    description: "Use the swap widget or CA to trade your SOL for $PIXEL tokens.",
-    href: "#", // No link needed as the widget is present
-    cta: "Welcome to the World!",
+    name: "3. Swap for $CHROME",
+    description: "Use the swap widget or CA to trade your SOL for $CHROME tokens.",
+    href: "#",
+    cta: "Welcome to the Crew!",
   },
 ];
 
@@ -33,65 +34,61 @@ export const HowToBuy = () => {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(contractAddress);
       setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 2000); // Reset icon after 2 seconds
+      setTimeout(() => setIsCopied(false), 2000);
     }
   };
 
   return (
     <section id="how-to-buy" className="pt-10 md:pt-20 mb-24 ">
-      {/* Header styled like other homepage sections */}
       <div className="text-left mb-8 md:mb-12">
-        <p className="text-pixel-green font-bold tracking-widest text-lg md:text-xl">
+        <p className="text-purple-400 font-bold tracking-widest text-lg md:text-xl">
           GET STARTED
         </p>
         <h2 className="text-4xl lg:text-5xl font-extrabold text-zinc-300 mt-2">
-          HOW TO BUY $PIXEL
+          HOW TO BUY $CHROME
         </h2>
       </div>
 
-       <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
-                {/* Left Side: Swap Widget */}
-                <div className="flex justify-center flex-col gap-4">
-                    {/* CA Copy Box with new dark styles */}
-                    <div className="relative z-10 w-full p-4 bg-zinc-900/80 border-2 border-zinc-700 rounded-lg backdrop-blur-sm flex items-center justify-between gap-4">
-                        <code className="text-sm sm:text-base text-zinc-300 truncate">
-                            {contractAddress}
-                        </code>
-                        <button 
-                            onClick={handleCopy} 
-                            className="text-zinc-400 hover:text-white transition-colors text-lg"
-                            aria-label="Copy contract address"
-                        >
-                            {isCopied ? <FaCheck className="text-pixel-green" /> : <FaCopy />}
-                        </button>
-                    </div>
-                    <SwapWidget />
-                </div>
-
-                {/* Right Side: Instructions */}                    
-                <div className="space-y-8">
-                    {steps.map((step, index) => (
-                        <div key={index} className="flex items-start">
-                            <CheckBadgeIcon className="h-8 w-8 text-pixel-green flex-shrink-0 mt-1" />
-                            <div className="ml-4">
-                                <h3 className="text-xl font-bold text-zinc-300">{step.name}</h3>
-                                <p className="mt-1 text-zinc-400">{step.description}</p>
-                                <a 
-                                    href={step.href} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="text-sm font-bold text-pixel-green hover:underline mt-2 inline-block"
-                                >
-                                    Learn More &rarr;
-                                </a>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          <div className="flex justify-center flex-col gap-4">
+            <div className="relative z-10 w-full p-4 bg-zinc-900/80 border-2 border-zinc-700 rounded-lg backdrop-blur-sm flex items-center justify-between gap-4">
+              <code className="text-sm sm:text-base text-zinc-300 truncate">
+                {contractAddress}
+              </code>
+              <button 
+                onClick={handleCopy} 
+                className="text-zinc-400 hover:text-white transition-colors text-lg"
+                aria-label="Copy contract address"
+              >
+                {isCopied ? <FaCheck className="text-purple-400" /> : <FaCopy />}
+              </button>
             </div>
+            <SwapWidget />
+          </div>
+       
+          <div className="space-y-8">
+            {steps.map((step, index) => (
+              <div key={index} className="flex items-start">
+                <CheckBadgeIcon className="h-8 w-8 text-purple-400 flex-shrink-0 mt-1" />
+                <div className="ml-4">
+                  <h3 className="text-xl font-bold text-zinc-300">{step.name}</h3>
+                  <p className="mt-1 text-zinc-400">{step.description}</p>
+                  <a 
+                    href={step.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-sm font-bold text-purple-400 hover:underline mt-2 inline-block"
+                  >
+                    Learn More &rarr;
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
     </section>
   );
 };

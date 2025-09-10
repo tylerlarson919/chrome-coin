@@ -1,25 +1,21 @@
+// components/Hero.tsx
 "use client";
 
 import { Image } from "@heroui/image";
+import Link from "next/link";
 import { FaXTwitter } from "react-icons/fa6";
 
 export const Hero = () => {
   const mintAddress = process.env.NEXT_PUBLIC_PIXEL_MINT_ADDRESS || "";
   const photonUrl = `https://www.dextools.io/app/en/solana/pair-explorer/${mintAddress}`;
-  const xlink = `https://x.com/PixelWorldChain`;
+  const xlink = `https://x.com/YourTwitterHandle`;
 
-  const shopSectionId = "#how-to-buy"; 
-
-  // Reusable class strings for the pixelated buttons
-  const primaryButtonClasses = "h-14 px-8 flex items-center justify-center text-white font-bold tracking-wider border-4 border-black shadow-[4px_4px_0px_#000000] bg-pixel-green hover:bg-green-600 hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150";
-  const secondaryButtonClasses = "h-14 px-4 flex items-center justify-center text-white font-bold tracking-wider border-4 border-black shadow-[4px_4px_0px_#000000] bg-zinc-700 hover:bg-zinc-600 hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150";
+  const shopUrl = "/market";
 
   return (
     <section className="relative w-full h-[80vh] md:h-[70vh] bg-zinc-800 flex justify-center overflow-hidden md:items-center">
-
-      {/* Background video */}
       <video
-        src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757031116/-8652648916557767945_kcfia3.webm"
+        src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757507059/3_kfchk5.webm"
         autoPlay
         loop
         muted
@@ -27,67 +23,88 @@ export const Hero = () => {
         className="absolute top-0 left-0 w-full h-full object-cover object-top"
       />
 
-      {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/60 md:to-black/0" />
 
-      {/* Content Container */}
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-between gap-6 px-8 pb-14 pt-32 text-center md:justify-center md:py-0">
-        {/* Top Content (Logo & Subtitle) */}
-        <div className="flex flex-col items-center">
-            <Image
-              src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757019941/px-white_2x_juk2c6.png"
-              alt="Pixel World Logo"
-              width={600}
-              height={60}
-              className="w-full max-w-[600px] h-auto object-contain"
-            />
+      <div className="relative z-10 flex h-full w-full flex-col items-center gap-6 px-8 pb-14 pt-32 text-center justify-center md:py-0">
+        <div className="flex flex-col items-center pb-2">
+          <Image
+            src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757465008/ch-scroll_gobxyz.svg"
+            alt="$CHROME Logo"
+            width={700}
+            height={70}
+            className="w-full max-w-[700px] h-auto object-contain invert"
+          />
         </div>
 
-        {/* Bottom Content (Buttons) */}
-        <div className="flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row">
-          {/* Primary CTA Button (No changes) */}
-          <a
-            href={shopSectionId}
-            className={`w-full sm:w-auto ${primaryButtonClasses}`}
+        <div className="flex flex-col items-center justify-center gap-3 sm:gap-11 w-auto sm:flex-row sm:items-center">
+          <div className="text-center">
+          <Link
+            href={shopUrl}
+            className="group relative inline-flex h-10 items-center justify-center overflow-visible"
+            aria-label="Shop $CHROME"
           >
-            Buy $PIXEL
-          </a>
+            <div 
+              className="absolute -inset-7 bg-white transition-colors group-hover:bg-zinc-300"
+              style={{
+                maskImage: "url('/cross-stroke.svg')",
+                maskRepeat: 'no-repeat',
+                maskPosition: 'center',
+                // This is the line to change for sizing!
+                maskSize: '100% 100%' 
+              }}
+            ></div>
+            
+            <span className="relative flex items-center justify-center px-2 text-white text-sm font-bold tracking-wider uppercase">
+              SHOP $CHROME
+            </span>
+          </Link>
+        </div>
 
-          {/* NEW: Wrapper for the two icon buttons */}
-          <div className="flex w-full gap-4 sm:w-auto">
-            {/* DEXTools Button */}
-            <a
-              href={photonUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              // CHANGE: Use flex-1 for mobile width, keep sm:w-auto for desktop
-              className={`flex-1 sm:w-auto flex items-center justify-center ${secondaryButtonClasses}`}
-              aria-label="View on DEXTools"
-            >
-              <Image
-                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757277715/4_ozmaii.png"
-                alt="DEXTools Logo"
-                width={32}
-                height={32}
-              />
-            </a>
-
-            {/* Twitter Button */}
-            <a
-              href={xlink}
-              target="_blank"
-              rel="noopener noreferrer"
-              // CHANGE: Use flex-1 for mobile width, keep sm:w-auto for desktop
-              className={`flex-1 sm:w-auto flex items-center justify-center ${secondaryButtonClasses}`}
-              aria-label="View on X/Twitter"
-            >
-              <Image
-                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757277713/3_znu7hj.png"
-                alt="TWITTER LOGO"
-                width={32}
-                height={32}
-              />
-            </a>
+          <div className="flex gap-6 w-auto">
+            <div className="text-center">
+              <Link
+                href={photonUrl}
+                className="group relative inline-flex h-10 w-10 items-center justify-center overflow-visible"
+                aria-label="View on DEXTools"
+              >
+                <div 
+                  className="absolute -inset-2 bg-white transition-colors group-hover:bg-zinc-300"
+                  style={{
+                    maskImage: "url('/cross-stroke-3.svg')",
+                    maskRepeat: 'no-repeat',
+                    maskPosition: 'center',
+                    // This is the line to change for sizing!
+                    maskSize: '100% 100%' 
+                  }}
+                ></div>
+                <Image
+                    src="/dextools.svg"
+                    alt="DEXTools Logo"
+                    width={20}
+                    height={20}
+                    className="relative"
+                  />
+              </Link>
+            </div>
+            <div className="text-center">
+              <Link
+                href={xlink}
+                className="group relative inline-flex h-10 w-10 items-center justify-center overflow-visible"
+                aria-label="View on X"
+              >
+                <div 
+                  className="absolute -inset-2 bg-white transition-colors group-hover:bg-zinc-300"
+                  style={{
+                    maskImage: "url('/cross-stroke-3.svg')",
+                    maskRepeat: 'no-repeat',
+                    maskPosition: 'center',
+                    // This is the line to change for sizing!
+                    maskSize: '100% 100%' 
+                  }}
+                ></div>
+                <FaXTwitter className="relative size-[20px] text-white" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

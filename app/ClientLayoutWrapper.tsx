@@ -1,9 +1,9 @@
+// app/ClientLayoutWrapper.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/Footer";
-// import WelcomeModules from "@/components/first-time-visitors/WelcomeModules";
 import { Providers } from "./providers";
 import { LoadingContext } from "@/context/LoadingContext";
 
@@ -27,7 +27,6 @@ export function ClientLayoutWrapper({
       >
         <Providers>
           <LoadingContext.Provider value={{ isBackgroundVisible }}>
-            {/* <WelcomeModules /> */}
             <div className="relative flex min-h-screen flex-col">
               <Navbar />
               <main className="flex-1">

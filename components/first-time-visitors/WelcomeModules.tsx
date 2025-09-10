@@ -7,7 +7,7 @@ export default function WelcomeModules() {
   const [hideCookies, setHideCookies] = useState(true);
 
   useEffect(() => {
-    const accepted = localStorage.getItem("mer_cookies_accepted");
+    const accepted = localStorage.getItem("chrome_cookies_accepted");
     if (!accepted) {
       setShowCookies(true);
     }
@@ -18,12 +18,12 @@ export default function WelcomeModules() {
   }, [showCookies]);
 
   const acceptCookies = () => {
-    localStorage.setItem("mer_cookies_accepted", "1");
+    localStorage.setItem("chrome_cookies_accepted", "1");
     setHideCookies(true);
   };
 
   const rejectCookies = () => {
-    localStorage.setItem("mer_cookies_accepted", "2");
+    localStorage.setItem("chrome_cookies_accepted", "2");
     setHideCookies(true);
   };
 
@@ -38,7 +38,7 @@ export default function WelcomeModules() {
     <>
       {showCookies && (
         <div
-          className={`fixed bottom-4 inset-x-4 z-50 max-w-6xl mx-auto bg-black/70 border-[3px] border-mer-orange rounded-xl backdrop-blur-lg flex flex-col md:flex-row items-center gap-4 p-4 md:p-5 transition-opacity duration-300 ${hideCookies ? "opacity-0" : "opacity-100"}`}
+          className={`fixed bottom-4 inset-x-4 z-50 max-w-6xl mx-auto bg-black/70 border-[3px] border-purple-500 rounded-xl backdrop-blur-lg flex flex-col md:flex-row items-center gap-4 p-4 md:p-5 transition-opacity duration-300 ${hideCookies ? "opacity-0" : "opacity-100"}`}
         >
           <div className="flex-grow flex items-center gap-4">
             <svg
@@ -59,10 +59,10 @@ export default function WelcomeModules() {
               />
             </svg>
             <p className="text-sm md:text-base text-white font-semibold tracking-wide [text-shadow:1px_1px_1px_#000]">
-              We use cookies to enhance your $MER experience.
+              We use cookies to enhance your $CHROME experience.
               <a
                 href="/cookie-policy"
-                className="underline ml-1 hover:text-mer-orange transition-colors"
+                className="underline ml-1 hover:text-purple-400 transition-colors"
               >
                 Learn more
               </a>
@@ -78,7 +78,7 @@ export default function WelcomeModules() {
             </button>
             <button
               onClick={acceptCookies}
-              className="px-5 py-2 bg-mer-orange text-white font-bold tracking-wider rounded-lg border-2 border-black text-sm shadow-[3px_3px_0px_#000] hover:shadow-none hover:brightness-110 active:scale-95 hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-150 ease-in-out"
+              className="px-5 py-2 bg-purple-600 text-white font-bold tracking-wider rounded-lg border-2 border-black text-sm shadow-[3px_3px_0px_#000] hover:shadow-none hover:brightness-110 active:scale-95 hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-150 ease-in-out"
             >
               Accept
             </button>

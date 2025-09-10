@@ -1,3 +1,4 @@
+// components/SwapWidget.tsx
 'use client';
 import { useState, useMemo, useEffect } from 'react';
 import { Input } from "@heroui/input";
@@ -12,7 +13,6 @@ const WalletIcon = ({ src, alt }: { src: string, alt: string }) => (
     <img src={src} alt={alt} className="w-8 h-8 rounded-[8px]" />
 );
 
-// Constants
 const PIXEL_MINT = new PublicKey(process.env.NEXT_PUBLIC_PIXEL_MINT_ADDRESS!);
 const SOL_MINT = new PublicKey('So11111111111111111111111111111111111111112');
 
@@ -40,7 +40,7 @@ export const SwapWidget = () => {
     const { publicKey, sendTransaction, wallet, disconnect, pixelBalance, fetchBalance } = useAppWallet();
     const { connection } = useConnection();
     const [isClient, setIsClient] = useState(false);
-    const [activeTab, setActiveTab] = useState('SOL'); // Logic preserved
+    const [activeTab, setActiveTab] = useState('SOL');
     const [payAmount, setPayAmount] = useState('0');
     const [prices, setPrices] = useState({ solPrice: 0, pixelPrice: 0 });
     const [isLoading, setIsLoading] = useState(false);
@@ -75,7 +75,7 @@ export const SwapWidget = () => {
         let amountInUsd;
         if (activeTab === 'SOL') {
             amountInUsd = amount * prices.solPrice;
-        } else { // 'CARD' logic preserved
+        } else {
             amountInUsd = amount;
         }
         
@@ -113,7 +113,6 @@ export const SwapWidget = () => {
                 }),
             });
 
-            // Original nested try/catch for API error parsing is preserved
             if (!response.ok) {
                 let errorData;
                 try {
@@ -134,7 +133,7 @@ export const SwapWidget = () => {
             await connection.confirmTransaction({ blockhash, lastValidBlockHeight, signature }, 'confirmed');
 
             setStatus('success');
-            setStatusMessage('Swap successful! Welcome to Pixel World.');
+            setStatusMessage('Swap successful! Welcome to $CHROME.');
             fetchBalance();
         } catch (error) {
             console.error('Swap failed:', error);
@@ -145,18 +144,16 @@ export const SwapWidget = () => {
         }
     };
     
-    // Preserved card payment placeholder
     const handleCardPayment = () => {
         alert("Card payments coming soon! We're working with our partners to enable this feature.");
     };
 
     const ActionButton = () => {
         const defaultButtonClasses = "h-14 py-3 px-4 font-bold text-base tracking-wider";
-        const pixelButtonClasses = "text-white font-bold border-4 border-black shadow-[4px_4px_0px_#000000] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150";
+        const chromeButtonClasses = "text-white font-bold border-4 border-black shadow-[4px_4px_0px_#000000] hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150";
 
         if (!publicKey) {
             return (
-                // Added a wrapper div for specific CSS targeting
                 <div className="swap-widget-container">
                     <WalletMultiButton 
                         className="!w-full !flex !items-center !justify-center !space-x-2"
@@ -171,19 +168,19 @@ export const SwapWidget = () => {
 
         if (isLoading) {
             return (
-                <button disabled className={`w-full text-white bg-zinc-500 ${defaultButtonClasses} ${pixelButtonClasses} !shadow-none`}>
+                <button disabled className={`w-full text-white bg-zinc-500 ${defaultButtonClasses} ${chromeButtonClasses} !shadow-none`}>
                     Processing...
                 </button>
             );
         }
         
-        const actionText = activeTab === 'CARD' ? 'Buy with Card' : `Swap SOL for $PIXEL`;
+        const actionText = activeTab === 'CARD' ? 'Buy with Card' : `Swap SOL for $CHROME`;
         const actionHandler = activeTab === 'CARD' ? handleCardPayment : handleSwap;
         
         return (
             <button
                 onClick={actionHandler}
-                className={`w-full bg-pixel-green hover:bg-green-600 ${defaultButtonClasses} ${pixelButtonClasses}`}
+                className={`w-full bg-purple-600 hover:bg-purple-500 ${defaultButtonClasses} ${chromeButtonClasses}`}
             >
                 {actionText}
             </button>
@@ -192,16 +189,15 @@ export const SwapWidget = () => {
 
     return (
         <div className="relative z-10 w-full max-w-xl mx-auto font-montserrat">
-            {/* Main container with new dark styles */}
             <div className="relative z-10 w-full p-6 bg-zinc-900/80 border-2 border-zinc-700 rounded-lg backdrop-blur-sm">
                 <h2 className="text-2xl lg:text-3xl font-bold text-center text-zinc-200">
-                    Swap SOL for $PIXEL
+                    Swap SOL for $CHROME
                 </h2>
                 {isClient && publicKey && wallet && (
-                    <div className="flex items-center justify-center gap-4 p-2 mt-4 bg-green-900/40 border border-green-700 rounded-lg">
+                    <div className="flex items-center justify-center gap-4 p-2 mt-4 bg-purple-900/40 border border-purple-700 rounded-lg">
                         <div className="flex items-center gap-2">
                             <img src={wallet.adapter.icon} alt={wallet.adapter.name} className="w-5 h-5" />
-                            <p className="font-mono text-xs font-bold text-green-300">
+                            <p className="font-mono text-xs font-bold text-purple-300">
                                 {publicKey.toBase58().slice(0, 10)}...{publicKey.toBase58().slice(-4)}
                             </p>
                         </div>
@@ -216,9 +212,9 @@ export const SwapWidget = () => {
                 )}
 
                 <div className="mt-4 text-center">
-                    <p className="text-zinc-300 font-bold">YOUR $PIXEL ≈ {pixelBalance.toLocaleString()}</p>
+                    <p className="text-zinc-300 font-bold">YOUR $CHROME ≈ {pixelBalance.toLocaleString()}</p>
                     <p className="text-sm text-zinc-400">
-                        1 $PIXEL ≈ ${prices.pixelPrice > 0 ? prices.pixelPrice.toPrecision(4) : '...'}
+                        1 $CHROME ≈ ${prices.pixelPrice > 0 ? prices.pixelPrice.toPrecision(4) : '...'}
                     </p>
                 </div>
 
@@ -233,15 +229,15 @@ export const SwapWidget = () => {
                         classNames={{
                             label: "text-sm font-bold text-zinc-400",
                             input: "text-xl font-bold text-white",
-                            inputWrapper: "border-2 border-zinc-700 bg-zinc-800 data-[hover=true]:bg-zinc-700 group-data-[focus=true]:border-pixel-green",
+                            inputWrapper: "border-2 border-zinc-700 bg-zinc-800 data-[hover=true]:bg-zinc-700 group-data-[focus=true]:border-purple-400",
                         }}
                     />
                     <Input
                         isReadOnly
-                        label="Receive $PIXEL"
+                        label="Receive $CHROME"
                         value={receiveAmount}
                         variant="bordered"
-                        endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757060371/pfp-dark-pix_1_rvfa4n.png" alt="$PIXEL" className="w-8 h-8 rounded-lg" />}
+                        endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757060371/pfp-dark-pix_1_rvfa4n.png" alt="$CHROME" className="w-8 h-8 rounded-lg" />}
                         classNames={{
                             label: "text-sm font-bold text-zinc-400",
                             input: "text-xl font-bold text-white",
@@ -259,7 +255,7 @@ export const SwapWidget = () => {
                 )}
                 
                 <div className="flex items-center justify-between mt-4">
-                    <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" className="text-sm underline text-zinc-400 hover:text-pixel-green">
+                    <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" className="text-sm underline text-zinc-400 hover:text-purple-400">
                         Don&apos;t have a Solana wallet?
                     </a>
                     <div className="flex items-center space-x-2">

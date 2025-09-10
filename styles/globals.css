@@ -1,3 +1,4 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,17 +19,14 @@
     }
   }
 
-  /* --- New Styles for Background --- */
   .shining-rays {
     background-image: repeating-conic-gradient(
       from 45deg,
-      #ff6510 0% 2.5%,
+      #9333ea 0% 2.5%,
       transparent 2.5% 5%
     );
     animation: spin 250s linear infinite;
   }
-
-
 
   @keyframes spin {
     from {
@@ -58,7 +56,6 @@
   100% { transform: scale(1); }
 }
 
-
 .text-stroke-smooth {
   -webkit-text-stroke: 14px #000;
   color: #FFF; 
@@ -71,10 +68,9 @@
 .text-stroke-bg {
   color: #000; 
   z-index: -1; 
-  text: center
+  text-align: center;
 }
 
-/* Default (Mobile) Styles */
 .noise-overlay {
   background-image: url("https://res.cloudinary.com/dqedckeaa/image/upload/v1752695475/retro_comics_halftone_background_dywwro.webp");
   position: fixed;
@@ -86,31 +82,21 @@
   pointer-events: none;
   z-index: 100;
   mix-blend-mode: soft-light;
-  
-  /* --- EDITS --- */
-  /* Smaller, repeating texture for mobile that doesn't stretch */
   background-size: 300px; 
   background-repeat: repeat;
   transform: none;
 }
 
-/* Desktop Styles (768px and wider) */
 @media (min-width: 1024px) {
-  /* The .noise-overlay element itself will render the two left-side textures */
   .noise-overlay {
     background-repeat: no-repeat;
     background-image:
       url("https://res.cloudinary.com/dqedckeaa/image/upload/v1752695475/retro_comics_halftone_background_dywwro.webp"),
       url("https://res.cloudinary.com/dqedckeaa/image/upload/v1752695475/retro_comics_halftone_background_dywwro.webp");
-    
-    /* Size each texture to be contained within its quadrant without squishing */
     background-size: contain;
-    
-    /* Position textures in the top-left and bottom-left half of the screen */
     background-position: top left, bottom left;
   }
 
-  /* The ::after pseudo-element will render the two MIRRORED right-side textures */
   .noise-overlay::after {
     content: "";
     position: absolute;
@@ -118,37 +104,25 @@
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* Use the same background properties as the parent */
     background-repeat: no-repeat;
     background-image:
       url("https://res.cloudinary.com/dqedckeaa/image/upload/v1752695475/retro_comics_halftone_background_dywwro.webp"),
       url("https://res.cloudinary.com/dqedckeaa/image/upload/v1752695475/retro_comics_halftone_background_dywwro.webp");
     background-size: contain;
-    
-    /* Position textures in the top-right and bottom-right half */
     background-position: top right, bottom right;
-    
-    /* Horizontally flip the entire pseudo-element to mirror the textures */
     transform: scaleX(-1);
-    
-    /* These properties must be duplicated from the parent for the pseudo-element */
-    opacity: 1.0; /* Opacity is handled by the parent */
+    opacity: 1.0;
     mix-blend-mode: soft-light;
     pointer-events: none;
   }
 }
 
-
-/* app/globals.css */
-
 .wallet-adapter-dropdown {
   width: 100% !important;
 }
 
-/* Base styles for the main connect button */
 .wallet-adapter-button-trigger {
-  background-color: #63c79a !important;
+  background-color: #9333ea !important; /* CHANGED */
   color: #ffffff !important;
   font-family: var(--font-montserrat), sans-serif !important; 
   font-weight: 700 !important;
@@ -159,20 +133,17 @@
   width: 100% !important;
 }
 
-/* UPDATED: Added transform and box-shadow for hover effect */
 .wallet-adapter-button-trigger:hover {
-  background-color: #52a57e !important;
+  background-color: #a855f7 !important; /* CHANGED */
   transform: translate(-2px, -2px) !important;
   box-shadow: 6px 6px 0px #000000 !important;
 }
 
-/* ADDED: Active state for the "pressed" effect */
 .wallet-adapter-button-trigger:active {
   transform: translate(4px, 4px) !important;
   box-shadow: none !important;
 }
 
-/* Modal Overlay & Wrapper */
 .wallet-adapter-modal-wrapper {
   background: #1a1a1a !important;
   border: 3px solid #000000 !important;
@@ -182,7 +153,6 @@
   padding-right: 10px;
 }
 
-/* Modal Title */
 .wallet-adapter-modal-title {
   font-size: 2rem !important;
   line-height: 2.5rem !important;
@@ -193,9 +163,8 @@
   padding-right: 14px !important;
 }
 
-/* Close Button ('X') */
 .wallet-adapter-modal-button-close {
-  background-color: #63c79a !important;
+  background-color: #9333ea !important; /* CHANGED */
   border-radius: 0.375rem !important;
   transition: all 0.2s ease-in-out !important;
 }
@@ -209,7 +178,6 @@
   fill: #000000 !important;
 }
 
-/* Wallet List & Buttons */
 .wallet-adapter-modal-list {
   margin: 0 !important;
   padding: 0 !important;
@@ -220,7 +188,6 @@
   margin-top: 10px;
 }
 
-/* Individual wallet buttons (Phantom, etc.) */
 .wallet-adapter-modal-list .wallet-adapter-button {
   background-color: rgba(0, 0, 0, 0.3) !important;
   border: 2px solid #000000 !important;
@@ -233,21 +200,19 @@
 
 .wallet-adapter-modal-list .wallet-adapter-button:hover {
   background-color: rgba(0, 0, 0, 0.6) !important;
-  border-color: #63c79a !important;
+  border-color: #9333ea !important; /* CHANGED */
 }
 
-/* Wallet icon */
 .wallet-adapter-button-start-icon img {
   width: 32px !important;
   height: 32px !important;
 }
 
-/* "More Options" Button */
 .wallet-adapter-modal-list-more {
   background: none !important;
   border: none !important;
   box-shadow: none !important;
-  color: #63c79a !important;
+  color: #9333ea !important; /* CHANGED */
   font-family: inherit !important;
   font-size: 1.1rem !important;
   font-weight: 600 !important;
@@ -261,18 +226,14 @@
 }
 
 .wallet-adapter-modal-list-more svg {
-  fill: #63c79a !important;
+  fill: #9333ea !important; /* CHANGED */
 }
 
 @layer base {
-  /* This targets desktop screens (Tailwind's 'lg' breakpoint and up) */
   @media (min-width: 1024px) {
-    /* Hides the scrollbar for WebKit browsers like Chrome, Safari, and Edge */
     html::-webkit-scrollbar {
       display: none;
     }
-
-    /* Hides the scrollbar for Firefox */
     html {
       scrollbar-width: none;
     }
@@ -294,27 +255,21 @@
     font-weight: 500 !important;
     letter-spacing: normal !important;
   }
-
-  /* UPDATED: Rule now targets both buttons and sets mobile padding */
   .navbar-wallet-button .wallet-adapter-button-trigger,
   .navbar-wallet-button .btn-connected {
-    padding-left: 0.5rem !important;  /* 8px, equivalent to px-2 */
+    padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
   }
 }
 
-/* --- Desktop Styles --- */
 @media (min-width: 640px) {
-  /* NEW: This rule sets the desktop padding */
   .navbar-wallet-button .wallet-adapter-button-trigger,
   .navbar-wallet-button .btn-connected {
-    padding-left: 1rem !important;   /* 16px, equivalent to px-4 */
+    padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
 }
 
-
-/* Starfield Background */
 @keyframes animateStars {
   from {
     transform: translateY(0);
@@ -338,16 +293,26 @@
   animation: animateStars linear infinite;
 }
 
-/* Layer 1: Farthest, smallest, slowest stars */
 #stars {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2000' height='2000'%3E%3Cg fill='%23fff' fill-opacity='0.4'%3E%3Ccircle cx='100' cy='100' r='1'/%3E%3Ccircle cx='300' cy='500' r='1'/%3E%3Ccircle cx='600' cy='200' r='1'/%3E%3Ccircle cx='800' cy='700' r='1'/%3E%3Ccircle cx='1100' cy='400' r='1'/%3E%3Ccircle cx='1300' cy='900' r='1'/%3E%3Ccircle cx='1500' cy='100' r='1'/%3E%3Ccircle cx='1800' cy='600' r='1'/%3E%3Ccircle cx='200' cy='1200' r='1'/%3E%3Ccircle cx='500' cy='1500' r='1'/%3E%3Ccircle cx='900' cy='1100' r='1'/%3E%3Ccircle cx='1200' cy='1800' r='1'/%3E%3Ccircle cx='1600' cy='1400' r='1'/%3E%3Ccircle cx='1900' cy='1900' r='1'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 2000px 2000px;
   animation-duration: 200s;
 }
 
-/* Layer 2: Closer, bigger, faster stars */
 #stars2 {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2000' height='2000'%3E%3Cg fill='%23fff' fill-opacity='0.6'%3E%3Ccircle cx='200' cy='300' r='2'/%3E%3Ccircle cx='500' cy='800' r='2'/%3E%3Ccircle cx='900' cy='100' r='2'/%3E%3Ccircle cx='1200' cy='600' r='2'/%3E%3Ccircle cx='1600' cy='1100' r='2'/%3E%3Ccircle cx='1900' cy='1500' r='2'/%3E%3Ccircle cx='100' cy='1400' r='2'/%3E%3Ccircle cx='700' cy='1800' r='2'/%3E%3Ccircle cx='1400' cy='200' r='2'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 2000px 2000px;
   animation-duration: 120s;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

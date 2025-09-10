@@ -4,18 +4,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: {
-    default: "Pixel World |  Build our universe, one block at a time.",
-    template: `Pixel World - %s`,
+    default: "$CHROME | The Intersection of Streetwear and Web3.",
+    template: `$CHROME - %s`,
   },
-  description: "A digital realm powered by nostalgia, memes, and zero-utility fun. Welcome to the world of $PIXEL.",
+  description: "Discover exclusive NFT collections from $CHROME. A new era of digital collectibles inspired by Chrome Hearts.",
   keywords: [
-    'Pixel World',
-    'crypto',
-    'meme coin',
-    'pixel art',
+    '$CHROME',
+    'Chrome Hearts',
     'NFTs',
+    'crypto',
     'blockchain',
-    '$PIXEL',
+    'digital collectibles',
+    'streetwear',
   ],
   robots: { index: true, follow: true },
   alternates: { canonical: '/' },
@@ -23,23 +23,23 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: '/',
-    siteName: 'Pixel World',
-    title: 'Pixel World |  Build our universe, one block at a time.',
-    description: 'A digital realm powered by nostalgia, memes, and zero-utility fun.',
+    siteName: '$CHROME',
+    title: '$CHROME | The Intersection of Streetwear and Web3.',
+    description: 'Discover exclusive NFT collections from $CHROME.',
     images: [
       {
-        url: '/og/default.jpg', // Make sure to create this image
+        url: '/og/default.jpg',
         width: 1200,
         height: 1200,
-        alt: 'Pixel World',
+        alt: '$CHROME',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pixel World |  Build our universe, one block at a time.',
-    description: 'A digital realm powered by nostalgia, memes, and zero-utility fun.',
-    images: ['/og/default.jpg'], // Make sure to create this image
+    title: '$CHROME | The Intersection of Streetwear and Web3.',
+    description: 'Discover exclusive NFT collections from $CHROME.',
+    images: ['/og/default.jpg'],
   },
   icons: {
     icon: '/favicon.ico',
