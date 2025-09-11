@@ -3,6 +3,7 @@
 
 import Link from "next/link";
 import { ProductGrid } from "./ProductGrid";
+import { Image } from "@heroui/image";
 
 export const Shop = () => {
   return (
@@ -10,11 +11,17 @@ export const Shop = () => {
       <div className="mx-auto pt-12 md:pt-20">
         <div className="text-center mb-8 md:mb-12">
           <p className="text-purple-400 font-bold tracking-widest text-lg md:text-xl">
-            200 PREMIUM NFTs
+            48 RARE NFTs
           </p>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-zinc-300 mt-2">
-            THE GENESIS DROP
-          </h2>
+          <div className="flex flex-col items-center pt-4 px-4 sm:px-0">
+            <Image
+              src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757551850/utilities_vwlwdk.svg"
+              alt="Utilities"
+              width={900}
+              height={90}
+              className="w-full max-w-[500px] h-auto object-contain invert"
+            />
+          </div>
         </div>
 
         {/* Product Grid Component */}

@@ -9,7 +9,16 @@ export const About = () => {
     <section id="about" className="overflow-hidden pb-0 ">
       <div className="mx-auto max-w-8xl px-0 sm:px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-8xl text-center md:mb-20">
-          <div className="flex flex-col items-center justify-start gap-4 sm:flex-row md:gap-6">
+          <div className="flex flex-col items-center justify-start gap-2">
+            <div className="flex flex-col items-center pt-4 w-full">
+              <Image
+                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757552472/artist_zwvehl.svg"
+                alt="Artist"
+                width={700}
+                height={70}
+                className="w-full max-w-[500px] h-auto object-contain invert"
+              />
+            </div>
             <div className="relative h-32 w-32 flex-shrink-0 overflow-hidden rounded-full border-4 border-purple-400 shadow-lg">
               <Image
                 src={artistImageUrl}
@@ -18,13 +27,10 @@ export const About = () => {
                 objectFit="cover"
               />
             </div>
-            <div className="mt-4 text-center sm:mt-0 sm:text-left">
+            <div className="text-center sm:text-left mt-4">
               <p className="text-lg font-bold tracking-widest text-purple-400 md:text-xl">
-                MEET THE ARTIST
-              </p>
-              <h2 className="mt-2 text-4xl font-extrabold text-zinc-300 lg:text-5xl">
                 IVAN PASSERNI
-              </h2>
+              </p>
             </div>
           </div>
 

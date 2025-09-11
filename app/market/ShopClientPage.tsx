@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Ticker } from "@/components/Ticker";
 import { ShopProductGrid } from "@/components/ShopProductGrid";
 import { HeroCarousel } from "@/components/HeroCarousel"; // 1. Import the new component
+import Link from "next/link";
 
 const shopCategories = [
   {
@@ -27,16 +28,34 @@ export function ShopClientPage() {
             loop
             muted
             playsInline
-            className="absolute top-0 left-0 h-full w-full object-cover object-center"
+            className="absolute top-0 left-0 h-full w-full object-cover object-bottom"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                {/* Center: Absolutely positioned logo */}
+                <div className="pointer-events-none absolute top-4 sm:top-8 left-1/2 -translate-x-1/2">
+                  <Link href="/" aria-label="Home" className="pointer-events-auto">
+                    <Image
+                      src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757465008/ch-scroll_gobxyz.svg"
+                      alt="Logo"
+                      width={400}
+                      height={40}
+                      className="h-auto w-[200px] min-w-[200px] sm:w-[240px] sm:min-w-[240px] invert"
+                    />
+                  </Link>
+                </div>
           <div className="relative z-10 container mx-auto flex flex-col items-center px-4">
             {/* 3. Kept the title and subtitle */}
-            <h1 className="mb-4 text-4xl font-bold drop-shadow-xl md:text-7xl">
-              The $CHROME Collection
-            </h1>
+            <div className="flex flex-col items-center pb-4 w-full">
+              <Image
+                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757551850/nfts_fckxio.svg"
+                alt="nfts"
+                width={600}
+                height={60}
+                className="w-full max-w-[500px] h-auto object-contain invert"
+              />
+            </div>
             <p className="mx-auto mb-12 max-w-3xl text-gray-200 md:text-lg">
-              $CHROME isn't just a token—it's your all-access pass to exclusive digital collectibles. Explore the Genesis Collection below.
+              YOUR ALL ACCESS PASS
             </p>
             
             {/* 4. Added the new HeroCarousel component */}

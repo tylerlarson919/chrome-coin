@@ -14,6 +14,7 @@ export const Hero = () => {
 
   return (
     <section className="relative w-full h-[80vh] md:h-[70vh] bg-zinc-800 flex justify-center overflow-hidden md:items-center">
+      
       <video
         src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757507059/3_kfchk5.webm"
         autoPlay
@@ -24,19 +25,31 @@ export const Hero = () => {
       />
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/60 md:to-black/0" />
+                {/* Center: Absolutely positioned logo */}
+                <div className="pointer-events-none absolute top-4 sm:top-8 left-1/2 -translate-x-1/2">
+                  <Link href="/" aria-label="Home" className="pointer-events-auto">
+                    <Image
+                      src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757465008/ch-scroll_gobxyz.svg"
+                      alt="Logo"
+                      width={400}
+                      height={40}
+                      className="h-auto w-[200px] min-w-[200px] sm:w-[240px] sm:min-w-[240px] invert"
+                    />
+                  </Link>
+                </div>
 
-      <div className="relative z-10 flex h-full w-full flex-col items-center gap-6 px-8 pb-14 pt-32 text-center justify-center md:py-0">
-        <div className="flex flex-col items-center pb-2">
+      <div className="relative z-10 flex h-full w-full flex-col items-center gap-2 px-8 pb-14 pt-32 text-center justify-center md:py-0 pointer-events-none">
+        <div className="flex flex-col items-center pb-2 w-full">
           <Image
             src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757465008/ch-scroll_gobxyz.svg"
             alt="$CHROME Logo"
-            width={700}
-            height={70}
-            className="w-full max-w-[700px] h-auto object-contain invert"
+            width={900}
+            height={90}
+            className="w-full max-w-[500px] h-auto object-contain invert"
           />
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-3 sm:gap-11 w-auto sm:flex-row sm:items-center">
+        <div className="flex flex-col items-center justify-center gap-3 sm:gap-11 w-auto sm:flex-row sm:items-center pointer-events-auto">
           <div className="text-center">
           <Link
             href={shopUrl}
