@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useLayoutEffect } from "react";
+import { Suspense, useEffect } from "react"; // Changed from useLayoutEffect
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment } from "@react-three/drei";
 import type { Product } from "@/data/products";
@@ -10,7 +10,7 @@ import * as THREE from "three";
 function Model({ url }: { url:string }) {
   const { scene } = useGLTF(url);
 
-  useLayoutEffect(() => {
+  useEffect(() => { // Changed from useLayoutEffect
     // 1. Calculate the initial bounding box of the loaded scene
     const box = new THREE.Box3().setFromObject(scene);
     const size = box.getSize(new THREE.Vector3());
@@ -18,8 +18,12 @@ function Model({ url }: { url:string }) {
     // 2. Determine the maximum dimension and calculate a scale factor
     // This normalizes the model's size to fit nicely in the view
     const maxDim = Math.max(size.x, size.y, size.z);
-    const scale = 1.5 / maxDim;
-    scene.scale.set(scale, scale, scale);
+
+    // Add a check to prevent division by zero if the box is empty
+    if (maxDim > 0) {
+      const scale = 1.5 / maxDim;
+      scene.scale.set(scale, scale, scale);
+    }
 
     // 3. After scaling, the bounding box changes. We recalculate it.
     const scaledBox = new THREE.Box3().setFromObject(scene);
@@ -37,6 +41,7 @@ function Model({ url }: { url:string }) {
   // Use <primitive> to directly render the modified scene object
   return <primitive object={scene} />;
 }
+
 
 interface ModelViewerProps {
   product: Product;
