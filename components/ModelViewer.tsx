@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect } from "react"; // Changed from useLayoutEffect
+import { Suspense, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment } from "@react-three/drei";
 import type { Product } from "@/data/products";
@@ -49,45 +49,71 @@ interface ModelViewerProps {
 
 export function ModelViewer({ product }: ModelViewerProps) {
   const { brightness = 1, yMovement = 0 } = product;
+  const controlsRef = useRef<any>(null);
 
   if (!product.modelUrl) {
     return <div>3D Model not available.</div>;
   }
 
+  const handleLogCoords = () => {
+    if (controlsRef.current) {
+      const cameraPosition = controlsRef.current.object.position;
+      const targetPosition = controlsRef.current.target;
+      console.log("Orbit (Target) XYZ Coords:", targetPosition);
+      console.log("Canvas (Camera) XYZ Coords:", cameraPosition);
+    }
+  };
+
   return (
-    <Canvas
-      dpr={[1, 2]} // Sets device pixel ratio for performance
-      // Set the initial camera position to your desired coordinates
-      camera={{
-        fov: 45,
-        position: [
-          0.8017536849629425, -0.59033168614362945, 1.2460163416884462,
-        ],
-      }}
-      style={{ background: "transparent", width: "100%", height: "100%" }}
-    >
-      <Suspense fallback={null}>
-        <ambientLight intensity={0.5 * brightness} />
-        <directionalLight
-          position={[10, 10, 5]}
-          intensity={1.5 * brightness}
+    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+      <Canvas
+        dpr={[1, 2]} // Sets device pixel ratio for performance
+        // Set the initial camera position to your desired coordinates
+        camera={{
+          fov: 45,
+          position: [
+            0.8017536849629425, -0.59033168614362945, 1.2460163416884462,
+          ],
+        }}
+        style={{ background: "transparent", width: "100%", height: "100%" }}
+      >
+        <Suspense fallback={null}>
+          <ambientLight intensity={0.5 * brightness} />
+          <directionalLight
+            position={[10, 10, 5]}
+            intensity={1.5 * brightness}
+          />
+          <Environment preset="city" />
+          <Model url={product.modelUrl} />
+        </Suspense>
+        <OrbitControls
+          ref={controlsRef}
+          // Set the controls target to your desired coordinates
+          target={[
+            -0.014800053829621304,
+            -0.25 + (yMovement || 0),
+            -0.015258936969356067,
+          ]}
+          autoRotate
+          enableZoom={false} // Disables zooming
+          enablePan={false} // Disables right-click panning
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI}
         />
-        <Environment preset="city" />
-        <Model url={product.modelUrl} />
-      </Suspense>
-      <OrbitControls
-        // Set the controls target to your desired coordinates
-        target={[
-          -0.014800053829621304,
-          -0.25 + (yMovement || 0),
-          -0.015258936969356067,
-        ]}
-        autoRotate
-        enableZoom={false} // Disables zooming
-        enablePan={false} // Disables right-click panning
-        minPolarAngle={0}
-        maxPolarAngle={Math.PI}
-      />
-    </Canvas>
+      </Canvas>
+      <button
+        onClick={handleLogCoords}
+        style={{
+          position: "absolute",
+          top: "10px",
+          left: "10px",
+          zIndex: 100,
+          padding: '8px 12px',
+          cursor: 'pointer'
+        }}
+      >
+        Log Coords
+      </button>
+    </div>
   );
 }
