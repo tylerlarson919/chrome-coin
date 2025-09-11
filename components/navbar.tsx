@@ -52,9 +52,7 @@ const WalletButton = () => {
     return (
       <WalletMultiButton
         className={`!bg-transparent !p-0 !font-normal ${buttonClasses}`}
-      >
-        LOGIN / BAG
-      </WalletMultiButton>
+      />
     );
   }
 
@@ -73,6 +71,7 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
+    { name: "HOME", href: "/" },
     { name: "MARKET", href: "/market" },
     { name: "ABOUT", href: "/#about" },
     { name: "CHROMENOMICS", href: "/#chromeplan" },

@@ -1,37 +1,39 @@
-// components/HeroCarousel.tsx
 "use client";
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { products } from "@/data/products";
-import { CarouselCard } from "./CarouselCard"; // 1. Import the new card component
+import { CarouselCard } from "./CarouselCard";
 
 // Constants to control the 3D layout
-const CARD_OFFSET = 80; // 2. Increased spacing
+const CARD_OFFSET = 80;
 const SCALE_FACTOR = 0.1;
 const ROTATION_FACTOR = 20;
 
 export const HeroCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  // Only use the first three products for the carousel
+  const carouselProducts = products.slice(0, 3);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % products.length);
+      // Update index to loop through the three products
+      setActiveIndex((prevIndex) => (prevIndex + 1) % carouselProducts.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [carouselProducts.length]);
 
   return (
     <div className="relative flex h-[450px] w-full max-w-5xl items-center justify-center [perspective:1000px] scale-80">
       <div className="relative h-full w-[300px] [transform-style:preserve-3d]">
-        {products.map((product, index) => {
-          // 3. New logic for seamless infinite scrolling
+        {carouselProducts.map((product, index) => {
+          // Logic now operates on the array of 3 products
           let relativeIndex = index - activeIndex;
-          const half = Math.floor(products.length / 2);
+          const half = Math.floor(carouselProducts.length / 2);
           if (relativeIndex > half) {
-            relativeIndex -= products.length;
+            relativeIndex -= carouselProducts.length;
           } else if (relativeIndex < -half) {
-            relativeIndex += products.length;
+            relativeIndex += carouselProducts.length;
           }
 
           const zIndex = 10 - Math.abs(relativeIndex);
@@ -40,10 +42,11 @@ export const HeroCarousel = () => {
           const opacity = Math.abs(relativeIndex) > 2 ? 0 : 1;
           const isCenter = relativeIndex === 0;
 
-          const scale = isCenter ? 1.2 : (1 - Math.abs(relativeIndex) * SCALE_FACTOR);
-          const yOffset = isCenter ? 0 : 10; // Pushes the center card down to align bottoms
-          const zOffset = isCenter ? 80 : 0; // Brings the center card forward (closer)
- 
+          const scale = isCenter
+            ? 1.2
+            : 1 - Math.abs(relativeIndex) * SCALE_FACTOR;
+          const yOffset = isCenter ? 0 : 10;
+          const zOffset = isCenter ? 80 : 0;
 
           return (
             <motion.div
@@ -56,7 +59,6 @@ export const HeroCarousel = () => {
               }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
             >
-              {/* 4. Use the new CarouselCard and pass the isCenter prop */}
               <CarouselCard
                 product={product}
                 isCenter={index === activeIndex}

@@ -52,7 +52,7 @@ export const ProductGrid = () => {
         canScrollPrev={canScrollPrev}
       />
       {/* This outer div with 'overflow-hidden' is the main viewport for the carousel */}
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div className="overflow-visible" ref={emblaRef}>
         <div className="flex pb-4 -ml-4 sm:-ml-6">
           {products.map((product) => (
             // Each child is a slide with a fixed width, preventing it from shrinking

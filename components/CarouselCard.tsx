@@ -1,7 +1,8 @@
-// components/CarouselCard.tsx
-import Image from "next/image";
+"use client";
 import type { Product } from "@/data/products";
 import { motion, AnimatePresence } from "framer-motion";
+import { CardModelViewer } from "./CardModelViewer";
+import { useInView } from "react-intersection-observer";
 
 interface CarouselCardProps {
   product: Product;
@@ -9,23 +10,34 @@ interface CarouselCardProps {
 }
 
 export const CarouselCard = ({ product, isCenter }: CarouselCardProps) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    // Main card container with rounded corners and a subtle border
     <div
-      className={`relative h-[450px] w-[300px] overflow-hidden rounded-3xl border-2 border-white/10 transition-shadow duration-500 bg-zinc-900 ${
-        isCenter ? "shadow-2xl shadow-purple-500/30" : "shadow-lg shadow-black/50"
+      ref={ref}
+      className={`relative h-[450px] w-[300px] overflow-hidden rounded-3xl border-2 bg-zinc-900 transition-all duration-500 ${
+        isCenter
+          ? "border-purple-500 shadow-2xl shadow-purple-500/30"
+          : "border-white/10 shadow-lg shadow-black/50"
       }`}
     >
-    <Image
-        src={product.images[0]}
-        alt={product.name}
-        layout="fill"
-        objectFit="cover"
-        className="z-0"
-      />
+      <div className="absolute inset-0">
+        {/* Copied logic: Only mount viewer when card is in view */}
+        {inView && product.modelUrl && (
+          <CardModelViewer
+            modelUrl={product.modelUrl}
+            isHovered={isCenter} // Keeps the active card spinning
+            margin={product.viewerMargin}
+            brightness={product.brightness}
+            yMovement={product.yMovement}
+          />
+        )}
+      </div>
 
-
-      {/* Bottom Overlay: Bid Info (renders only if `isCenter` is true) */}
+      {/* Bottom Overlay */}
       <AnimatePresence>
         {isCenter && (
           <motion.div
