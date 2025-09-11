@@ -154,7 +154,7 @@ export const SwapWidget = () => {
 
         if (!publicKey) {
             return (
-                <div className="swap-widget-container">
+                <div className="swap-widget-container flex justify-center">
                     <WalletMultiButton 
                         className="!w-full !flex !items-center !justify-center !space-x-2"
                         style={{ justifyContent: 'center' }}

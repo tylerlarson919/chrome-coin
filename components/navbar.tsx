@@ -46,13 +46,13 @@ const WalletButton = () => {
   };
 
   const buttonClasses =
-    "font-mono text-xs font-normal tracking-[0.2em] text-white uppercase transition-opacity hover:opacity-70";
+    "text-sm text-white uppercase transition-opacity hover:opacity-70 font-mono";
 
   if (!connected || !publicKey) {
     return (
-      <WalletMultiButton
-        className={`!bg-transparent !p-0 !font-normal ${buttonClasses}`}
-      />
+      <WalletMultiButton className={`!bg-transparent !p-0 ${buttonClasses}`}>
+        CONNECT
+      </WalletMultiButton>
     );
   }
 
@@ -61,7 +61,7 @@ const WalletButton = () => {
     .slice(-2)}`;
 
   return (
-    <button onClick={handleDisconnect} className={buttonClasses}>
+    <button onClick={handleDisconnect} className={`${buttonClasses} px-2`}>
       {shortAddress}
     </button>
   );
@@ -107,7 +107,7 @@ export const Navbar = () => {
           </div>
 
           {/* Right side: Wallet Button */}
-          <div className="flex w-1/4 items-center justify-end pointer-events-auto">
+          <div className="navbar-wallet-button flex w-1/4 items-end justify-end pointer-events-auto">
             <WalletButton />
           </div>
         </div>
