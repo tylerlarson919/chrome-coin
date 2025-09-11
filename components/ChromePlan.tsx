@@ -124,14 +124,7 @@ export const ChromePlan = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-16 gap-x-6 pt-12">
         {roadmapPhases.map((phase) => (
           <div key={phase.title} className="relative">
-            <Image
-              src={vineUrl}
-              alt=""
-              width={60}
-              height={60}
-              className="absolute -top-16 left-1/2 -translate-x-1/2 h-16 w-auto pointer-events-none"
-            />
-            <div className="h-full bg-zinc-900/80 backdrop-blur-sm border-4 border-zinc-700 p-5 flex flex-col text-center transition-colors duration-300 hover:border-purple-400 ">
+            <div className="h-full bg-zinc-900/80 backdrop-blur-sm rounded-lg border-2 border-zinc-700 p-5 flex flex-col text-center transition-colors duration-300 hover:border-purple-400 ">
               <h4 className="text-2xl font-bold text-white tracking-wider">{phase.title}</h4>
               <p className="text-md mt-2 flex-grow text-zinc-300 tracking-wider">
                 {phase.description}

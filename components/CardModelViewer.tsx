@@ -18,7 +18,10 @@ function Model({
   const groupRef = useRef<THREE.Group>(null);
   const [isInitialized, setIsInitialized] = useState(false);
   const [introAnimationDone, setIntroAnimationDone] = useState(false);
-
+  const [targetRotation, setTargetRotation] = useState(Math.PI);
+  const DURATION_SECONDS = 1.5; // Adjust this value to make the animation slower or faster
+  const animation = useRef({ active: false, start: 0, from: 0 });
+  const prevHovered = useRef(isHovered);
   useEffect(() => {
     if (scene && groupRef.current && !isInitialized) {
       // Start at final scale, removing the "zoom in" effect.
@@ -35,11 +38,26 @@ function Model({
     }
   }, [scene, isInitialized]);
 
+  useEffect(() => {
+    if (!isHovered && groupRef.current) {
+      const currentRotation = groupRef.current.rotation.y;
+      const fullCircle = Math.PI * 2;
+      
+      const rotations = (currentRotation - Math.PI) / fullCircle;
+      
+      // Change Math.round to Math.ceil to always move forward
+      const nextRotation = Math.ceil(rotations);
+      
+      const newTarget = Math.PI + nextRotation * fullCircle;
+      
+      setTargetRotation(newTarget);
+    }
+  }, [isHovered]);
+
   useFrame((state, delta) => {
     if (!groupRef.current || !isInitialized) return;
 
     let isStillAnimating = false;
-    const targetRotation = Math.PI;
 
     // --- Intro Animation: Opacity Fade-in ---
     if (!introAnimationDone) {
@@ -70,23 +88,49 @@ function Model({
     }
 
     // --- Hover Animation: Rotation ---
-    if (isHovered) {
+     if (isHovered) {
+      animation.current.active = false; // Cancel any return animation on re-hover
       groupRef.current.rotation.y += delta * 1.5;
-      isStillAnimating = true; // Always animating while hovered
+      isStillAnimating = true;
     } else {
-      // Animate back to original rotation when not hovered
-      if (Math.abs(groupRef.current.rotation.y - targetRotation) > 0.001) {
+      // --- Timed Return Animation with Easing ---
+      
+      // Detect when hover has just ended to START the animation
+      if (prevHovered.current && !isHovered) {
+        animation.current = {
+          active: true,
+          start: state.clock.elapsedTime,
+          from: groupRef.current.rotation.y,
+        };
+      }
+
+      if (animation.current.active) {
+        const elapsedTime = state.clock.elapsedTime - animation.current.start;
+        const progress = Math.min(elapsedTime / DURATION_SECONDS, 1.0);
+
+        // An ease-in-out cubic function for smooth acceleration and deceleration
+        const easeInOutCubic = (t: number) =>
+          t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        const easedProgress = easeInOutCubic(progress);
+
+        // Interpolate rotation based on the eased progress
         groupRef.current.rotation.y = THREE.MathUtils.lerp(
-          groupRef.current.rotation.y,
+          animation.current.from,
           targetRotation,
-          0.1
+          easedProgress
         );
+
         isStillAnimating = true;
-      } else {
-        // Snap to final value
-        groupRef.current.rotation.y = targetRotation;
+
+        // If animation is finished, deactivate it
+        if (progress >= 1.0) {
+          animation.current.active = false;
+        }
       }
     }
+    
+    // Update the previous hover state at the end of the frame
+    prevHovered.current = isHovered;
 
     // If no animations are active, notify the parent to stop the render loop
     if (!isStillAnimating) {

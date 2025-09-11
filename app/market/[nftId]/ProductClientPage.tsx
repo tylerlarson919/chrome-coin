@@ -92,8 +92,8 @@ export function ProductClientPage({ product }: ProductClientPageProps) {
             </div>
 
             {/* Right Column: DESKTOP VIEW ONLY */}
-            <div className="hidden h-fit lg:sticky lg:top-24 lg:block lg:w-2/5">
-              <div className="flex flex-col space-y-4 rounded-lg border border-neutral-800 bg-zinc-900/80 p-6 backdrop-blur-sm">
+            <div className="hidden h-full lg:sticky lg:top-24 lg:block lg:w-2/5">
+              <div className="flex flex-col space-y-4 rounded-lg p-6 backdrop-blur-sm h-full">
                 <div>
                   <p className="text-lg text-gray-400">{product.collection}</p>
                   <h1 className="text-3xl font-bold md:text-4xl">

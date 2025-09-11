@@ -11,7 +11,7 @@ const shopCategories = [
   {
     title: "Genesis Collection",
     description:
-      "The inaugural NFT drop from $CHROME. A curated selection of 200 rare, high-detail digital assets that define the intersection of luxury streetwear and Web3.",
+      "The inaugural NFT drop from $CHROME. A curated selection of 48 rare, high-detail digital assets that define the intersection of luxury streetwear and Web3.",
   },
 ];
 
