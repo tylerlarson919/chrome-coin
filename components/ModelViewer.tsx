@@ -7,7 +7,7 @@ import type { Product } from "@/data/products";
 import * as THREE from "three";
 
 // Helper component to load, center, and normalize the GLB model
-function Model({ url }: { url: string }) {
+function Model({ url }: { url:string }) {
   const { scene } = useGLTF(url);
 
   useLayoutEffect(() => {
@@ -68,16 +68,13 @@ export function ModelViewer({ product }: ModelViewerProps) {
           intensity={1.5 * brightness}
         />
         <Environment preset="city" />
-
-        {/* The group for yMovement is still useful for product-specific tweaks */}
-        <group position={[0, yMovement || 0, 0]}>
-          <Model url={product.modelUrl} />
-        </group>
+        <Model url={product.modelUrl} />
       </Suspense>
       <OrbitControls
         // Set the controls target to your desired coordinates
         target={[
-          -0.014800053829621304, -0.25,
+          -0.014800053829621304,
+          -0.25 + (yMovement || 0),
           -0.015258936969356067,
         ]}
         autoRotate

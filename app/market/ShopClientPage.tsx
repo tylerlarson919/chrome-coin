@@ -43,7 +43,7 @@ export function ShopClientPage() {
                     />
                   </Link>
                 </div>
-          <div className="relative z-10 container mx-auto flex flex-col items-center px-4">
+          <div className="relative z-10 container mx-auto flex flex-col items-center px-4 sm:mb-60">
             {/* 3. Kept the title and subtitle */}
             <div className="flex flex-col items-center pb-4 w-full">
               <Image
@@ -59,7 +59,7 @@ export function ShopClientPage() {
             </p>
             
             {/* 4. Added the new HeroCarousel component */}
-            <HeroCarousel />
+            
           </div>
         </section>
 
