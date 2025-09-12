@@ -21,7 +21,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     <Link
       ref={ref}
       href={`/market/${product.id}`}
-      className="group relative block h-[400px] overflow-hidden rounded-3xl border-2 border-white/10 bg-zinc-900 shadow-lg shadow-black/50 transition-all duration-300 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/30"
+      className="group relative block h-[400px] overflow-hidden rounded-3xl border-2 border-white/10 backdrop-blur-lg shadow-lg shadow-black/50 transition-all duration-300 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/30"
       onMouseEnter={() => {
         if (inView) setIsHovered(true);
       }}

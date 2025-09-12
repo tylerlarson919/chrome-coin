@@ -4,14 +4,13 @@ import { Shop } from "@/components/Shop";
 import { About } from "@/components/About";
 import { ChromePlan } from "@/components/ChromePlan";
 import { HowToBuy } from "@/components/HowToBuy";
-import { Ticker } from "@/components/Ticker";
 
 export default function HomePage() {
   // The `overflow-x-hidden` class has been removed here to allow sticky positioning to work.
   return (
     <div className="w-full">
       <Hero />
-      <Ticker />
+      
 
       {/* This parent wrapper defines the scroll area for the effect */}
       <div className="relative">

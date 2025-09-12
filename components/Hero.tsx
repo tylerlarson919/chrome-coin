@@ -29,11 +29,11 @@ export const Hero = () => {
                 <div className="pointer-events-none absolute top-4 sm:top-8 left-1/2 -translate-x-1/2">
                   <Link href="/" aria-label="Home" className="pointer-events-auto">
                     <Image
-                      src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757700304/chrome-coin-logo_nfnanc.svg"
+                      src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757700728/chrome-coin-pfp-logo_vktsdc.svg"
                       alt="Logo"
                       width={400}
                       height={40}
-                      className="h-auto w-[200px] min-w-[200px] sm:w-[240px] sm:min-w-[240px] invert"
+                      className="h-auto w-[200px] min-w-[200px] sm:w-[240px] sm:min-w-[240px]"
                     />
                   </Link>
                 </div>

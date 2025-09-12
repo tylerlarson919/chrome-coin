@@ -3,11 +3,13 @@
 
 import Link from "next/link";
 import { ProductGrid } from "./ProductGrid";
+import { Ticker } from "@/components/Ticker";
 
 export const Shop = () => {
   return (
     <section id="shop" className="relative overflow-hidden pb-12 md:pb-20">
-      <div className="mx-auto pt-12 md:pt-20">
+      <Ticker />
+      <div className="mx-auto pt-20 md:pt-28">
         <div className="text-center mb-8 md:mb-12">
           <p className="text-purple-400 font-bold tracking-widest text-lg md:text-xl">
             48 RARE NFTs

@@ -7,7 +7,7 @@
   .ticker-animation {
     display: inline-block;
     white-space: nowrap;
-    animation: ticker 30s linear infinite;
+    animation: ticker 10s linear infinite;
   }
 
   @keyframes ticker {
