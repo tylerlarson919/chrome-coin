@@ -94,9 +94,8 @@ export function ModelViewer({ product }: ModelViewerProps) {
             -0.25 + (yMovement || 0),
             -0.015258936969356067,
           ]}
-          autoRotate
-          enableZoom={false} // Disables zooming
-          enablePan={false} // Disables right-click panning
+          // autoRotate
+          // enableZoom and enablePan are true by default
           minPolarAngle={0}
           maxPolarAngle={Math.PI}
         />
