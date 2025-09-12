@@ -48,7 +48,7 @@ interface ModelViewerProps {
 }
 
 export function ModelViewer({ product }: ModelViewerProps) {
-  const { brightness = 1, yMovement = 0 } = product;
+  const { brightness = 1, yMovement = 0, xMovement = 0 } = product;
   const controlsRef = useRef<any>(null);
 
   if (!product.modelUrl) {
@@ -90,7 +90,7 @@ export function ModelViewer({ product }: ModelViewerProps) {
           ref={controlsRef}
           // Set the controls target to your desired coordinates
           target={[
-            0,
+            0 + (xMovement || 0),
             0.71 + (yMovement || 0),
             0,
           ]}
