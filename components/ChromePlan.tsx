@@ -58,13 +58,15 @@ export const ChromePlan = () => {
       </div>
 
       <div className="container mx-auto flex flex-col items-center justify-center gap-8 text-center min-h-[400px]">
-        <Image
-          src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757103951/5472274962897794227-min_omhhxs.gif"
-          alt="$CHROME Character"
+        <video
+          src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757715579/logo-spin_srkhov.webm"
           width={250}
           height={250}
-          unoptimized
-          className="h-[200px] w-[200px] md:h-[250px] md:w-[250px] mb-4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-[200px] w-[200px] md:h-[250px] md:w-[250px] mb-4 rounded-3xl"
         />
         <div className="font-mono text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-100 h-[120px] md:h-[150px]">
           <span className="whitespace-pre-line">{displayedText}</span>

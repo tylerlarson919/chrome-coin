@@ -28,7 +28,7 @@ const BuyWidget = ({ product }: { product: Product }) => (
       }}
     ></div>
     <span className="relative flex h-10 items-center justify-center px-2 text-white text-sm font-bold tracking-wider uppercase">
-      MINT FOR {product.price} SOL
+      COMING SOON
     </span>
   </button>
 );
