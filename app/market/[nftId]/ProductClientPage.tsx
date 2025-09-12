@@ -83,7 +83,7 @@ export function ProductClientPage({ product }: ProductClientPageProps) {
       <div className="pointer-events-none absolute top-4 sm:top-8 left-1/2 -translate-x-1/2">
         <Link href="/" aria-label="Home" className="pointer-events-auto">
           <Image
-            src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757465008/ch-scroll_gobxyz.svg"
+            src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757700304/chrome-coin-logo_nfnanc.svg"
             alt="Logo"
             width={400}
             height={40}

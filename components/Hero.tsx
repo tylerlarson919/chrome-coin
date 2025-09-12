@@ -29,7 +29,7 @@ export const Hero = () => {
                 <div className="pointer-events-none absolute top-4 sm:top-8 left-1/2 -translate-x-1/2">
                   <Link href="/" aria-label="Home" className="pointer-events-auto">
                     <Image
-                      src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757465008/ch-scroll_gobxyz.svg"
+                      src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757700304/chrome-coin-logo_nfnanc.svg"
                       alt="Logo"
                       width={400}
                       height={40}
@@ -41,7 +41,7 @@ export const Hero = () => {
       <div className="relative z-10 flex h-full w-full flex-col items-center gap-2 px-8 pb-14 pt-32 text-center justify-center md:py-0 pointer-events-none">
         <div className="flex flex-col items-center pb-2 w-full">
           <Image
-            src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757465008/ch-scroll_gobxyz.svg"
+            src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757700304/chrome-coin-logo_nfnanc.svg"
             alt="$CHROME Logo"
             width={900}
             height={90}

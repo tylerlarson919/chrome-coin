@@ -43,7 +43,7 @@ export const ChromePlan = () => {
   const vineUrl = "https://res.cloudinary.com/dqedckeaa/image/upload/v1757106626/vines_qw6nl9.png";
 
   return (
-    <section id="chromeplan" className="pt-10 md:pt-20">
+    <section id="chromeplan" className="">
       <div className="text-left mb-8 md:mb-12">
         <p className="text-purple-400 font-bold tracking-widest text-lg md:text-xl">
           CHROMENOMICS

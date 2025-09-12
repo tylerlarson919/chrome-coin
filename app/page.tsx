@@ -41,7 +41,6 @@ export default function HomePage() {
             <Shop />
           </div>
           <div className="w-full px-4 md:px-12 pb-8 md:pb-12">
-            <About />
             <ChromePlan />
           </div>
         </div>

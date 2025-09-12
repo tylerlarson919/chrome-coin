@@ -13,15 +13,9 @@ export const Shop = () => {
           <p className="text-purple-400 font-bold tracking-widest text-lg md:text-xl">
             48 RARE NFTs
           </p>
-          <div className="flex flex-col items-center pt-4 px-4 sm:px-0">
-            <Image
-              src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757551850/utilities_vwlwdk.svg"
-              alt="Utilities"
-              width={900}
-              height={90}
-              className="w-full max-w-[500px] h-auto object-contain invert"
-            />
-          </div>
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-zinc-300 mt-2">
+            NFTs
+          </h2>
         </div>
 
         {/* Product Grid Component */}

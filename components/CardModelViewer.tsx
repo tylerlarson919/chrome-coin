@@ -35,7 +35,7 @@ function Model({
   isHovered: boolean;
   onAnimationComplete: () => void;
 }) {
-  const { scene } = useGLTF(url);
+  const { scene } = useGLTF(url, 'https://www.gstatic.com/draco/v1/decoders/');
   const groupRef = useRef<THREE.Group>(null);
   const [isInitialized, setIsInitialized] = useState(false);
   const [introAnimationDone, setIntroAnimationDone] = useState(false);
