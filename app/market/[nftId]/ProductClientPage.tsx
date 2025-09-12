@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { products } from "@/data/products";
 import { ModelViewer } from "@/components/ModelViewer";
 import Link from "next/link";
@@ -33,10 +34,24 @@ const BuyWidget = ({ product }: { product: Product }) => (
 );
 
 export function ProductClientPage({ product }: ProductClientPageProps) {
+  const [backgroundVideo, setBackgroundVideo] = useState("");
+  const videos = [
+    "https://res.cloudinary.com/dqedckeaa/video/upload/v1757698582/shop-bg-4_r4gkj1.webm",
+    "https://res.cloudinary.com/dqedckeaa/video/upload/v1757698582/shop-bg-1_rtkzks.webm",
+    "https://res.cloudinary.com/dqedckeaa/video/upload/v1757698582/shop-bg-5_joglfa.webm",
+    "https://res.cloudinary.com/dqedckeaa/video/upload/v1757698582/shop-bg-2_c7yfjp.webm",
+    "https://res.cloudinary.com/dqedckeaa/video/upload/v1757698581/shop-bg-3_nkfw4l.webm",
+  ];
+
+  useEffect(() => {
+    // Select a random video on component mount
+    const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+    setBackgroundVideo(randomVideo);
+  }, []);
   // This component now renders the 3D model for direct interaction.
   const NFTDisplay = () => {
     return product.modelUrl ? (
-      <div className="relative h-[60vh] w-full rounded-lg border border-neutral-800 bg-zinc-900/50">
+      <div className="relative h-[60vh] w-full rounded-lg border border-neutral-800 backdrop-blur-sm">
         <ModelViewer product={product} />
         <div className="pointer-events-none absolute bottom-4 right-4 rounded-full bg-black/50 px-3 py-1.5 text-xs text-white/80 backdrop-blur-sm">
           Click to interact
@@ -46,7 +61,24 @@ export function ProductClientPage({ product }: ProductClientPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white pb-16 lg:pb-12 pt-24 sm:pt-32">
+    <div className="relative min-h-screen text-white pb-16 lg:pb-12 pt-24 sm:pt-32">
+      {/* Background Video Player */}
+      {backgroundVideo && (
+        <>
+          <video
+            key={backgroundVideo} // Ensures React replaces the video element if the src changes
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="fixed inset-0 w-full h-full object-cover -z-20"
+          >
+            <source src={backgroundVideo} type="video/webm" />
+          </video>
+          {/* Overlay for text readability */}
+          <div className="fixed inset-0 bg-black/60 -z-10" />
+        </>
+      )}
       {/* Center: Absolutely positioned logo */}
       <div className="pointer-events-none absolute top-4 sm:top-8 left-1/2 -translate-x-1/2">
         <Link href="/" aria-label="Home" className="pointer-events-auto">
@@ -60,15 +92,15 @@ export function ProductClientPage({ product }: ProductClientPageProps) {
         </Link>
       </div>
       <div className="container mx-auto max-w-7xl px-4">
-        <div className="flex flex-col gap-4 lg:gap-12 lg:flex-row">
+        <div className="flex flex-col gap-4 lg:gap-12 lg:grid lg:grid-cols-5">
           {/* Left Column: NFT Display */}
-          <div className="w-full lg:w-3/5">
+          <div className="w-full lg:col-span-3">
             <NFTDisplay />
           </div>
 
           {/* Right Column: Product Details (Visible on all screen sizes) */}
-          <div className="w-full h-full lg:sticky lg:top-24 lg:w-2/5">
-            <div className="flex flex-col space-y-4 rounded-lg p-6 backdrop-blur-sm h-full">
+          <div className="w-full lg:sticky lg:top-24 lg:col-span-2">
+            <div className="flex flex-col space-y-4 rounded-lg p-6 backdrop-blur-sm h-full border border-neutral-800">
               <div>
                 <p className="text-lg text-gray-400">{product.collection}</p>
                 <h1 className="text-3xl font-bold md:text-4xl">

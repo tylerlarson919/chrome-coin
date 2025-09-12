@@ -1,9 +1,30 @@
 "use-client";
 
-import { Suspense, useRef, useEffect, useState } from "react";
+import { Suspense, useRef, useEffect, useState, useLayoutEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, Bounds } from "@react-three/drei";
+import { useGLTF, Bounds, useProgress, Html } from "@react-three/drei";
 import * as THREE from "three";
+
+function Loader() {
+  const { progress } = useProgress();
+  return (
+    <Html as='div' style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      pointerEvents: 'none',
+      zIndex: 10,
+    }}>
+      <div style={{
+        height: '4px',
+        width: `${progress}%`,
+        backgroundColor: '#8A2BE2', // Purple
+        transition: 'width 0.3s ease',
+      }} />
+    </Html>
+  );
+}
 
 function Model({
   url,

@@ -23,12 +23,12 @@ export function ShopClientPage() {
         {/* 2. Adjusted layout to be a flex column and provide vertical space */}
         <section className="relative flex w-full flex-col items-center justify-center pt-28 pb-12 text-center md:min-h-[800px] overflow-hidden">
           <video
-            src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757507060/2_o70vxz.webm"
+            src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757695786/bgggmp4_yheg5u.webm"
             autoPlay
             loop
             muted
             playsInline
-            className="absolute top-0 left-0 h-full w-full object-cover object-bottom"
+            className="absolute top-0 left-0 h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
                 {/* Center: Absolutely positioned logo */}

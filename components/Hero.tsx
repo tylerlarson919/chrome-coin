@@ -16,12 +16,12 @@ export const Hero = () => {
     <section className="relative w-full h-[80vh] md:h-[70vh] bg-zinc-800 flex justify-center overflow-hidden md:items-center">
       
       <video
-        src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757507059/3_kfchk5.webm"
+        src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757693995/chrome-bg_acgksq.webm"
         autoPlay
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover object-top"
+        className="absolute top-0 left-0 w-full h-full object-cover object-center"
       />
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/60 md:to-black/0" />
