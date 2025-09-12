@@ -53,6 +53,8 @@ export const CarouselCard = ({ product, isCenter }: CarouselCardProps) => {
             </div>
             <a
               href={`/market/${product.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-bold text-green-400 transition-opacity hover:opacity-80"
             >
               MORE ▸
