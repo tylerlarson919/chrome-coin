@@ -72,7 +72,7 @@ export function ModelViewer({ product }: ModelViewerProps) {
         camera={{
           fov: 45,
           position: [
-            0.8017536849629425, -0.59033168614362945, 1.2460163416884462,
+            1.9199315253046938, 0.3448954646022235, 2.9229235932135977,
           ],
         }}
         style={{ background: "transparent", width: "100%", height: "100%" }}
@@ -90,9 +90,9 @@ export function ModelViewer({ product }: ModelViewerProps) {
           ref={controlsRef}
           // Set the controls target to your desired coordinates
           target={[
-            -0.014800053829621304,
+            0.06466167470940913,
             -0.25 + (yMovement || 0),
-            -0.015258936969356067,
+            0.057213858964938955,
           ]}
           // autoRotate
           // enableZoom and enablePan are true by default
