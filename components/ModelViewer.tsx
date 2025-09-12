@@ -30,7 +30,7 @@ function Loader() {
 
 // Helper component to load, center, normalize, and handle progressive textures
 function Model({ url, scale }: { url: string; scale?: number }) {
-  const { scene: originalScene } = useGLTF(url);
+  const { scene: originalScene } = useGLTF(url, 'https://www.gstatic.com/draco/v1/decoders/');
   const [texturesApplied, setTexturesApplied] = useState(false);
   const [sceneToRender, setSceneToRender] = useState<THREE.Group | null>(null);
 

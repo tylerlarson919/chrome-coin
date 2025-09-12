@@ -3,7 +3,6 @@
 
 import Link from "next/link";
 import { ProductGrid } from "./ProductGrid";
-import { Image } from "@heroui/image";
 
 export const Shop = () => {
   return (
