@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useMemo, useRef } from "react";
+import { Suspense, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment, useProgress, Html } from "@react-three/drei";
 import type { Product } from "@/data/products";
@@ -86,23 +86,12 @@ interface ModelViewerProps {
 
 export function ModelViewer({ product }: ModelViewerProps) {
   const { brightness = 1, yMovement = 0, xMovement = 0 } = product;
-  const controlsRef = useRef<any>(null);
 
   if (!product.modelUrl) {
     return <div>3D Model not available.</div>;
   }
 
-  const handleLogCoords = () => {
-    if (controlsRef.current) {
-      const cameraPosition = controlsRef.current.object.position;
-      const targetPosition = controlsRef.current.target;
-      console.log("Orbit (Target) XYZ Coords:", targetPosition);
-      console.log("Canvas (Camera) XYZ Coords:", cameraPosition);
-    }
-  };
-
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
       <Canvas
         dpr={[1, 2]}
         camera={{
@@ -113,26 +102,13 @@ export function ModelViewer({ product }: ModelViewerProps) {
       >
         <Scene product={product} brightness={brightness} />
         <OrbitControls
-          ref={controlsRef}
           target={[0 + xMovement, 0.71 + yMovement, 0]}
           autoRotate
+          enableZoom={false}
+          enablePan={false}
           minPolarAngle={0}
           maxPolarAngle={Math.PI}
         />
       </Canvas>
-      <button
-        onClick={handleLogCoords}
-        style={{
-          position: "absolute",
-          top: "10px",
-          left: "10px",
-          zIndex: 100,
-          padding: '8px 12px',
-          cursor: 'pointer'
-        }}
-      >
-        Log Coords
-      </button>
-    </div>
   );
 }
