@@ -1,9 +1,10 @@
 // components/Hero.tsx
 "use client";
-
+import { useState } from "react";
 import { Image } from "@heroui/image";
 import Link from "next/link";
 import { FaXTwitter } from "react-icons/fa6";
+import { FaCopy, FaCheck } from "react-icons/fa";
 
 export const Hero = () => {
   const mintAddress = process.env.NEXT_PUBLIC_PIXEL_MINT_ADDRESS || "";
@@ -11,6 +12,18 @@ export const Hero = () => {
   const xlink = `https://x.com/chromecoin_fun`;
 
   const shopUrl = "/market";
+
+  const [isCopied, setIsCopied] = useState(false);
+    const contractAddress = process.env.NEXT_PUBLIC_PIXEL_MINT_ADDRESS || "CA not available";
+  
+    const handleCopy = () => {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(contractAddress);
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 2000);
+      }
+    };
+  
 
   return (
     <section className="relative w-full h-[80vh] md:h-[70vh] bg-zinc-800 flex justify-center overflow-hidden md:items-center">
@@ -72,6 +85,7 @@ export const Hero = () => {
             </span>
           </Link>
         </div>
+         
 
           <div className="flex gap-6 w-auto">
             <div className="text-center">
@@ -118,6 +132,22 @@ export const Hero = () => {
                 <FaXTwitter className="relative size-[20px] text-white" />
               </Link>
             </div>
+          </div>
+        </div>
+        {/* Contract Address */}
+        <div className="w-xl mt-4 p-4 rounded-lg flex items-center justify-between gap-4 pointer-events-auto">
+          <span className="text-sm font-mono text-zinc-900">CA</span>
+          <div className="flex items-center gap-3">
+            <code className="text-sm sm:text-base text-zinc-100 truncate">
+              {contractAddress}
+            </code>
+            <button
+              onClick={handleCopy}
+              className="text-zinc-400 hover:text-white transition-colors text-lg flex-shrink-0"
+              aria-label="Copy contract address"
+            >
+              {isCopied ? <FaCheck className="text-zinc-900" /> : <FaCopy className="text-zinc-900" />}
+            </button>
           </div>
         </div>
       </div>
