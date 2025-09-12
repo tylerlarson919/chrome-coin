@@ -72,7 +72,7 @@ export function ModelViewer({ product }: ModelViewerProps) {
         camera={{
           fov: 45,
           position: [
-            1.1778857752195313, 0.2243252820758666, 1.772466202334125,
+            0.5290094616768045, 0.22432528207586294, -1.7563390895942006,
           ],
         }}
         style={{ background: "transparent", width: "100%", height: "100%" }}
