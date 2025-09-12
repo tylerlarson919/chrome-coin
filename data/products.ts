@@ -14,6 +14,7 @@ export type Product = {
   brightness?: number;
   yMovement?: number;
   xMovement?: number;
+  scale?: number;
 };
 
 export const products: Product[] = [
@@ -57,6 +58,7 @@ export const products: Product[] = [
     price: 1.2,
     description: "Secure your digital identity. This ornate keychain features a heavy-duty clasp and iconic gothic detailing for everyday use in the digital realm.",
     modelUrl: "/models/chrome-keychain.glb",
+    yMovement: -0.3,
      brightness: 2.5,
     details: [
       "Token Standard: SPL",
@@ -73,6 +75,8 @@ export const products: Product[] = [
     price: 3.5,
     description: "A functional piece of art. This meticulously crafted lighter sparks with a digital flame, encased in polished chrome with brand engravings.",
     modelUrl: "/models/chrome-lighter.glb",
+    yMovement: -0.2,
+    scale: 0.8,
     viewerMargin: 1.5,
     brightness: 2.5,
     details: [
@@ -90,6 +94,7 @@ export const products: Product[] = [
     price: 2.8,
     description: "Wealth preserved in style. A minimalist yet bold money clip, designed to hold digital assets securely with a touch of gothic elegance.",
     modelUrl: "/models/chrome-money-clip.glb",
+    yMovement: -0.3,
      brightness: 2.5,
     viewerMargin: 1.4,
     details: [
@@ -107,6 +112,8 @@ export const products: Product[] = [
     price: 5.0,
     description: "The ultimate catch. A cultural icon reimagined in hyper-detailed chrome, this legendary sphere is a grail piece for any collector.",
     modelUrl: "/models/chrome-pokeball.glb",
+    scale: 0.8,
+    yMovement: -0.1,
      brightness: 0.4,
     viewerMargin: 1.7,
     details: [
@@ -124,6 +131,8 @@ export const products: Product[] = [
     price: 2.2,
     description: "A loyal companion in the metaverse. This playful puppy charm is crafted with a high-shine finish, representing a softer side of the chrome aesthetic.",
     modelUrl: "/models/chrome-puppy.glb",
+    scale: 0.9,
+    yMovement: -0.125,
     viewerMargin: 1.5,
     details: [
       "Token Standard: SPL",
@@ -157,7 +166,7 @@ export const products: Product[] = [
     price: 4.5,
     description: "Digital streetwear essential. This zip hoodie features a heavyweight feel, ornate dagger zipper, and custom brand graphics on the back.",
     modelUrl: "/models/chrome-zip-hoodie.glb",
-    xMovement: -1.515,
+    yMovement: -0.3,
     details: [
       "Token Standard: SPL",
       "Blockchain: Solana",
