@@ -93,6 +93,7 @@ export function ModelViewer({ product }: ModelViewerProps) {
 
   return (
       <Canvas
+        key={product.name}
         dpr={[1, 2]}
         camera={{
           fov: 45,
