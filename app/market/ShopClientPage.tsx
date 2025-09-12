@@ -45,15 +45,9 @@ export function ShopClientPage() {
                 </div>
           <div className="relative z-10 container mx-auto flex flex-col items-center px-4 sm:mb-60">
             {/* 3. Kept the title and subtitle */}
-            <div className="flex flex-col items-center pb-4 w-full">
-              <Image
-                src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757551850/nfts_fckxio.svg"
-                alt="nfts"
-                width={600}
-                height={60}
-                className="w-full max-w-[500px] h-auto object-contain invert"
-              />
-            </div>
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-zinc-300 mt-2">
+              NFTs
+            </h2>
             <p className="mx-auto mb-12 max-w-3xl text-gray-200 md:text-lg">
               YOUR ALL ACCESS PASS
             </p>
