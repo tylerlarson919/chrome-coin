@@ -7,13 +7,7 @@ export const Footer = () => {
         <section id="community" className="w-full bg-purple-600 text-white rounded-t-3xl">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
                 <div className="flex justify-center items-center space-x-6">
-                    <a href="https://x.com/YourTwitterHandle" className="font-bold text-lg hover:underline flex flex-col items-center gap-2">
-                        <Image
-                          src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757277713/3_znu7hj.png"
-                          alt="$CHROME Twitter"
-                          width={32}
-                          height={32}
-                        />
+                    <a href="https://x.com/chromecoin_fun" className="font-bold text-lg hover:underline flex flex-col items-center gap-2">
                         TWITTER
                     </a>
                 </div>

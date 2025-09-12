@@ -8,7 +8,7 @@ import { FaXTwitter } from "react-icons/fa6";
 export const Hero = () => {
   const mintAddress = process.env.NEXT_PUBLIC_PIXEL_MINT_ADDRESS || "";
   const photonUrl = `https://www.dextools.io/app/en/solana/pair-explorer/${mintAddress}`;
-  const xlink = `https://x.com/YourTwitterHandle`;
+  const xlink = `https://x.com/chromecoin_fun`;
 
   const shopUrl = "/market";
 
