@@ -90,9 +90,9 @@ export function ModelViewer({ product }: ModelViewerProps) {
           ref={controlsRef}
           // Set the controls target to your desired coordinates
           target={[
-            0.12260811300319598,
-            0.6641547863322047 + (yMovement || 0),
-            0.14245024105593326,
+            0,
+            0.66 + (yMovement || 0),
+            0,
           ]}
           autoRotate
           // enableZoom and enablePan are true by default
