@@ -52,21 +52,16 @@ export const ChromePlan = () => {
         <p className="text-purple-400 font-bold tracking-widest text-lg md:text-xl">
           CHROMENOMICS
         </p>
-        <h2 className="text-4xl lg:text-5xl font-extrabold text-zinc-300 mt-2">
-          THE $CHROME PLAN
-        </h2>
       </div>
 
       <div className="container mx-auto flex flex-col items-center justify-center gap-8 text-center min-h-[400px]">
-        <video
-          src="https://res.cloudinary.com/dqedckeaa/video/upload/v1757715579/logo-spin_srkhov.webm"
+        <Image
+          src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757718129/chrome-rotate-logo_dtpgip.gif"
+          alt="$Chrome Logo rotate"
           width={250}
           height={250}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="h-[200px] w-[200px] md:h-[250px] md:w-[250px] mb-4 rounded-3xl"
+          unoptimized
+          className="h-[200px] w-[200px] md:h-[250px] md:w-[250px] mb-4 rounded-md"
         />
         <div className="font-mono text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-100 h-[120px] md:h-[150px]">
           <span className="whitespace-pre-line">{displayedText}</span>
