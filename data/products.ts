@@ -13,6 +13,7 @@ export type Product = {
   viewerMargin?: number;
   brightness?: number;
   yMovement?: number;
+  xMovement?: number;
 };
 
 export const products: Product[] = [
@@ -156,6 +157,7 @@ export const products: Product[] = [
     price: 4.5,
     description: "Digital streetwear essential. This zip hoodie features a heavyweight feel, ornate dagger zipper, and custom brand graphics on the back.",
     modelUrl: "/models/chrome-zip-hoodie.glb",
+    xMovement: -1.515,
     details: [
       "Token Standard: SPL",
       "Blockchain: Solana",
