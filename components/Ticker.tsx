@@ -2,8 +2,12 @@
 import React from 'react';
 
 const TickerItem = () => (
-    <div className="flex-shrink-0 flex items-center space-x-4 px-4">
-        <span className="text-xl font-semibold tracking-widest text-purple-400">SHOP $CHROME</span>
+    <div className="flex-shrink-0 flex items-center px-6">
+        <img
+            src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757700728/chrome-coin-pfp-logo_vktsdc.svg"
+            alt="Chrome Coin Logo"
+            className="h-8 w-16"
+        />
     </div>
 );
 
