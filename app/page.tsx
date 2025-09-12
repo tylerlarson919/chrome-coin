@@ -43,15 +43,14 @@ export default function HomePage() {
             <ChromePlan />
           </div>
         </div>
+        <HowToBuy />
       </div>
 
       {/*
         This content is outside the parent wrapper. It appears after the effect is complete,
         once the ChromePlan section is scrolled past and the video begins to "act like relative again".
       */}
-      <div className="w-full px-4 md:px-12">
-        <HowToBuy />
-      </div>
+      
     </div>
   );
 }

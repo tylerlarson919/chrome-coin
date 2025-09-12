@@ -49,7 +49,7 @@ export const ChromePlan = () => {
   return (
     <section id="chromeplan" className="pb-10 pt-16 md:pt-24">
       <div className="text-left mb-8 md:mb-12">
-        <p className="text-purple-400 font-bold tracking-widest text-lg md:text-xl">
+        <p className="text-purple-400 font-bold tracking-widest text-lg md:text-xl text-center">
           CHROMENOMICS
         </p>
       </div>

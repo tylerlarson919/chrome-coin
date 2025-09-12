@@ -189,7 +189,7 @@ export const SwapWidget = () => {
 
     return (
         <div className="relative z-10 w-full max-w-xl mx-auto font-montserrat">
-            <div className="relative z-10 w-full p-6 bg-zinc-900/80 border-2 border-zinc-700 rounded-lg backdrop-blur-sm">
+            <div className="relative z-10 w-full p-6 backdrop-blur-lg  rounded-lg backdrop-blur-sm">
                 <h2 className="text-2xl lg:text-3xl font-bold text-center text-zinc-200">
                     Swap SOL for $CHROME
                 </h2>
@@ -237,7 +237,7 @@ export const SwapWidget = () => {
                         label="Receive $CHROME"
                         value={receiveAmount}
                         variant="bordered"
-                        endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757060371/pfp-dark-pix_1_rvfa4n.png" alt="$CHROME" className="w-8 h-8 rounded-lg" />}
+                        endContent={<img src="https://res.cloudinary.com/dqedckeaa/image/upload/v1757718851/CHROME-COIN-PFP_ofd3n6.webp" alt="$CHROME" className="w-8 h-8 rounded-lg" />}
                         classNames={{
                             label: "text-sm font-bold text-zinc-400",
                             input: "text-xl font-bold text-white",
@@ -253,16 +253,6 @@ export const SwapWidget = () => {
                         {statusMessage}
                     </div>
                 )}
-                
-                <div className="flex items-center justify-between mt-4">
-                    <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" className="text-sm underline text-zinc-400 hover:text-purple-400">
-                        Don&apos;t have a Solana wallet?
-                    </a>
-                    <div className="flex items-center space-x-2">
-                        <WalletIcon src="https://res.cloudinary.com/dqedckeaa/image/upload/v1752805802/phantom-logo_retn2j.webp" alt="Phantom Wallet" />
-                        <WalletIcon src="https://res.cloudinary.com/dqedckeaa/image/upload/v1752805802/solflare-logo_qy2ndn.webp" alt="Solflare Wallet" />
-                    </div>
-                </div>
             </div>
         </div>
     );
